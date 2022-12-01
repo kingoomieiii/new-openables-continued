@@ -1,4 +1,4 @@
-local MAJOR, MINOR = "LibQuestItem-1.0", tonumber("27") or 999 -- ES increased version to take over all older instances
+local MAJOR, MINOR = "LibQuestItem-1.0", tonumber("28") or 999 -- ES increased version to take over all older instances
 local LibQuestItem = LibStub:NewLibrary(MAJOR, MINOR)
 
 if not LibQuestItem then return end -- no need to update
@@ -34,7 +34,7 @@ LibQuestItem.frame = LibQuestItem.frame	or CreateFrame("Frame", "LibQuestItem10F
 -- -----
 -- localization
 -- -----
-local LOCALE_QUEST = ((_G.GetItemClassInfo == nil) and select(10, GetAuctionItemClasses())) or _G.GetItemClassInfo(LE_ITEM_CLASS_QUESTITEM) or "Quest" -- ES legion aware fix
+local LOCALE_QUEST = ((_G.GetItemClassInfo == nil) and select(10, GetAuctionItemClasses())) or _G.GetItemClassInfo(LE_ITEM_CLASS_QUESTITEM or (Enum and Enum.ItemClass and Enum.ItemClass.Questitem)) or "Quest" -- ES legion aware fix
 
 -- -----
 -- local helpers

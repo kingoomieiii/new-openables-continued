@@ -981,4 +981,95 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [182651] = {{1,PRI_OPEN},nil,nil}, -- Destructive Reverberations
   [182656] = {{1,PRI_OPEN},nil,nil}, -- Disturb the Peace
 
+  --10.0 Profession
+  --Herbalism
+  [202014] = {{1,PRI_OPEN},nil,nil}, -- Infused Pollen
+  [200677] = {{1,PRI_OPEN},nil,nil}, -- Dreambloom Petal
+  [200678] = {{1,PRI_OPEN},nil,nil}, -- Dreambloom
+  [199115] = {{1,PRI_OPEN},nil,nil}, -- Herbalism Field Notes
+  --Mining
+  [194062] = {{1,PRI_OPEN},nil,nil}, -- Unyielding Stone Chunk
+  [201301] = {{1,PRI_OPEN},nil,nil}, -- Iridescent Ore
+  --Skinning
+  [202016] = {{1,PRI_OPEN},nil,nil}, -- Saturated Bone
+  [198841] = {{1,PRI_OPEN},nil,nil}, -- Large Sample of Curious Hide
+  [198837] = {{1,PRI_OPEN},nil,nil}, -- Curious Hide Scraps
+  --Alchemy
+  [193897] = {{1,PRI_OPEN},nil,nil}, -- Reawakened Catalyst
+  [198608] = {{1,PRI_OPEN},nil,nil}, -- Alchemy Notes
+  [193891] = {{1,PRI_OPEN},nil,nil}, -- Experimental Substance
+  [198964] = {{1,PRI_OPEN},nil,nil}, -- Elementious Splinter
+  [198685] = {{1,PRI_OPEN},nil,nil}, -- Well Insulated Mug
+  [198697] = {{1,PRI_OPEN},nil,nil}, -- Contraband Concoction
+  [198599] = {{1,PRI_OPEN},nil,nil}, -- Experimental Decay Sample
+  [198710] = {{1,PRI_OPEN},nil,nil}, -- Canteen of Suspicious Water
+  [198712] = {{1,PRI_OPEN},nil,nil}, -- Firewater Powder Sample
+  [198663] = {{1,PRI_OPEN},nil,nil}, -- Frostforged Potion
+  [201003] = {{1,PRI_OPEN},nil,nil}, -- Furry Gloop
+  --
+  [198660] = {{1,PRI_OPEN},nil,nil}, -- Fragmented Key
+  --Smithing
+  [198606] = {{1,PRI_OPEN},nil,nil}, -- Blacksmith's Writ
+  [201007] = {{1,PRI_OPEN},nil,nil}, -- Ancient Monument
+  [201005] = {{1,PRI_OPEN},nil,nil}, -- Curious Ingots
+  [201008] = {{1,PRI_OPEN},nil,nil}, -- Molten Ingot
+  [201010] = {{1,PRI_OPEN},nil,nil}, -- Qalashi Weapon Diagram
+  [201004] = {{1,PRI_OPEN},nil,nil}, -- Ancient Spear Shards
+  [201009] = {{1,PRI_OPEN},nil,nil}, -- Falconer Gauntlet Drawings
+  [201011] = {{1,PRI_OPEN},nil,nil}, -- Spelltouched Tongs
+  [201006] = {{1,PRI_OPEN},nil,nil}, -- Draconic Flux
+  --Tailoring
+  [198609] = {{1,PRI_OPEN},nil,nil}, -- Tailoring Examples
+  [198699] = {{1,PRI_OPEN},nil,nil}, -- Mysterious Banner
+  [198702] = {{1,PRI_OPEN},nil,nil}, -- Itinerant Singed Fabric
+  [198692] = {{1,PRI_OPEN},nil,nil}, -- Noteworthy Scrap of Carpet
+  [201020] = {{1,PRI_OPEN},nil,nil}, -- Silky Surprise
+  [198680] = {{1,PRI_OPEN},nil,nil}, -- Decaying Brackenhide Blanket
+  [198662] = {{1,PRI_OPEN},nil,nil}, -- Intriguing Bolt of Blue Cloth
+  [198684] = {{1,PRI_OPEN},nil,nil}, -- Miniature Bronze Dragonflight Banner
+  [201019] = {{1,PRI_OPEN},nil,nil}, -- Ancient Dragonweave Bolt
+  --Leatherworking
+  [200979] = {{1,PRI_OPEN},nil,nil}, -- Dusty Leatherworker's Diagrams
+  [198667] = {{1,PRI_OPEN},nil,nil}, -- Spare Djaradin Tools
+  [198696] = {{1,PRI_OPEN},nil,nil}, -- Wind-Blessed Hide
+  [201018] = {{1,PRI_OPEN},nil,nil}, -- Well-Danced Drum
+  [198658] = {{1,PRI_OPEN},nil,nil}, -- Decay-Infused Tanning Oil
+  [198683] = {{1,PRI_OPEN},nil,nil}, -- Treated Hides
+  [198690] = {{1,PRI_OPEN},nil,nil}, -- Decayed Scales
+  [198711] = {{1,PRI_OPEN},nil,nil}, -- Poacher's Pack
+  --
+  [200980] = {{1,PRI_OPEN},nil,nil}, -- Dusty Herbalist's Notes
+  --Enchanting
+  [198798] = {{1,PRI_OPEN},nil,nil}, -- Flashfrozen Scroll
+  [198675] = {{1,PRI_OPEN},nil,nil}, -- Lava-Infused Seed
+  [198689] = {{1,PRI_OPEN},nil,nil}, -- Stormbound Horn
+  [198799] = {{1,PRI_OPEN},nil,nil}, -- Forgotten Arcane Tome
+  [201013] = {{1,PRI_OPEN},nil,nil}, -- Faintly Enchanted Remains
+  [201012] = {{1,PRI_OPEN},nil,nil}, -- Enchanted Debris
+  [198694] = {{1,PRI_OPEN},nil,nil}, -- Enriched Earthen Shard
+  [198800] = {{1,PRI_OPEN},nil,nil}, -- Fractured Titanic Sphere
+  --Engineering
+  [201014] = {{1,PRI_OPEN},nil,nil}, -- Boomthyr Rocket
+  [198789] = {{1,PRI_OPEN},nil,nil}, -- Intact Coil Capacitor
+  --Inscription
+  [200973] = {{1,PRI_OPEN},nil,nil}, -- Dusty Scribe's Runic Drawings
+  [198703] = {{1,PRI_OPEN},nil,nil}, -- Sign Language Reference Sheet
+  [198693] = {{1,PRI_OPEN},nil,nil}, -- Dusty Darkmoon Card
+  [198704] = {{1,PRI_OPEN},nil,nil}, -- Pulsing Earth Rune
+  [198659] = {{1,PRI_OPEN},nil,nil}, -- Forgetful Apprentice's Tome
+  [201015] = {{1,PRI_OPEN},nil,nil}, -- Counterfeit Darkmoon Deck
+  [198669] = {{1,PRI_OPEN},nil,nil}, -- How to Train Your Whelpling
+  [198686] = {{1,PRI_OPEN},nil,nil}, -- Frosted Parchment
+  --Jewelcrafting
+  [198687] = {{1,PRI_OPEN},nil,nil}, -- Closely Guarded Shiny
+  [201017] = {{1,PRI_OPEN},nil,nil}, -- Igneous Gem
+  [198670] = {{1,PRI_OPEN},nil,nil}, -- Lofty Malygite
+  [198660] = {{1,PRI_OPEN},nil,nil}, -- Fragmented Key
+  [198664] = {{1,PRI_OPEN},nil,nil}, -- Crystalline Overgrowth
+  [201016] = {{1,PRI_OPEN},nil,nil}, -- Harmonic Crystal Harmonizer
+  [198682] = {{1,PRI_OPEN},nil,nil}, -- Alexstraszite Cluster
+  [198656] = {{1,PRI_OPEN},nil,nil}, -- Painter's Pretty Jewel
+  
+  --[] = {{1,PRI_OPEN},nil,nil}, -- 
+  
 }

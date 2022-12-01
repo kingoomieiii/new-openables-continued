@@ -5,10 +5,10 @@ local LibStub = _G.LibStub; assert(LibStub ~= nil,'LibStub')
 local BACKPACK_CONTAINER = _G.BACKPACK_CONTAINER; assert(BACKPACK_CONTAINER ~= nil,'BACKPACK_CONTAINER')
 local C_PetJournal = _G.C_PetJournal; assert(C_PetJournal ~= nil,'C_PetJournal')
 local format = _G.format; assert(format ~= nil,'format')
-local GetContainerItemID = _G.GetContainerItemID; assert(GetContainerItemID ~= nil,'GetContainerItemID')
-local GetContainerItemInfo = _G.GetContainerItemInfo; assert(GetContainerItemInfo ~= nil,'GetContainerItemInfo')
-local GetContainerItemLink = _G.GetContainerItemLink; assert(GetContainerItemLink ~= nil,'GetContainerItemLink')
-local GetContainerNumSlots = _G.GetContainerNumSlots; assert(GetContainerNumSlots ~= nil,'GetContainerNumSlots')
+local GetContainerItemID = _G.GetContainerItemID or C_Container.GetContainerItemID; assert(GetContainerItemID ~= nil,'GetContainerItemID')
+local GetContainerItemInfo = _G.GetContainerItemInfo or C_Container.GetContainerItemInfo; assert(GetContainerItemInfo ~= nil,'GetContainerItemInfo')
+local GetContainerItemLink = _G.GetContainerItemLink or C_Container.GetContainerItemLink; assert(GetContainerItemLink ~= nil,'GetContainerItemLink')
+local GetContainerNumSlots = _G.GetContainerNumSlots or C_Container.GetContainerNumSlots; assert(GetContainerNumSlots ~= nil,'GetContainerNumSlots')
 local GetItemCount = _G.GetItemCount; assert(GetItemCount ~= nil,'GetItemCount')
 local GetItemInfo = _G.GetItemInfo; assert(GetItemInfo ~= nil,'GetItemInfo')
 local GetItemSpell = _G.GetItemSpell; assert(GetItemSpell ~= nil,'GetItemSpell')
@@ -305,6 +305,9 @@ function NOP:ItemShow(itemID,prio) -- add item to button
     self:BlacklistItem(false,itemID)
     self:ItemShowRestart()
     return
+  end
+  if type(itemTexture) == "table" then
+    itemTexture = itemTexture.iconFileID
   end
   local mtext = format(P.MACRO_ACTIVE,itemID)
   if T_PICK[itemID] then -- item has picklock in tooltip

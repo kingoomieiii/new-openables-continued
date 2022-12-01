@@ -262,7 +262,7 @@ function NOP:ButtonLoad() -- create button, restore his position
     bt:SetFrameStrata(NOP.AceDB.profile.strata and "HIGH" or "MEDIUM")
     self:ButtonBackdrop(bt) -- create backdrop around button if enabled
     bt:RegisterForDrag("LeftButton") -- ALT-LEFT-MOUSE for drag
-    bt:RegisterForClicks("AnyUp") -- act on key release 
+    bt:RegisterForClicks("AnyUp", "AnyDown") -- act on key release 
     bt:SetScript("OnEnter",     function(self) NOP:ButtonOnEnter(self) end)
     bt:SetScript("OnLeave",     function(self) NOP:ButtonOnLeave(self) end)
     bt:SetScript("PreClick",    function(self,button) NOP.preClick = true end)

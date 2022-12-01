@@ -94,7 +94,7 @@ function NOP:QBButton(i, p) -- create new quest bar button
   local bt = CreateFrame("Button", name, p, "SecureActionButtonTemplate, ActionButtonTemplate")
   self:QBButtonSize(bt)
   self:ButtonBackdrop(bt)
-  bt:RegisterForClicks("AnyUp") -- act on key release 
+  bt:RegisterForClicks("AnyUp", "AnyDown") -- act on key release 
   bt:SetScript("OnEnter",  function(self) NOP:QBOnEnter(self) end)
   bt:SetScript("OnLeave",  function(self) NOP:QBOnLeave(self) end)
   bt:SetScript("PostClick",function(self,mouse) NOP:QBPostClick(self,mouse) end)
