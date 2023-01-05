@@ -4,7 +4,7 @@ name: Main - CurseForge - Package and Release - All pushes
 on:
   push:
     branches:
-      - master
+      - main
     tags:
       - '*'
       - '!**-alpha**'
