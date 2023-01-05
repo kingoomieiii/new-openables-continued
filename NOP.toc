@@ -1,6 +1,6 @@
 ## Interface: 100002
 ## Title: New |cffffff88Openables|r
-## Author: cont1nuity
+## Author: cont1nuity (previous maintainers/creators: srhinos, PeknaMrcha alias EduardCurse alias Edik)
 #@version-retail@
 ## Version: @project-version@
 #@end-version-retail@
