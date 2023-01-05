@@ -28,7 +28,7 @@ jobs:
       - name: Clone project
         uses: actions/checkout@v1
         with:
-          fetch-depth: 100 # for automated history
+          fetch-depth: 0 # for automated history
 
       - name: Package and Release
         uses: BigWigsMods/packager@master
