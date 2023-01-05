@@ -21,4 +21,5 @@ Supported items:
 
 Let me know item names to add to wish list. I will grow list as I find items suitable to add. Please I need people who will send me translations for nop-locale-enUS.lua to other languages. Localized SubZones are in for deDE, esES, esMX, frFR, itIT, koKR, ptBR, ruRU, zhCN and zhTW.
 
-Source pulled from [this curseforge](https://www.curseforge.com/wow/addons/new-openables) project as the author has since abandoned it 
+Source pulled from [this curseforge](https://www.curseforge.com/wow/addons/new-openables) project as the author has since abandoned it.
+Afterwards forked from srhinos maintenance repo at https://github.com/srhinos/new-openables/
