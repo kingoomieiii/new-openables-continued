@@ -1,5 +1,4 @@
 ## Interface: 100002
-## Interface-Mainline: 100002
 ## Title: New |cffffff88Openables|r
 ## Author: cont1nuity
 #@version-retail@
