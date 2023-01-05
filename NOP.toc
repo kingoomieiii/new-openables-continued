@@ -1,9 +1,13 @@
-## Interface: 100002 
-## Title: New |cffffff88Openables|r - Continued
-## Author: Continuity (forked from NOP by PeknaMrcha alias EduardCurse alias Edik)
-## Version: 09.16 16.12.2018
-## Notes: Popup Button and keybind for opening or using items in your bags. Adopted idea by Driizt@BB_EU. Quest Button Bar idea and code by Nickenyfiken and ZidayaXis
+## Interface: 100002
+## Interface-Mainline: 100002
+## Title: New |cffffff88Openables|r
+## Author: cont1nuity
+#@version-retail@
+## Version: @project-version@-Retail
+#@end-version-retail@
+## Notes: Popup Button and keybind for opening or using items in your bags. Continued version of the original NOP to support Dragonflight.
 ## SavedVariables: NewOpenablesProfile
+## X-Curse-Project-ID: 790748
 
 LibStub\LibStub.lua
 CallbackHandler-1.0\CallbackHandler-1.0.lua
