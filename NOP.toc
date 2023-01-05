@@ -3,7 +3,7 @@
 ## Title: New |cffffff88Openables|r
 ## Author: cont1nuity
 #@version-retail@
-## Version: @project-version@-Retail
+## Version: @project-version@
 #@end-version-retail@
 ## Notes: Popup Button and keybind for opening or using items in your bags. Continued version of the original NOP to support Dragonflight.
 ## SavedVariables: NewOpenablesProfile
