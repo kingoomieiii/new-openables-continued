@@ -1,1 +1,3 @@
+package-as: NOP
+
 enable-nolib-creation: no
