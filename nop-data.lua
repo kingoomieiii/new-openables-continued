@@ -1017,6 +1017,7 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [182656] = {{1,PRI_OPEN},nil,nil}, -- Disturb the Peace
 
   --10.0 
+  [198395] = {{1,PRI_OPEN},nil,nil}, -- Dull Spined Clam
   
   --Dragon Riding Skins
     [197099] = {{1,PRI_OPEN},nil,nil}, -- highland-drake-armor
