@@ -989,22 +989,34 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [200677] = {{1,PRI_OPEN},nil,nil}, -- Dreambloom Petal
   [200678] = {{1,PRI_OPEN},nil,nil}, -- Dreambloom
   [199115] = {{1,PRI_OPEN},nil,nil}, -- Herbalism Field Notes
+  [194704] = {{1,PRI_OPEN},nil,nil}, -- draconic-treatise-on-herbalism
+  [200980] = {{1,PRI_OPEN},nil,nil}, -- dusty-herbalists-notes
+  [201276] = {{1,PRI_OPEN},nil,nil}, -- rare-herbalists-notes
+  [201287] = {{1,PRI_OPEN},nil,nil}, -- ancient-herbalists-notes
   --Mining
   [199122] = {{1,PRI_OPEN},nil,nil}, -- Mining Field Notes
   [201716] = {{1,PRI_OPEN},nil,nil}, -- Notebook of Crafting Knowledge
   [201700] = {{1,PRI_OPEN},nil,nil}, -- Notebook of Crafting Knowledge
   [194039] = {{1,PRI_OPEN},nil,nil}, -- Heated Ore Sample
-  [199122] = {{1,PRI_OPEN},nil,nil}, -- Mining Field Notes
   [201301] = {{1,PRI_OPEN},nil,nil}, -- Iridescent Ore
   [201300] = {{1,PRI_OPEN},nil,nil}, -- Iridescent Ore Fragments
   [202011] = {{1,PRI_OPEN},nil,nil}, -- Elementally-Charged Stone
   [194062] = {{1,PRI_OPEN},nil,nil}, -- Unyielding Stone Chunk
+  [194708] = {{1,PRI_OPEN},nil,nil}, -- draconic-treatise-on-mining
+  [200981] = {{1,PRI_OPEN},nil,nil}, -- dusty-miners-notes
+  [201277] = {{1,PRI_OPEN},nil,nil}, -- rare-miners-notes
+  [201288] = {{1,PRI_OPEN},nil,nil}, -- ancient-miners-notes
   --Skinning
   [201714] = {{1,PRI_OPEN},nil,nil}, -- Notebook of Crafting Knowledge
   [201718] = {{1,PRI_OPEN},nil,nil}, -- Notebook of Crafting Knowledge
   [202016] = {{1,PRI_OPEN},nil,nil}, -- Saturated Bone
   [198841] = {{1,PRI_OPEN},nil,nil}, -- Large Sample of Curious Hide
   [198837] = {{1,PRI_OPEN},nil,nil}, -- Curious Hide Scraps
+  [199128] = {{1,PRI_OPEN},nil,nil}, -- skinning-field-notes
+  [201023] = {{1,PRI_OPEN},nil,nil}, -- draconic-treatise-on-skinning
+  [200982] = {{1,PRI_OPEN},nil,nil}, -- dusty-skinners-notes
+  [201278] = {{1,PRI_OPEN},nil,nil}, -- rare-skinners-notes
+  [201289] = {{1,PRI_OPEN},nil,nil}, -- ancient-skinners-notes
   --Alchemy
   [201706] = {{1,PRI_OPEN},nil,nil}, -- Notebook of Crafting Knowledge
   [198963] = {{1,PRI_OPEN},nil,nil}, -- Decaying Phlegm
@@ -1019,8 +1031,9 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [198712] = {{1,PRI_OPEN},nil,nil}, -- Firewater Powder Sample
   [198663] = {{1,PRI_OPEN},nil,nil}, -- Frostforged Potion
   [201003] = {{1,PRI_OPEN},nil,nil}, -- Furry Gloop
-  --
-  [198660] = {{1,PRI_OPEN},nil,nil}, -- Fragmented Key
+  [201281] = {{1,PRI_OPEN},nil,nil}, -- ancient-alchemists-research
+  [201270] = {{1,PRI_OPEN},nil,nil}, -- rare-alchemists-research
+  [200974] = {{1,PRI_OPEN},nil,nil}, -- dusty-alchemists-research
   --Blacksmithing
   [201708] = {{1,PRI_OPEN},nil,nil}, -- Notebook of Crafting Knowledge
   [198606] = {{1,PRI_OPEN},nil,nil}, -- Blacksmith's Writ
@@ -1032,6 +1045,15 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [201009] = {{1,PRI_OPEN},nil,nil}, -- Falconer Gauntlet Drawings
   [201011] = {{1,PRI_OPEN},nil,nil}, -- Spelltouched Tongs
   [201006] = {{1,PRI_OPEN},nil,nil}, -- Draconic Flux
+  [198791] = {{1,PRI_OPEN},nil,nil}, -- glimmer-of-blacksmithing-wisdom
+  [192132] = {{1,PRI_OPEN},nil,nil}, -- draconium-blade-sharpener
+  [192131] = {{1,PRI_OPEN},nil,nil}, -- valdrakken-weapon-chain
+  [198965] = {{1,PRI_OPEN},nil,nil}, -- primeval-earth-fragment
+  [198966] = {{1,PRI_OPEN},nil,nil}, -- molten-globule
+  [198454] = {{1,PRI_OPEN},nil,nil}, -- draconic-treatise-on-blacksmithing
+  [201279] = {{1,PRI_OPEN},nil,nil}, -- ancient-blacksmiths-diagrams
+  [201268] = {{1,PRI_OPEN},nil,nil}, -- rare-blacksmiths-diagrams
+  [200972] = {{1,PRI_OPEN},nil,nil}, -- dusty-blacksmiths-diagrams
   --Tailoring
   [201715] = {{1,PRI_OPEN},nil,nil}, -- Notebook of Crafting Knowledge
   [198609] = {{1,PRI_OPEN},nil,nil}, -- Tailoring Examples
@@ -1043,6 +1065,14 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [198662] = {{1,PRI_OPEN},nil,nil}, -- Intriguing Bolt of Blue Cloth
   [198684] = {{1,PRI_OPEN},nil,nil}, -- Miniature Bronze Dragonflight Banner
   [201019] = {{1,PRI_OPEN},nil,nil}, -- Ancient Dragonweave Bolt
+  [193899] = {{1,PRI_OPEN},nil,nil}, -- primalweave-spindle
+  [198977] = {{1,PRI_OPEN},nil,nil}, -- ohnarhan-weave
+  [193898] = {{1,PRI_OPEN},nil,nil}, -- umbral-bone-needle
+  [198978] = {{1,PRI_OPEN},nil,nil}, -- stupidly-effective-stitchery
+  [194698] = {{1,PRI_OPEN},nil,nil}, -- draconic-treatise-on-tailoring
+  [201271] = {{1,PRI_OPEN},nil,nil}, -- rare-tailors-diagrams
+  [200975] = {{1,PRI_OPEN},nil,nil}, -- dusty-tailors-diagrams
+  [201282] = {{1,PRI_OPEN},nil,nil}, -- ancient-tailors-diagrams
   --Leatherworking
   [201713] = {{1,PRI_OPEN},nil,nil}, -- Notebook of Crafting Knowledge
   [200979] = {{1,PRI_OPEN},nil,nil}, -- Dusty Leatherworker's Diagrams
@@ -1054,30 +1084,63 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [198690] = {{1,PRI_OPEN},nil,nil}, -- Decayed Scales
   [198711] = {{1,PRI_OPEN},nil,nil}, -- Poacher's Pack
   [200980] = {{1,PRI_OPEN},nil,nil}, -- Dusty Herbalist's Notes
+  [193910] = {{1,PRI_OPEN},nil,nil}, -- molted-dragon-scales
+  [193913] = {{1,PRI_OPEN},nil,nil}, -- preserved-animal-parts
+  [198975] = {{1,PRI_OPEN},nil,nil}, -- ossified-hide
+  [198976] = {{1,PRI_OPEN},nil,nil}, -- exceedingly-soft-skin
+  [198613] = {{1,PRI_OPEN},nil,nil}, -- leatherworking-designs
+  [201275] = {{1,PRI_OPEN},nil,nil}, -- rare-leatherworkers-diagrams
+  [201286] = {{1,PRI_OPEN},nil,nil}, -- ancient-leatherworkers-diagrams
+  [194700] = {{1,PRI_OPEN},nil,nil}, -- draconic-treatise-on-leatherworking
   --Enchanting
   [201709] = {{1,PRI_OPEN},nil,nil}, -- Notebook of Crafting Knowledge
-  [198798] = {{1,PRI_OPEN},nil,nil}, -- Flashfrozen Scroll
-  [198675] = {{1,PRI_OPEN},nil,nil}, -- Lava-Infused Seed
-  [198689] = {{1,PRI_OPEN},nil,nil}, -- Stormbound Horn
-  [198799] = {{1,PRI_OPEN},nil,nil}, -- Forgotten Arcane Tome
   [201013] = {{1,PRI_OPEN},nil,nil}, -- Faintly Enchanted Remains
   [201012] = {{1,PRI_OPEN},nil,nil}, -- Enchanted Debris
-  [198694] = {{1,PRI_OPEN},nil,nil}, -- Enriched Earthen Shard
-  [198800] = {{1,PRI_OPEN},nil,nil}, -- Fractured Titanic Sphere
+  [198968] = {{1,PRI_OPEN},nil,nil}, -- primalist-charm
+  [198967] = {{1,PRI_OPEN},nil,nil}, -- primordial-aether
+  [193900] = {{1,PRI_OPEN},nil,nil}, -- prismatic-focusing-shard
+  [193901] = {{1,PRI_OPEN},nil,nil}, -- primal-dust
+  [194702] = {{1,PRI_OPEN},nil,nil}, -- draconic-treatise-on-enchanting
+  [201283] = {{1,PRI_OPEN},nil,nil}, -- ancient-enchanters-research
+  [201272] = {{1,PRI_OPEN},nil,nil}, -- rare-enchanters-research
+  [200976] = {{1,PRI_OPEN},nil,nil}, -- dusty-enchanters-research
+  --[198689] = {{1,PRI_OPEN},nil,nil}, -- stormbound-horn -- needs to be disenchanted!
+  --[198799] = {{1,PRI_OPEN},nil,nil}, -- forgotten-arcane-tome -- needs to be disenchanted!
+  --[198694] = {{1,PRI_OPEN},nil,nil}, -- enriched-earthen-shard -- needs to be disenchanted!
+  --[198800] = {{1,PRI_OPEN},nil,nil}, -- fractured-titanic-sphere -- needs to be disenchanted!
+  --[198798] = {{1,PRI_OPEN},nil,nil}, -- flashfrozen-scroll -- needs to be disenchanted!
+  --[198675] = {{1,PRI_OPEN},nil,nil}, -- lava-infused-seed -- needs to be disenchanted!
   --Engineering
-  [201710] = {{1,PRI_OPEN},nil,nil}, -- Notebook of Crafting Knowledge
-  [201014] = {{1,PRI_OPEN},nil,nil}, -- Boomthyr Rocket
-  [198789] = {{1,PRI_OPEN},nil,nil}, -- Intact Coil Capacitor
+  [201014] = {{1,PRI_OPEN},nil,nil}, -- boomthyr-rocket
+  [198789] = {{1,PRI_OPEN},nil,nil}, -- intact-coil-capacitor
+  [193902] = {{1,PRI_OPEN},nil,nil}, -- eroded-titan-gizmo
+  [193903] = {{1,PRI_OPEN},nil,nil}, -- watcher-power-core
+  [198969] = {{1,PRI_OPEN},nil,nil}, -- keepers-mark
+  [198970] = {{1,PRI_OPEN},nil,nil}, -- infinitely-attachable-pair-o-docks
+  [201710] = {{1,PRI_OPEN},nil,nil}, -- notebook-of-crafting-knowledge
+  [198510] = {{1,PRI_OPEN},nil,nil}, -- draconic-treatise-on-engineering
+  [198611] = {{1,PRI_OPEN},nil,nil}, -- engineering-details
+  [201273] = {{1,PRI_OPEN},nil,nil}, -- rare-engineers-scribblings
+  [200977] = {{1,PRI_OPEN},nil,nil}, -- dusty-engineers-scribblings
+  [201284] = {{1,PRI_OPEN},nil,nil}, -- ancient-engineers-scribblings
   --Inscription
-  [201711] = {{1,PRI_OPEN},nil,nil}, -- Notebook of Crafting Knowledge
-  [200973] = {{1,PRI_OPEN},nil,nil}, -- Dusty Scribe's Runic Drawings
-  [198703] = {{1,PRI_OPEN},nil,nil}, -- Sign Language Reference Sheet
-  [198693] = {{1,PRI_OPEN},nil,nil}, -- Dusty Darkmoon Card
-  [198704] = {{1,PRI_OPEN},nil,nil}, -- Pulsing Earth Rune
-  [198659] = {{1,PRI_OPEN},nil,nil}, -- Forgetful Apprentice's Tome
-  [201015] = {{1,PRI_OPEN},nil,nil}, -- Counterfeit Darkmoon Deck
-  [198669] = {{1,PRI_OPEN},nil,nil}, -- How to Train Your Whelpling
-  [198686] = {{1,PRI_OPEN},nil,nil}, -- Frosted Parchment
+  [198704] = {{1,PRI_OPEN},nil,nil}, -- pulsing-earth-rune
+  [198703] = {{1,PRI_OPEN},nil,nil}, -- sign-language-reference-sheet
+  [198693] = {{1,PRI_OPEN},nil,nil}, -- dusty-darkmoon-card
+  [198686] = {{1,PRI_OPEN},nil,nil}, -- frosted-parchment
+  [198669] = {{1,PRI_OPEN},nil,nil}, -- how-to-train-your-whelpling
+  [198659] = {{1,PRI_OPEN},nil,nil}, -- forgetful-apprentices-tome
+  [201015] = {{1,PRI_OPEN},nil,nil}, -- counterfeit-darkmoon-deck
+  [193904] = {{1,PRI_OPEN},nil,nil}, -- phoenix-feather-quill
+  [193905] = {{1,PRI_OPEN},nil,nil}, -- iskaaran-trading-ledger
+  [198972] = {{1,PRI_OPEN},nil,nil}, -- draconic-glamour
+  [198971] = {{1,PRI_OPEN},nil,nil}, -- curious-djaradin-rune
+  [201711] = {{1,PRI_OPEN},nil,nil}, -- notebook-of-crafting-knowledge
+  [194699] = {{1,PRI_OPEN},nil,nil}, -- draconic-treatise-on-inscription
+  [198607] = {{1,PRI_OPEN},nil,nil}, -- scribes-glyphs
+  [201269] = {{1,PRI_OPEN},nil,nil}, -- rare-scribes-runic-drawings
+  [200973] = {{1,PRI_OPEN},nil,nil}, -- dusty-scribes-runic-drawings
+  [201280] = {{1,PRI_OPEN},nil,nil}, -- ancient-scribes-runic-drawings
   --Jewelcrafting
   [193907] = {{1,PRI_OPEN},nil,nil}, -- Chipped Tyrstone
   [201712] = {{1,PRI_OPEN},nil,nil}, -- Notebook of Crafting Knowledge
@@ -1093,6 +1156,12 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [201016] = {{1,PRI_OPEN},nil,nil}, -- Harmonic Crystal Harmonizer
   [198682] = {{1,PRI_OPEN},nil,nil}, -- Alexstraszite Cluster
   [198656] = {{1,PRI_OPEN},nil,nil}, -- Painter's Pretty Jewel
+  [198660] = {{1,PRI_OPEN},nil,nil}, -- Fragmented Key
+  [193907] = {{1,PRI_OPEN},nil,nil}, -- chipped-tyrstone
+  [194703] = {{1,PRI_OPEN},nil,nil}, -- draconic-treatise-on-jewelcrafting
+  [201274] = {{1,PRI_OPEN},nil,nil}, -- rare-jewelers-illustrations
+  [200978] = {{1,PRI_OPEN},nil,nil}, -- dusty-jewelers-illustrations
+  [201285] = {{1,PRI_OPEN},nil,nil}, -- ancient-jewelers-illustrations
   
   --[] = {{1,PRI_OPEN},nil,nil}, -- 
   
