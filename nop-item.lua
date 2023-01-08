@@ -118,6 +118,12 @@ function NOP:ItemGetPattern(itemID,bag,slot) -- looking for usable item via patt
     local headingLine = P.TOOLTIP_SCAN .. "TextLeft" .. i
     local heading = _G[headingLine]:GetText() -- get line from tooltip
     if heading and heading ~= "" then
+      if heading == ITEM_COSMETIC then
+        return 1, P.PRI_OPEN
+      end
+      if heading == TOY then
+        return 1, P.PRI_OPEN
+      end
       for key, data in pairs(T_RECIPES_FIND) do -- /run for k,v in pairs(NOP.private.T_RECIPES_FIND) do print(k,'"',unpack(v,2,2),'"') end
         local c, pattern, z, m, faction = unpack(data,1,5)
         if strfind(heading,pattern,1,true) then
