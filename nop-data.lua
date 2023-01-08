@@ -153,6 +153,25 @@ NOP.T_RECIPES = { -- [ItemId] = {{count_to_use,priority}, "gsub regex" | tooltip
   [141342] = {{1,PRI_REP},1,nil,nil,1894}, -- Wardens Insignia
   [141991] = {{1,PRI_REP},1,nil,nil,1894}, -- Greater Wardens Insignia
 }
+NOP.T_DISENCHANT_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]=true,...},auraID}, table for opening/use item by itemID, when is no possible to check for any common text
+  --10.0
+  --Professions Knowledge Enchanting
+  [198689] = {{1,PRI_OPEN},nil,nil}, -- stormbound-horn -- needs to be disenchanted!
+  [198799] = {{1,PRI_OPEN},nil,nil}, -- forgotten-arcane-tome -- needs to be disenchanted!
+  [198694] = {{1,PRI_OPEN},nil,nil}, -- enriched-earthen-shard -- needs to be disenchanted!
+  [198800] = {{1,PRI_OPEN},nil,nil}, -- fractured-titanic-sphere -- needs to be disenchanted!
+  [198798] = {{1,PRI_OPEN},nil,nil}, -- flashfrozen-scroll -- needs to be disenchanted!
+  [198675] = {{1,PRI_OPEN},nil,nil}, -- lava-infused-seed -- needs to be disenchanted!
+  --Profession Materieals Enchanting
+  [200939] = {{1,PRI_OPEN},nil,nil}, -- Chromatic Pocketwatch
+  [200940] = {{1,PRI_OPEN},nil,nil}, -- Everflowing Inkwell
+  [200941] = {{1,PRI_OPEN},nil,nil}, -- Seal of Order
+  [200947] = {{1,PRI_OPEN},nil,nil}, -- Carving of Awakening
+  [200942] = {{1,PRI_OPEN},nil,nil}, -- Vibrant Emulsion
+  [200943] = {{1,PRI_OPEN},nil,nil}, -- Whispering Band
+  [200945] = {{1,PRI_OPEN},nil,nil}, -- Valiant Hammer
+  [200946] = {{1,PRI_OPEN},nil,nil}, -- Thunderous Blade
+}
 NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]=true,...},auraID}, table for opening/use item by itemID, when is no possible to check for any common text
   [166999] = {{1,PRI_OPEN},nil,nil}, -- [Treasure Map]
   [ 47030] = {{1,PRI_OPEN},nil,nil}, -- [Huge Seaforium Bombs]
@@ -1018,6 +1037,7 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
 
   --10.0 
   [198395] = {{1,PRI_OPEN},nil,nil}, -- Dull Spined Clam
+  [195453] = {{1,PRI_OPEN},nil,nil}, -- Ludo's Stash Map
   
   --Dragon Riding Skins
     [197099] = {{1,PRI_OPEN},nil,nil}, -- highland-drake-armor
@@ -1268,6 +1288,7 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [197014] = {{1,PRI_OPEN},nil,nil}, -- cliffside-wylderdrake-white-scales
   [197007] = {{1,PRI_OPEN},nil,nil}, -- cliffside-wylderdrake-wide-stripes-pattern
   
+  --[[
   --Professions:  
   --Herbalism
   [201705] = {{1,PRI_OPEN},nil,nil}, -- Notebook of Crafting Knowledge
@@ -1449,7 +1470,7 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [201274] = {{1,PRI_OPEN},nil,nil}, -- rare-jewelers-illustrations
   [200978] = {{1,PRI_OPEN},nil,nil}, -- dusty-jewelers-illustrations
   [201285] = {{1,PRI_OPEN},nil,nil}, -- ancient-jewelers-illustrations
-  
+  ]]--
   --[] = {{1,PRI_OPEN},nil,nil}, -- 
   
 }

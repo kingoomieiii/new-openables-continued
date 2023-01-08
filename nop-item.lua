@@ -62,7 +62,7 @@ function NOP:ItemGetSpell(itemID) -- looking for usable item by spell attached t
   end
 end
 function NOP:ItemGetItem(itemID) -- looking for usable item by itemID returns (count, 2, zone, map, aura) or nil
-  local ref = NOP.T_ITEMS[itemID]
+  local ref = NOP.T_ITEMS[itemID] or NOP.T_DISENCHANT_ITEMS[itemID]
   if not ref then return end
   local c,z,m,a = unpack(ref,1,4)
   if m and not m[self.mapID] then
@@ -320,6 +320,9 @@ function NOP:ItemShow(itemID,prio) -- add item to button
     else
       T_PICK[itemID] = nil -- it not require lockpick anymore
     end
+  elseif NOP.T_DISENCHANT_ITEMS[itemID] then
+    isGlow = true
+    mtext = format(P.MACRO_DISENCHANT,itemID) -- disenchant this
   end
   if (bt.itemCount ~= itemCount) or (bt.itemID ~= itemID) or (bt.isGlow ~= isGlow) or (bt.mtext ~= mtext) then
     bt.prio = prio

@@ -60,6 +60,7 @@ P.CONSOLE_USAGE = L["CONSOLE_USAGE"]
 P.MACRO_INACTIVE = "/stopcasting"
 P.MACRO_ACTIVE = "/use item:%d" -- "%s/use %d %d"
 P.MACRO_PICKLOCK = "/use %s\n/use %d %d" -- Picklock targeted at bags position only works, because there could be locked and unlocked items in bags
+P.MACRO_DISENCHANT = "/use disenchant\n/use item:%d" -- Disenchant item
 P.DEFAULT_ICON = "Interface\\Icons\\inv_crate_01" -- Supply Crate
 P.DEFAULT_ITEMID = 4629 -- Supply Crate
 P.QUEST_ICON = "Interface\\MINIMAP\\ObjectIcons"
