@@ -112,6 +112,10 @@ function NOP:ItemGetPattern(itemID,bag,slot) -- looking for usable item via patt
     print(format("|cFFFF0000Error|r broken tooltip for |cFFFF0000%s|r itemID(%d)",GetItemInfo(itemID) or "unknown",itemID))
     return -- invalid tooltip
   end
+  local itemType, itemSubType, _, _, _, _, classID, subclassID = select(6, GetItemInfo(itemID))
+  if classID == Enum.ItemClass.Miscellaneous and subclassID == Enum.ItemMiscellaneousSubclass.Mount then
+    return 1, P.PRIO_OPEN --fallback for mounts
+  end
   local n, p = self:ItemGetLockPattern(itemID)
   if n and n > 0 then return n, p end
   for i=1,self.scanFrame:NumLines() do -- scan all lines in tooltip
