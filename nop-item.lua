@@ -70,20 +70,27 @@ function NOP:ItemGetItem(itemID) -- looking for usable item by itemID returns (c
     return 0
   end -- map lock reject
   if a then
+    local hasAura = false
     for n = 1, 40 do 
       local name, icon, countAura, debuffType, duration, expirationTime, unitCaster, isStealable, shouldConsolidate, spellID = UnitAura(P.UNITID_PLAYER, n,P.AURA_HELPFUL)
-      if spellID and (spellID == a) then -- already have aura from that item
+      if spellID and (spellID == math.abs(a)) then -- already has aura from that item
         if (spellID == P.AURA_MINERS_COFFEE) then -- extra handling for this aura
           if (countAura >= NOP.AceDB.profile.cofeeStacks) then -- it has enough of stacks?
             self:Verbose("ItemGetItem:","itemID",itemID,"rejected already have aura",name,"with",countAura,"stacks")
             return 0
           end
         else
-          self:Verbose("ItemGetItem:","itemID",itemID,"rejected already have aura",name)
-          return 0
+          hasAura = true
         end
         break
       end
+    end
+    if a > 0 and hasAura then
+      self:Verbose("ItemGetItem:","itemID",itemID,"rejected already have aura",name)
+      return 0
+    elseif a < 0 and not hasAura then
+      self:Verbose("ItemGetItem:","itemID",itemID,"rejected missing aura",name)
+      return 0
     end
   end
   return c[1], c[2], z, m, a
@@ -370,7 +377,7 @@ function NOP:ItemShowNew() -- check bags for usable item and place it on button
   local toShow, prio, stamp = nil, 0, 0 -- item for use on button
   for itemID, data in pairs(T_USE) do
     local c, p, z, m, a, t = unpack(data,1,6)
-    local inZone = false
+    local inZone = not z
     if z then -- zone table can be {"sub-Zone","sub-Zone",...} | zoneID | {zoneID,zoneID,...}
       if type(z) == "table" then
         for i = 1, #z do
