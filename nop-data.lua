@@ -1039,6 +1039,13 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [198395] = {{1,PRI_OPEN},nil,nil}, -- Dull Spined Clam
   [195453] = {{1,PRI_OPEN},nil,nil}, -- Ludo's Stash Map
   
+  --Tuskarr Feast Reagent
+  [199208] = {{1,PRI_OPEN},nil,nil}, -- Grungle
+  [199213] = {{1,PRI_OPEN},nil,nil}, -- Lakkamuk Blenny
+  [199212] = {{1,PRI_OPEN},nil,nil}, -- Clubfish
+  [199205] = {{1,PRI_OPEN},nil,nil}, -- Manasucker
+  [199207] = {{1,PRI_OPEN},nil,nil}, -- Iceback Sculpin
+  
   --Dragon Riding Skins
     [197099] = {{1,PRI_OPEN},nil,nil}, -- highland-drake-armor
   [197117] = {{1,PRI_OPEN},nil,nil}, -- highland-drake-black-hair
