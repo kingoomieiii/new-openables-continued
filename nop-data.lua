@@ -1038,6 +1038,7 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   --10.0 
   [198395] = {{1,PRI_OPEN},nil,nil}, -- Dull Spined Clam
   [195453] = {{1,PRI_OPEN},nil,nil}, -- Ludo's Stash Map
+  [201837] = {{1,PRI_OPEN},nil,nil,-289433}, -- Magmammoth Harness (requires aura -> aura missing check)
   
   --Tuskarr Feast Reagent
   [199208] = {{1,PRI_OPEN},nil,nil}, -- Grungle
