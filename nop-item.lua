@@ -261,6 +261,16 @@ function NOP:ItemIsUsable(itemID) -- look in tooltip if there is no red text
           end
         end
       end
+      local rightText = _G[P.TOOLTIP_SCAN .. "TextRight" .. i]
+      if rightText and rightText.GetText then
+        local text = rightText:GetText()
+        if text and text ~= "" then
+          if self:ItemIsUnusable(rightText:GetTextColor()) then 
+            self:Verbose("itemID",itemID,"has red text in tooltip!",text)
+            return false
+          end
+        end
+      end
     end
     return true
   end
