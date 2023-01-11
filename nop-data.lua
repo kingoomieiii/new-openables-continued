@@ -1015,6 +1015,14 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [199212] = {{1,PRI_OPEN},nil,nil}, -- Clubfish
   [199205] = {{1,PRI_OPEN},nil,nil}, -- Manasucker
   [199207] = {{1,PRI_OPEN},nil,nil}, -- Iceback Sculpin
+  [199106] = {{1,PRI_OPEN},nil,nil}, -- Tiny Leviathan Bone
+  [199105] = {{3,PRI_OPEN},nil,nil}, -- Ancheevy
+  [199834] = {{1,PRI_OPEN},nil,nil}, -- Pulpy Seagrass -- this and the next two are all needed.
+  [199101] = {{1,PRI_OPEN},nil,nil}, -- Dried Wyldermane Kelp
+  [199835] = {{1,PRI_OPEN},nil,nil}, -- Torga's Braid
+  [199100] = {{1,PRI_OPEN},nil,nil}, -- Peppersmelt -- this and the next two are all needed.
+  [199833] = {{1,PRI_OPEN},nil,nil}, -- Dragonhead Eel
+  [199832] = {{1,PRI_OPEN},nil,nil}, -- Smoked Seaviper
   
   --[] = {{1,PRI_OPEN},nil,nil}, -- 
   
