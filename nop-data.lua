@@ -71,40 +71,9 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [ 94226] = {{1,PRI_REP},nil,nil}, -- Stolen Stolen Klaxxi Insignia
   [ 94227] = {{1,PRI_REP},nil,nil}, -- Stolen Golden Lotus Insignia
   --10.0 Profession Knowledge
-  [375806] = {{1,PRI_REP},nil,nil}, -- Studying - Enchanting - 1
-  [392779] = {{1,PRI_REP},nil,nil}, -- Studying - Alchemy - 1
-  [392780] = {{1,PRI_REP},nil,nil}, -- Studying - Blacksmithing - 1
-  [392781] = {{1,PRI_REP},nil,nil}, -- Studying - Enchanting - 1
-  [392782] = {{1,PRI_REP},nil,nil}, -- Studying - Engineering  - 1
-  [392783] = {{1,PRI_REP},nil,nil}, -- Studying - Herbalism - 1
-  [392784] = {{1,PRI_REP},nil,nil}, -- Studying - Inscription - 1
-  [392785] = {{1,PRI_REP},nil,nil}, -- Studying - Jewelcrafting - 1
-  [392786] = {{1,PRI_REP},nil,nil}, -- Studying - Leatherworking - 1
-  [392787] = {{1,PRI_REP},nil,nil}, -- Studying - Mining - 1
-  [392788] = {{1,PRI_REP},nil,nil}, -- Studying - Skinning - 1
-  [392789] = {{1,PRI_REP},nil,nil}, -- Studying - Tailoring - 1
-  [393123] = {{1,PRI_REP},nil,nil}, -- Studying - Alchemy - 3
-  [393124] = {{1,PRI_REP},nil,nil}, -- Studying - Alchemy - 5
-  [393125] = {{1,PRI_REP},nil,nil}, -- Studying - Blacksmithing - 3
-  [393126] = {{1,PRI_REP},nil,nil}, -- Studying - Blacksmithing - 5
-  [393127] = {{1,PRI_REP},nil,nil}, -- Studying - Enchanting - 3
-  [393128] = {{1,PRI_REP},nil,nil}, -- Studying - Enchanting - 5
-  [393129] = {{1,PRI_REP},nil,nil}, -- Studying - Engineering - 3
-  [393130] = {{1,PRI_REP},nil,nil}, -- Studying - Engineering - 5
-  [393131] = {{1,PRI_REP},nil,nil}, -- Studying - Herbalism - 3
-  [393132] = {{1,PRI_REP},nil,nil}, -- Studying - Herbalism - 5
-  [393133] = {{1,PRI_REP},nil,nil}, -- Studying - Inscription - 3
-  [393134] = {{1,PRI_REP},nil,nil}, -- Studying - Inscription - 5
-  [393135] = {{1,PRI_REP},nil,nil}, -- Studying - Jewelcrafting - 3
-  [393136] = {{1,PRI_REP},nil,nil}, -- Studying - Jewelcrafting - 5
-  [393137] = {{1,PRI_REP},nil,nil}, -- Studying - Leatherworking - 3
-  [393138] = {{1,PRI_REP},nil,nil}, -- Studying - Leatherworking - 5
-  [393139] = {{1,PRI_REP},nil,nil}, -- Studying - Mining - 3
-  [393140] = {{1,PRI_REP},nil,nil}, -- Studying - Mining - 5
-  [393141] = {{1,PRI_REP},nil,nil}, -- Studying - Skinning - 3
-  [393142] = {{1,PRI_REP},nil,nil}, -- Studying - Skinning - 5
-  [393144] = {{1,PRI_REP},nil,nil}, -- Studying - Tailoring - 3
-  [393145] = {{1,PRI_REP},nil,nil}, -- Studying - Tailoring - 5
+  [201705] = {{1,PRI_REP},nil,nil}, -- Studying - All knowledge use "Studying"
+  --10.0 Dragon Riding
+  [197124] = {{1,PRI_REP},nil,nil}, -- Deciphering - All dragon riding skins use "Deciphering"
 }
 NOP.T_RECIPES = { -- [ItemId] = {{count_to_use,priority}, "gsub regex" | tooltip-line-number,{"sub-Zone",...},{[mapID]=true,...}, factionID}, item tooltip template only text to 1st match is compared, that mean all items of same school would be looked up.
   [153135] = {{1,PRI_TOKEN},4,nil,nil}, -- Unsullied Cloth Robes, why Blizzard did put in type of armor?
@@ -1048,7 +1017,8 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [199207] = {{1,PRI_OPEN},nil,nil}, -- Iceback Sculpin
   
   --Dragon Riding Skins
-    [197099] = {{1,PRI_OPEN},nil,nil}, -- highland-drake-armor
+  --[[ --Handle via "Deciphering" skill
+  [197099] = {{1,PRI_OPEN},nil,nil}, -- highland-drake-armor
   [197117] = {{1,PRI_OPEN},nil,nil}, -- highland-drake-black-hair
   [197142] = {{1,PRI_OPEN},nil,nil}, -- highland-drake-black-scales
   [197153] = {{1,PRI_OPEN},nil,nil}, -- highland-drake-bladed-tail
@@ -1295,8 +1265,9 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [196989] = {{1,PRI_OPEN},nil,nil}, -- cliffside-wylderdrake-white-hair
   [197014] = {{1,PRI_OPEN},nil,nil}, -- cliffside-wylderdrake-white-scales
   [197007] = {{1,PRI_OPEN},nil,nil}, -- cliffside-wylderdrake-wide-stripes-pattern
+  ]]--
   
-  --[[
+  --[[ --Handle via "Learning" skill
   --Professions:  
   --Herbalism
   [201705] = {{1,PRI_OPEN},nil,nil}, -- Notebook of Crafting Knowledge
