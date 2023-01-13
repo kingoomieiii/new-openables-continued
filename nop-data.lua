@@ -74,6 +74,12 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [201705] = {{1,PRI_REP},nil,nil}, -- Studying - All knowledge use "Studying"
   --10.0 Dragon Riding
   [197124] = {{1,PRI_REP},nil,nil}, -- Deciphering - All dragon riding skins use "Deciphering"
+  --10.0 Tier sets
+  [196591] = {{1,PRI_REP},nil,nil}, -- "Vault Chest Forgestone"
+  [196592] = {{1,PRI_REP},nil,nil}, -- "Vault Hands Forgestone"
+  [196593] = {{1,PRI_REP},nil,nil}, -- "Vault Legs Forgestone"
+  [196594] = {{1,PRI_REP},nil,nil}, -- "Vault Shoulder Forgestone"
+  [196595] = {{1,PRI_REP},nil,nil}, -- "Vault Head Forgestone"
 }
 NOP.T_RECIPES = { -- [ItemId] = {{count_to_use,priority}, "gsub regex" | tooltip-line-number,{"sub-Zone",...},{[mapID]=true,...}, factionID}, item tooltip template only text to 1st match is compared, that mean all items of same school would be looked up.
   [153135] = {{1,PRI_TOKEN},4,nil,nil}, -- Unsullied Cloth Robes, why Blizzard did put in type of armor?
