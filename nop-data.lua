@@ -70,6 +70,17 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [ 94225] = {{1,PRI_REP},nil,nil}, -- Stolen Celestial Insignia
   [ 94226] = {{1,PRI_REP},nil,nil}, -- Stolen Stolen Klaxxi Insignia
   [ 94227] = {{1,PRI_REP},nil,nil}, -- Stolen Golden Lotus Insignia
+  [104013] = {{1,PRI_REP},nil,nil}, -- Timeless x Armor Cache
+  [102288] = {{1,PRI_REP},nil,nil}, -- Timeless x Leggings
+  [102284] = {{1,PRI_REP},nil,nil}, -- Timeless x Robes
+  [102263] = {{1,PRI_REP},nil,nil}, -- Timeless x Chestpiece
+  [102289] = {{1,PRI_REP},nil,nil}, -- Timeless x Spaulders
+  [102290] = {{1,PRI_REP},nil,nil}, -- Timeless x Belt
+  [102286] = {{1,PRI_REP},nil,nil}, -- Timeless x Gloves
+  [102287] = {{1,PRI_REP},nil,nil}, -- Timeless x Helm
+  [102321] = {{1,PRI_REP},nil,nil}, -- Timeless x Bracers
+  [102285] = {{1,PRI_REP},nil,nil}, -- Timeless x Boots
+  
   --10.0 Profession Knowledge
   [201705] = {{1,PRI_REP},nil,nil}, -- Studying - All knowledge use "Studying"
   --10.0 Dragon Riding
@@ -154,6 +165,7 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [146328] = {{1,PRI_OPEN},nil,nil}, -- Petrified Wyrmtongue
   [  5523] = {{1,PRI_OPEN},nil,nil}, -- Small Barnacled clam
   [  5524] = {{1,PRI_OPEN},nil,nil}, -- Thick-shelled clam
+  [ 36781] = {{1,PRI_OPEN},nil,nil}, -- Darkwater Clam
   [141071] = {{1,PRI_REP},nil,nil}, -- Badge of Honor
   [154879] = {{1,PRI_OPEN},nil,nil}, -- Awoken Titan Essence
   [  2934] = {{3,PRI_OPEN},nil,nil}, -- Ruined Leather Scraps
@@ -398,7 +410,26 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [152998] = {{1,PRI_OPEN},nil,nil}, -- Carefully Hidden Muffin
   [153113] = {{1,PRI_REP},nil,{[1135] = true, [1170] = true, [1171] = true}}, -- Demon's Soulstone, usable on Argus maps
   [153114] = {{1,PRI_REST},nil,nil}, -- Nathrezim Tome of Manipulation
+  [168262] = {{1,PRI_OPEN},nil,nil}, -- Sentry Fish
+  [ 52340] = {{1,PRI_OPEN},nil,nil}, -- Abyssal Clam
+  [118727] = {{1,PRI_OPEN},nil,nil}, -- Frostfire Treasure Map
+  [118730] = {{1,PRI_OPEN},nil,nil}, -- Talador Treasure Map
+  [118728] = {{1,PRI_OPEN},nil,nil}, -- Shadowmoon Valey Treasure Map
+  [170502] = {{1,PRI_OPEN},nil,nil}, -- Waterlogged Toolbox
+  [170505] = {{1,PRI_OPEN},nil,nil}, -- Grimy Manaperal Bracelet
+  [169942] = {{1,PRI_OPEN},nil,nil}, -- Vigrant Sea Blossom
+  [169941] = {{1,PRI_OPEN},nil,nil}, -- Ceremonial Ankoan Scabbard; Grants reputation with the Ankoan
+  [171335] = {{1,PRI_OPEN},nil,nil}, -- Corrupting Core
+  [171354] = {{1,PRI_OPEN},nil,nil}, -- Horrific Core
+  [163852] = {{1,PRI_OPEN},nil,nil}, -- Tortollan Pilgrimage Scroll
+  [118732] = {{1,PRI_OPEN},nil,nil}, -- Nagrand Treasure Map
+  [178512] = {{1,PRI_OPEN},nil,nil}, -- Celebration Package; 16th anniversary
+  [128314] = {{1,PRI_OPEN},nil,nil}, -- Frozen Arms of a Hero
+  [ 64492] = {{1,PRI_OPEN},nil,nil}, -- Ramkahen Badge of Valor
+  [118729] = {{1,PRI_OPEN},nil,nil}, -- Gorgrond Treasure Map
+  [118731] = {{1,PRI_OPEN},nil,nil}, -- Spires of Arak Treasure Map
 -- 9.0
+  [190339] = {{1,PRI_OPEN},nil,nil}, -- Enlightened Offering
 -- Memories of the Runecarver
   [182617] = {{1,PRI_REP},nil,{[1912] = true,}}, -- Memory of Death's Embrace
   [182625] = {{1,PRI_REP},nil,{[1912] = true,}}, -- Memory of an Everlasting Grip
@@ -1009,6 +1040,9 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [182624] = {{1,PRI_OPEN},nil,nil}, -- Show of Force
   [182651] = {{1,PRI_OPEN},nil,nil}, -- Destructive Reverberations
   [182656] = {{1,PRI_OPEN},nil,nil}, -- Disturb the Peace
+  
+--- All
+  [190640] = {{1,PRI_OPEN},nil,nil}, -- Font of Ephemeral Power
 
   --10.0 
   [198395] = {{1,PRI_OPEN},nil,nil}, -- Dull Spined Clam
