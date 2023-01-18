@@ -137,7 +137,7 @@ function NOP:ItemGetPattern(itemID,bag,slot) -- looking for usable item via patt
       end
       for key, data in pairs(T_RECIPES_FIND) do -- /run for k,v in pairs(NOP.private.T_RECIPES_FIND) do print(k,'"',unpack(v,2,2),'"') end
         local c, pattern, z, m, faction = unpack(data,1,5)
-        if strfind(heading,pattern,1,true) then
+        if strfind(heading,pattern,1,true) and classID ~= 2 and classID ~= 4 then
           if faction then -- faction tokens can be skipped when exalted or when paragon reward pending
             local level, top, value, reward = self:GetReputation(heading)
             if (level and (level > 7) and NOP.AceDB.profile.SkipExalted) or reward then return end -- already exalted with faction for this token or have reward pending
