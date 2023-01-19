@@ -181,7 +181,10 @@ function NOP:ItemScan() -- /run NOP:ItemScan(); foreach(T_USE,print)
   for bag = BACKPACK_CONTAINER, NUM_BAG_SLOTS, 1 do
     for slot = 1, GetContainerNumSlots(bag), 1 do
       local itemID = GetContainerItemID(bag,slot)
-      if (itemID ~= nil) then T_BAGS[itemID] = {bag,slot} end -- index it for later use in macro and clear check table
+      if (itemID ~= nil) then
+        local itemLink = GetContainerItemLink(bag,slot) -- create link from slot, it will have type of item in bags
+        T_BAGS[itemID] = {bag,slot,itemLink} -- index it for later use in macro and clear check table
+      end
     end
   end
   for key in pairs(T_CHECK) do if not T_BAGS[key] then T_CHECK[key] = nil end end -- cleanup check table
@@ -190,8 +193,7 @@ function NOP:ItemScan() -- /run NOP:ItemScan(); foreach(T_USE,print)
     if not T_CHECK[itemID] then -- not checked before
       T_CHECK[itemID] = true -- stop checking it except later T_USE will reset it
       if not self:ItemIsBlacklisted(itemID) then
-        local bag, slot = unpack(data)
-        local itemLink = GetContainerItemLink(bag,slot) -- create link from slot, it will have type of item in bags
+        local bag, slot, itemLink = unpack(data)
         if itemLink then
           local _, _, linkColor, linkType, linkID = string.find(itemLink, "|?c?f?f?(%x*)|?H?([^:]*):?(%d+):")
           if linkType == P.ITEM_TYPE_BATTLE_PET then
@@ -241,7 +243,11 @@ function NOP:ItemIsUnusable(Red, Green, Blue, Alpha) -- test red color
 end
 function NOP:ItemIsUsable(itemID) -- look in tooltip if there is no red text
   if not T_BAGS[itemID] then return end -- don't have item
-  local bag,slot = unpack(T_BAGS[itemID])
+  local bag,slot,itemLink = unpack(T_BAGS[itemID])
+  if itemLink then
+    local _, _, linkColor, linkType, linkID = string.find(itemLink, "|?c?f?f?(%x*)|?H?([^:]*):?(%d+):")
+    if linkType == P.ITEM_TYPE_BATTLE_PET then return true end
+  end
   self.scanFrame:ClearLines() -- clean tooltip frame
   self.scanFrame:SetBagItem(bag, slot) -- fill up tooltip
   if (self.scanFrame:NumLines() < 1) then -- bug, all items should have tooltip!
