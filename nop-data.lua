@@ -1048,6 +1048,18 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [198395] = {{1,PRI_OPEN},nil,nil}, -- Dull Spined Clam
   [195453] = {{1,PRI_OPEN},nil,nil}, -- Ludo's Stash Map
   [201837] = {{1,PRI_OPEN},nil,nil,-289433}, -- Magmammoth Harness (requires aura -> aura missing check)
+  [201437] = {{5,PRI_OPEN},nil,nil}, -- Slumbering Dream Fragment
+  [201779] = {{1,PRI_OPEN},nil,nil}, -- Merithra's Blessing
+  [194088] = {{1,PRI_OPEN},nil,nil}, -- Ohuna Companion Color: Dark
+  [193205] = {{1,PRI_OPEN},nil,nil}, -- Ohuna Companion Color: Brown
+  [194087] = {{1,PRI_OPEN},nil,nil}, -- Ohuna Companion Color: Red
+  [194095] = {{1,PRI_OPEN},nil,nil}, -- Ohuna Companion Color: Sepia
+  [194094] = {{1,PRI_OPEN},nil,nil}, -- Bakar Companion Color: Black
+  [194089] = {{1,PRI_OPEN},nil,nil}, -- Bakar Companion Color: Orange
+  [194091] = {{1,PRI_OPEN},nil,nil}, -- Bakar Companion Color: Golden Brown
+  [194093] = {{1,PRI_OPEN},nil,nil}, -- Bakar Companion Color: Brown
+  [194090] = {{1,PRI_OPEN},nil,nil}, -- Bakar Companion Color: White
+  
   
   --Tuskarr Feast Reagent
   [199208] = {{1,PRI_OPEN},nil,nil}, -- Grungle
@@ -1063,6 +1075,7 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [199100] = {{1,PRI_OPEN},nil,nil}, -- Peppersmelt -- this and the next two are all needed.
   [199833] = {{1,PRI_OPEN},nil,nil}, -- Dragonhead Eel
   [199832] = {{1,PRI_OPEN},nil,nil}, -- Smoked Seaviper
+  [199103] = {{1,PRI_OPEN},nil,nil}, -- Nappa's Famous Tea
   
   --[] = {{1,PRI_OPEN},nil,nil}, -- 
   
