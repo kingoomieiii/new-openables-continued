@@ -80,6 +80,11 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [102287] = {{1,PRI_REP},nil,nil}, -- Timeless x Helm
   [102321] = {{1,PRI_REP},nil,nil}, -- Timeless x Bracers
   [102285] = {{1,PRI_REP},nil,nil}, -- Timeless x Boots
+  [202091] = {{1,PRI_OPEN},nil,nil}, -- Dragonscale Expedition Insignia
+  [202092] = {{1,PRI_OPEN},nil,nil}, -- Iskaara Tuskarr Insignia
+  [202093] = {{1,PRI_OPEN},nil,nil}, -- Valdrakken Accord Insignia
+  [202094] = {{1,PRI_OPEN},nil,nil}, -- Maruuk Centaur Insignia
+  
   
   --10.0 Profession Knowledge
   [201705] = {{1,PRI_REP},nil,nil}, -- Studying - All knowledge use "Studying"
@@ -1050,6 +1055,7 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [201837] = {{1,PRI_OPEN},nil,nil,-289433}, -- Magmammoth Harness (requires aura -> aura missing check)
   [201437] = {{5,PRI_OPEN},nil,nil}, -- Slumbering Dream Fragment
   [201779] = {{1,PRI_OPEN},nil,nil}, -- Merithra's Blessing
+  [201782] = {{1,PRI_OPEN},nil,nil}, -- Tyr's Blessing
   [194088] = {{1,PRI_OPEN},nil,nil}, -- Ohuna Companion Color: Dark
   [193205] = {{1,PRI_OPEN},nil,nil}, -- Ohuna Companion Color: Brown
   [194087] = {{1,PRI_OPEN},nil,nil}, -- Ohuna Companion Color: Red
