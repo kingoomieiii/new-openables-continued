@@ -1082,6 +1082,8 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [199833] = {{1,PRI_OPEN},nil,nil}, -- Dragonhead Eel
   [199832] = {{1,PRI_OPEN},nil,nil}, -- Smoked Seaviper
   [199103] = {{1,PRI_OPEN},nil,nil}, -- Nappa's Famous Tea
+  [199102] = {{1,PRI_OPEN},nil,nil}, -- Hunk o' Blubber
+  [199063] = {{1,PRI_OPEN},nil,nil}, -- Salted Fish Scraps
   
   --[] = {{1,PRI_OPEN},nil,nil}, -- 
   
