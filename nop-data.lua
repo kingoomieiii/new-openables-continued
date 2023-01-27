@@ -80,12 +80,16 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [102287] = {{1,PRI_REP},nil,nil}, -- Timeless x Helm
   [102321] = {{1,PRI_REP},nil,nil}, -- Timeless x Bracers
   [102285] = {{1,PRI_REP},nil,nil}, -- Timeless x Boots
+  [102318] = {{1,PRI_REP},nil,nil}, -- Timeless Cloak
+  [102291] = {{1,PRI_REP},nil,nil}, -- Timeless Signet
+  [104345] = {{1,PRI_REP},nil,nil}, -- Timeless Lavalliere
+  [104347] = {{1,PRI_REP},nil,nil}, -- Timeless Curio
+  
+  --10.0 Rep
   [202091] = {{1,PRI_OPEN},nil,nil}, -- Dragonscale Expedition Insignia
   [202092] = {{1,PRI_OPEN},nil,nil}, -- Iskaara Tuskarr Insignia
   [202093] = {{1,PRI_OPEN},nil,nil}, -- Valdrakken Accord Insignia
   [202094] = {{1,PRI_OPEN},nil,nil}, -- Maruuk Centaur Insignia
-  
-  
   --10.0 Profession Knowledge
   [201705] = {{1,PRI_REP},nil,nil}, -- Studying - All knowledge use "Studying"
   --10.0 Dragon Riding
