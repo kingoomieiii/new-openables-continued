@@ -38,6 +38,7 @@ local FROSTFIRE_RIDGE9 = P.FROSTFIRE_RIDGE9; assert(FROSTFIRE_RIDGE9 ~= nil,'FRO
 local SHADOWMOON_VALLEY1 = P.SHADOWMOON_VALLEY1; assert(SHADOWMOON_VALLEY1 ~= nil,'SHADOWMOON_VALLEY1')
 local SHADOWMOON_VALLEY3 = P.SHADOWMOON_VALLEY3; assert(SHADOWMOON_VALLEY3 ~= nil,'SHADOWMOON_VALLEY3')
 local SHADOWMOON_VALLEY3 = P.SHADOWMOON_VALLEY3; assert(SHADOWMOON_VALLEY3 ~= nil,'SHADOWMOON_VALLEY3')
+local VALDRAKKEN = P.VALDRAKKEN; assert(VALDRAKKEN ~= nil,'VALDRAKKEN')
 --
 NOP.T_INSTA_WQ = { -- [spellID] = itemID, list of OH advancements and spells for instant completion non-elite WQ
   [221602] = 140038, -- Might of Dalaran
@@ -1052,6 +1053,7 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   
 --- All
   [190640] = {{1,PRI_OPEN},nil,nil}, -- Font of Ephemeral Power
+  [199197] = {{1,PRI_OPEN},{VALDRAKKEN},{[2112] = true,}}, -- Bottled Essence
 
   --10.0 
   [198395] = {{1,PRI_OPEN},nil,nil}, -- Dull Spined Clam

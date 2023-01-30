@@ -35,6 +35,7 @@ P.MINE_HORDE = LIB_BABBLESUBZONE_has["Frostwall Mine"]
 P.MINE_ALLIANCE = LIB_BABBLESUBZONE_has["Lunarfall Excavation"]
 P.SHIPYARD_HORDE = LIB_BABBLESUBZONE_has["Frostwall Shipyard"]
 P.SHIPYARD_ALLIANCE = LIB_BABBLESUBZONE_has["Lunarfall Shipyard"]
+P.VALDRAKKEN = LIB_BABBLESUBZONE_has["Valdrakken"]
 for i=0,1 do
  P['TIMELESS_ISLE'..(i+1)] = 554 + i
 end
