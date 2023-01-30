@@ -1070,6 +1070,18 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [194093] = {{1,PRI_OPEN},nil,nil}, -- Bakar Companion Color: Brown
   [194090] = {{1,PRI_OPEN},nil,nil}, -- Bakar Companion Color: White
   
+  -- Treasure maps
+  [194540] = {{1,PRI_OPEN},nil,nil}, -- Nokhud Armorer's Notes
+  [198843] = {{1,PRI_OPEN},nil,nil}, -- Emerald Gardens Explorer's Notes
+  [198852] = {{1,PRI_OPEN},nil,nil}, -- Bear Termination Orders
+  [198854] = {{1,PRI_OPEN},nil,nil}, -- Archeologist Artifact Notes
+  [199061] = {{1,PRI_OPEN},nil,nil}, -- A Guide to Rare Fish
+  [199062] = {{1,PRI_OPEN},nil,nil}, -- Ruby Gem Cluster Map
+  [199065] = {{1,PRI_OPEN},nil,nil}, -- Sorrowful Letter
+  [199066] = {{1,PRI_OPEN},nil,nil}, -- Letter of Caution
+  [199067] = {{1,PRI_OPEN},nil,nil}, -- Precious Plans
+  [199068] = {{1,PRI_OPEN},nil,nil}, -- Time-Lost Memo
+  [200738] = {{1,PRI_OPEN},nil,nil}, -- Onyx Gem Cluster Map
   
   --Tuskarr Feast Reagent
   [199208] = {{1,PRI_OPEN},nil,nil}, -- Grungle
