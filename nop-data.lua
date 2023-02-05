@@ -91,6 +91,12 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [202092] = {{1,PRI_OPEN},nil,nil}, -- Iskaara Tuskarr Insignia
   [202093] = {{1,PRI_OPEN},nil,nil}, -- Valdrakken Accord Insignia
   [202094] = {{1,PRI_OPEN},nil,nil}, -- Maruuk Centaur Insignia
+  [201781] = {{1,PRI_OPEN},nil,nil}, -- Memory of Tyr
+  [198790] = {{1,PRI_OPEN},nil,nil}, -- I.O.U.
+  [201779] = {{1,PRI_OPEN},nil,nil}, -- Merithra's Blessing
+  [201782] = {{1,PRI_OPEN},nil,nil}, -- Tyr's Blessing
+  [201783] = {{1,PRI_OPEN},nil,nil}, -- Tutaqan's Commendation
+  
   --10.0 Profession Knowledge
   [201705] = {{1,PRI_REP},nil,nil}, -- Studying - All knowledge use "Studying"
   --10.0 Dragon Riding
@@ -1060,8 +1066,6 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [195453] = {{1,PRI_OPEN},nil,nil}, -- Ludo's Stash Map
   [201837] = {{1,PRI_OPEN},nil,nil,-289433}, -- Magmammoth Harness (requires aura -> aura missing check)
   [201437] = {{5,PRI_OPEN},nil,nil}, -- Slumbering Dream Fragment
-  [201779] = {{1,PRI_OPEN},nil,nil}, -- Merithra's Blessing
-  [201782] = {{1,PRI_OPEN},nil,nil}, -- Tyr's Blessing
   [194088] = {{1,PRI_OPEN},nil,nil}, -- Ohuna Companion Color: Dark
   [193205] = {{1,PRI_OPEN},nil,nil}, -- Ohuna Companion Color: Brown
   [194087] = {{1,PRI_OPEN},nil,nil}, -- Ohuna Companion Color: Red
