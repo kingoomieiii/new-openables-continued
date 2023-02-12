@@ -15,7 +15,7 @@ local GetItemSpell = _G.GetItemSpell; assert(GetItemSpell ~= nil,'GetItemSpell')
 local GetTime = _G.GetTime; assert(GetTime ~= nil,'GetTime')
 local LOCKED = _G.LOCKED; assert(LOCKED ~= nil,'LOCKED')
 local math = _G.math; assert(math ~= nil,'math')
-local NUM_BAG_SLOTS = _G.NUM_BAG_SLOTS; assert(NUM_BAG_SLOTS ~= nil,'NUM_BAG_SLOTS')
+local NUM_TOTAL_EQUIPPED_BAG_SLOTS = _G.NUM_TOTAL_EQUIPPED_BAG_SLOTS; assert(NUM_TOTAL_EQUIPPED_BAG_SLOTS ~= nil,'NUM_TOTAL_EQUIPPED_BAG_SLOTS')
 local pairs = _G.pairs; assert(pairs ~= nil,'pairs')
 local strfind = _G.strfind; assert(strfind ~= nil,'strfind')
 local string = _G.string; assert(string ~= nil,'string')
@@ -178,7 +178,7 @@ function NOP:ItemToUse(itemID,count,prio,zone,map,aura) -- store item into table
 end
 function NOP:ItemScan() -- /run NOP:ItemScan(); foreach(T_USE,print)
   wipe(T_BAGS)
-  for bag = BACKPACK_CONTAINER, NUM_BAG_SLOTS, 1 do
+  for bag = BACKPACK_CONTAINER, NUM_TOTAL_EQUIPPED_BAG_SLOTS, 1 do
     for slot = 1, GetContainerNumSlots(bag), 1 do
       local itemID = GetContainerItemID(bag,slot)
       if (itemID ~= nil) then
@@ -292,7 +292,7 @@ function NOP:ItemIsUsable(itemID) -- look in tooltip if there is no red text
 end
 function NOP:ItemToPicklock(itemID) -- need to find which item really need to unlock, locked and unlocked items have same itemID
   if not itemID then return end
-  for bag = BACKPACK_CONTAINER, NUM_BAG_SLOTS, 1 do
+  for bag = BACKPACK_CONTAINER, NUM_TOTAL_EQUIPPED_BAG_SLOTS, 1 do
     for slot = 1, GetContainerNumSlots(bag), 1 do
       local id = GetContainerItemID(bag,slot)
       if (id == itemID) then

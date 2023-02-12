@@ -14,7 +14,7 @@ local GetSpellInfo = _G.GetSpellInfo; assert(GetSpellInfo ~= nil,'GetSpellInfo')
 local GetTime = _G.GetTime; assert(GetTime ~= nil,'GetTime')
 local issecurevariable = _G.issecurevariable; assert(issecurevariable ~= nil,'issecurevariable')
 local math = _G.math; assert(math ~= nil,'math')
-local NUM_BAG_SLOTS = _G.NUM_BAG_SLOTS; assert(NUM_BAG_SLOTS ~= nil,'NUM_BAG_SLOTS')
+local NUM_TOTAL_EQUIPPED_BAG_SLOTS = _G.NUM_TOTAL_EQUIPPED_BAG_SLOTS; assert(NUM_TOTAL_EQUIPPED_BAG_SLOTS ~= nil,'NUM_TOTAL_EQUIPPED_BAG_SLOTS')
 local pairs = _G.pairs; assert(pairs ~= nil,'pairs')
 local string = _G.string; assert(string ~= nil,'string')
 local tonumber = _G.tonumber; assert(tonumber ~= nil,'tonumber')
@@ -30,7 +30,7 @@ NOP.slash_handler = function(msg, editbox) -- /nop handler
   local line = msg:lower()
   local cmd, arg = string.split(" ,",line)
   if cmd == "bdump" then
-    for bag = BACKPACK_CONTAINER, NUM_BAG_SLOTS, 1 do
+    for bag = BACKPACK_CONTAINER, NUM_TOTAL_EQUIPPED_BAG_SLOTS, 1 do
       for slot = 1, GetContainerNumSlots(bag), 1 do
         local link = GetContainerItemLink(bag, slot)
         if link then
@@ -49,7 +49,7 @@ NOP.slash_handler = function(msg, editbox) -- /nop handler
   if cmd == "titem" then
     local id = tonumber(arg)
     if id then
-      for bag = BACKPACK_CONTAINER, NUM_BAG_SLOTS, 1 do
+      for bag = BACKPACK_CONTAINER, NUM_TOTAL_EQUIPPED_BAG_SLOTS, 1 do
         for slot = 1, GetContainerNumSlots(bag), 1 do
           local itemID = GetContainerItemID(bag,slot)
           if itemID and itemID == id then -- when I own item just check true tooltip over bags
