@@ -86,6 +86,8 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [104345] = {{1,PRI_REP},nil,nil}, -- Timeless Lavalliere
   [104347] = {{1,PRI_REP},nil,nil}, -- Timeless Curio
   
+  --10.0 Misc
+  [198614] = {{1,PRI_OPEN},nil,nil}, -- Soggy Clump of Darkmoon Cards
   --10.0 Rep
   [202091] = {{1,PRI_OPEN},nil,nil}, -- Dragonscale Expedition Insignia
   [202092] = {{1,PRI_OPEN},nil,nil}, -- Iskaara Tuskarr Insignia
@@ -444,6 +446,7 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [ 64492] = {{1,PRI_OPEN},nil,nil}, -- Ramkahen Badge of Valor
   [118729] = {{1,PRI_OPEN},nil,nil}, -- Gorgrond Treasure Map
   [118731] = {{1,PRI_OPEN},nil,nil}, -- Spires of Arak Treasure Map
+  [ 21813] = {{1,PRI_OPEN},nil,nil}, -- Bag of Heart Candies
 -- 9.0
   [190339] = {{1,PRI_OPEN},nil,nil}, -- Enlightened Offering
 -- Memories of the Runecarver
