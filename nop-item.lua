@@ -93,6 +93,7 @@ function NOP:ItemGetItem(itemID) -- looking for usable item by itemID returns (c
       return 0
     end
   end
+  self:Verbose("ItemGetItem:","itemID",itemID,"will be shown",name,"count",c[1],"prio",c[2])
   return c[1], c[2], z, m, a
 end
 function NOP:ItemGetLockPattern(itemID) -- test tooltip for locked item
@@ -121,6 +122,7 @@ function NOP:ItemGetPattern(itemID,bag,slot) -- looking for usable item via patt
   end
   local itemType, itemSubType, _, _, _, _, classID, subclassID = select(6, GetItemInfo(itemID))
   if classID == Enum.ItemClass.Miscellaneous and subclassID == Enum.ItemMiscellaneousSubclass.Mount then
+    self:Verbose("ItemGetPattern:","itemID",itemID,name,"will be shown as MOUNT")
     return 1, P.PRIO_OPEN --fallback for mounts
   end
   local n, p = self:ItemGetLockPattern(itemID)
@@ -130,9 +132,11 @@ function NOP:ItemGetPattern(itemID,bag,slot) -- looking for usable item via patt
     local heading = _G[headingLine]:GetText() -- get line from tooltip
     if heading and heading ~= "" then
       if heading == ITEM_COSMETIC then
+        self:Verbose("ItemGetPattern:","itemID",itemID,name,"will be shown as COSMETIC")
         return 1, P.PRI_OPEN
       end
       if heading == TOY then
+        self:Verbose("ItemGetPattern:","itemID",itemID,name,"will be shown as TOY")
         return 1, P.PRI_OPEN
       end
       for key, data in pairs(T_RECIPES_FIND) do -- /run for k,v in pairs(NOP.private.T_RECIPES_FIND) do print(k,'"',unpack(v,2,2),'"') end
@@ -142,12 +146,14 @@ function NOP:ItemGetPattern(itemID,bag,slot) -- looking for usable item via patt
             local level, top, value, reward = self:GetReputation(heading)
             if (level and (level > 7) and NOP.AceDB.profile.SkipExalted) or reward then return end -- already exalted with faction for this token or have reward pending
           end
+          self:Verbose("ItemGetPattern:","itemID",itemID,name,"will be shown as RECIPE")
           return c[1], c[2], z, m
         end
       end
       for key, data in pairs(T_OPEN) do
         if strfind(heading,key,1,true) then
           local c, z, m = unpack(data,1,3)
+          self:Verbose("ItemGetPattern:","itemID",itemID,name,"will be shown as OPEN")
           return c[1], c[2], z, m
         end
       end
@@ -156,7 +162,8 @@ function NOP:ItemGetPattern(itemID,bag,slot) -- looking for usable item via patt
   return 0 -- test OK but nothing found
 end
 local offset = 0
-function NOP:ItemToUse(itemID,count,prio,zone,map,aura) -- store item into table
+function NOP:ItemToUse(itemID,count,prio,zone,map,aura,source) -- store item into table
+  self:Verbose("ItemToUse:","itemID",itemID,"count",count,"prio",prio,"zone",zone,"map",map,"aura",aura,"source",source)
   local pt = T_USE[itemID]
   if not pt then -- new item
     if (self.BF and self.BF.showID == nil) and (itemID == self.AceDB.char.itemID) then -- first time looking for item then get last item from last session
@@ -199,7 +206,7 @@ function NOP:ItemScan() -- /run NOP:ItemScan(); foreach(T_USE,print)
           if linkType == P.ITEM_TYPE_BATTLE_PET then
             local numCollected, limit = C_PetJournal.GetNumCollectedInfo(linkID)
             if (numCollected < limit) then
-              self:ItemToUse(itemID, 1, P.PRI_OPEN, nil, nil)
+              self:ItemToUse(itemID, 1, P.PRI_OPEN, nil, nil, "PET")
             else
               self:Verbose("ItemScan:","Pet",itemID,"have more than limit",limit)
               T_USE[itemID] = nil
@@ -207,15 +214,15 @@ function NOP:ItemScan() -- /run NOP:ItemScan(); foreach(T_USE,print)
           elseif linkType == P.ITEM_TYPE_ITEM then
             local count, prio, zone, map, aura = self:ItemGetSpell(itemID) -- 1st lookup by spell
             if count then 
-              if (count > 0) then self:ItemToUse(itemID, count, prio, zone, map, aura) else T_USE[itemID] = nil end
+              if (count > 0) then self:ItemToUse(itemID, count, prio, zone, map, aura, "SPELL") else T_USE[itemID] = nil end
             else
               count, prio, zone, map, aura = self:ItemGetItem(itemID) -- 2nd direct by itemID
               if count then 
-                if (count > 0) then self:ItemToUse(itemID, count, prio, zone, map, aura) else T_USE[itemID] = nil end
+                if (count > 0) then self:ItemToUse(itemID, count, prio, zone, map, aura, "ITEMID") else T_USE[itemID] = nil end
               else
                 count, prio, zone, map, aura = self:ItemGetPattern(itemID,bag,slot) -- 3rd lookup by tooltip text
                 if count then
-                  if (count > 0) then self:ItemToUse(itemID, count, prio, zone, map, aura) else T_USE[itemID] = nil end
+                  if (count > 0) then self:ItemToUse(itemID, count, prio, zone, map, aura, "TOOLTIP") else T_USE[itemID] = nil end
                 else
                   T_CHECK[itemID] = nil
                   T_USE[itemID] = nil
