@@ -175,6 +175,10 @@ NOP.T_DISENCHANT_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",..
   [200943] = {{1,PRI_OPEN},nil,nil}, -- Whispering Band
   [200945] = {{1,PRI_OPEN},nil,nil}, -- Valiant Hammer
   [200946] = {{1,PRI_OPEN},nil,nil}, -- Thunderous Blade
+  [201356] = {{1,PRI_OPEN},nil,nil}, -- Glimmer of Fire
+  [201357] = {{1,PRI_OPEN},nil,nil}, -- Glimmer of Frost
+  [201358] = {{1,PRI_OPEN},nil,nil}, -- Glimmer of Air
+  [201359] = {{1,PRI_OPEN},nil,nil}, -- Glimmer of Earth
 }
 NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]=true,...},auraID}, table for opening/use item by itemID, when is no possible to check for any common text
   [166999] = {{1,PRI_OPEN},nil,nil}, -- [Treasure Map]
