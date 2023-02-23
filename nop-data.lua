@@ -1082,6 +1082,11 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [194091] = {{1,PRI_OPEN},nil,nil}, -- Bakar Companion Color: Golden Brown
   [194093] = {{1,PRI_OPEN},nil,nil}, -- Bakar Companion Color: Brown
   [194090] = {{1,PRI_OPEN},nil,nil}, -- Bakar Companion Color: White
+  [199752] = {{1,PRI_OPEN},nil,nil}, -- Ensemble: Crimson Valdrakken Clothing
+  [199753] = {{1,PRI_OPEN},nil,nil}, -- Ensemble: Black Valdrakken Clothing
+  [199754] = {{1,PRI_OPEN},nil,nil}, -- Ensemble: Azure Valdrakken Clothing
+  [199755] = {{1,PRI_OPEN},nil,nil}, -- Ensemble: Green Valdrakken Clothing
+  [199756] = {{1,PRI_OPEN},nil,nil}, -- Ensemble: Bronze Valdrakken Clothing
   
   -- Treasure maps
   [194540] = {{1,PRI_OPEN},nil,nil}, -- Nokhud Armorer's Notes
