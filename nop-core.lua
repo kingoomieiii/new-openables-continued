@@ -4,6 +4,7 @@ local assert = _G.assert
 local ARTIFACT_RELIC_TALENT_AVAILABLE = _G.ARTIFACT_RELIC_TALENT_AVAILABLE; assert(ARTIFACT_RELIC_TALENT_AVAILABLE ~= nil,'ARTIFACT_RELIC_TALENT_AVAILABLE')
 local C_Garrison = _G.C_Garrison; assert(C_Garrison ~= nil,'C_Garrison')
 local C_Reputation = _G.C_Reputation; assert(C_Reputation ~= nil,'C_Reputation')
+local C_TooltipInfo = _G.C_TooltipInfo; assert(C_TooltipInfo ~= nil,'C_TooltipInfo')
 local CreateFrame = _G.CreateFrame; assert(CreateFrame ~= nil,'CreateFrame')
 local date = _G.date; assert(date ~= nil,'date')
 local debugprofilestop = _G.debugprofilestop; assert(debugprofilestop ~= nil,'debugprofilestop')
@@ -63,9 +64,9 @@ local SHIPYARD_ANNOUNCE = P.SHIPYARD_ANNOUNCE; assert(SHIPYARD_ANNOUNCE ~= nil,'
 local SPELL_PICKLOCK = P.SPELL_PICKLOCK; assert(SPELL_PICKLOCK ~= nil,'SPELL_PICKLOCK')
 local TALENT_ANNOUNCE = P.TALENT_ANNOUNCE; assert(TALENT_ANNOUNCE ~= nil,'TALENT_ANNOUNCE')
 local TOGO_ANNOUNCE = P.TOGO_ANNOUNCE; assert(TOGO_ANNOUNCE ~= nil,'TOGO_ANNOUNCE')
-local TOOLTIP_ITEM = P.TOOLTIP_ITEM; assert(TOOLTIP_ITEM ~= nil,'TOOLTIP_ITEM')
-local TOOLTIP_SCAN = P.TOOLTIP_SCAN; assert(TOOLTIP_SCAN ~= nil,'TOOLTIP_SCAN')
-local TOOLTIP_SPELL = P.TOOLTIP_SPELL; assert(TOOLTIP_SPELL ~= nil,'TOOLTIP_SPELL')
+--local TOOLTIP_ITEM = P.TOOLTIP_ITEM; assert(TOOLTIP_ITEM ~= nil,'TOOLTIP_ITEM')
+--local TOOLTIP_SCAN = P.TOOLTIP_SCAN; assert(TOOLTIP_SCAN ~= nil,'TOOLTIP_SCAN')
+--local TOOLTIP_SPELL = P.TOOLTIP_SPELL; assert(TOOLTIP_SPELL ~= nil,'TOOLTIP_SPELL')
 local whoCalls = P.whoCalls; assert(whoCalls ~= nil,'whoCalls')
 local WORK_ANNOUNCE = P.WORK_ANNOUNCE; assert(WORK_ANNOUNCE ~= nil,'WORK_ANNOUNCE')
 local LIB_MASQUE = P.LIB_MASQUE; -- this one could not exist
@@ -88,9 +89,11 @@ function NOP:OnInitialize() -- app initialize
   self:InitEvents() -- register events
   self:ProfileLoad() -- initialize AceDB
   self:OptionsLoad() -- initialize AceConfig
-  self.scanFrame = self:TooltipCreate(TOOLTIP_SCAN)
-  self.itemFrame = self:TooltipCreate(TOOLTIP_ITEM)
-  self.spellFrame = self:TooltipCreate(TOOLTIP_SPELL) -- /run NOP.spellFrame = NOP:TooltipCreate("NOP_TOOLTIP_SPELL")
+  
+  -- rather use tooltip API instead of actual tooltips. less mess with other addons
+  --self.scanFrame = self:TooltipCreate(TOOLTIP_SCAN)
+  --self.itemFrame = self:TooltipCreate(TOOLTIP_ITEM)
+  --self.spellFrame = self:TooltipCreate(TOOLTIP_SPELL)
 end
 function NOP:OnEnable() -- add-on enable
   self.masque = LIB_MASQUE and LIB_MASQUE:Group(ADDON) -- when user has installed Masque addon, then skinnig is done by Masque save new group pointer
@@ -105,6 +108,36 @@ function NOP:TooltipCreate(name) -- create tooltip frame
   end
   frame:SetOwner(UIParent,"ANCHOR_NONE") -- frame out of screen and start updating
   return frame
+end
+function NOP:GetLinesFromTooltipData(tooltipData)
+  if not tooltipData then return {} end
+  --this is the retail way
+  TooltipUtil.SurfaceArgs(tooltipData)
+  local lines = {}
+  for i, line in ipairs(tooltipData.lines) do
+    TooltipUtil.SurfaceArgs(line)
+    lines[i] = line
+  end
+  return lines
+  
+  --old way for before this api: tooltip scanning.
+  --self.itemFrame:ClearLines() -- clean tooltip frame
+  --self.itemFrame:SetItemByID(itemID)
+  --local count = self.itemFrame:NumLines()
+  --local tooltipText = TOOLTIP_ITEM .. "TextLeft" .. 1
+  --local heading = _G[tooltipText]:GetText()
+end
+function NOP:GetTooltipLinesByID(itemID)
+  local tooltipData = C_TooltipInfo.GetItemByID(itemID)
+  return NOP:GetLinesFromTooltipData(tooltipData)
+end
+function NOP:GetTooltipLinesByBagItem(bag, slot)
+  local tooltipData = C_TooltipInfo.GetBagItem(bag, slot)
+  return NOP:GetLinesFromTooltipData(tooltipData)
+end
+function NOP:GetTooltipLinesBySpellID(spellID)
+  local tooltipData = C_TooltipInfo.GetSpellByID(spellID)
+  return NOP:GetLinesFromTooltipData(tooltipData)
 end
 local tItemRetry = {}
 function NOP:ItemLoad() -- load template item tooltips
@@ -125,15 +158,13 @@ function NOP:ItemLoad() -- load template item tooltips
       else
         local c,pattern,zone,map,faction = unpack(data,1,5)
         if (c[2] == PRI_REP) and faction then T_REPS[name] = faction end -- fill-up item name to faction table
-        self.itemFrame:ClearLines() -- clean tooltip frame
-        self.itemFrame:SetItemByID(itemID)
-        local count = self.itemFrame:NumLines()
+        local lines = NOP:GetTooltipLinesByID(itemID)
+        local count = #lines
         if count > 1 then -- I must have at least 2 lines in tooltip
           if type(pattern) == "number" then
             if count >= (pattern + nCB) then
-              local i = pattern + nCB
-              local tooltipText = TOOLTIP_ITEM .. "TextLeft" .. i
-              local text = _G[tooltipText].GetText and _G[tooltipText]:GetText() or "none"
+              local i = pattern + ((pattern == 1) and 0 or nCB) -- if we are on line 1, we still want line 1. line 2 needs to be skipped, as it contains rarity information
+              local text = lines[i] and lines[i].leftText or "none"
               if text and (text ~= "none") and (text ~= "") and not string.find(text,'100') then -- bandaid for incomplete tooltip
                 T_RECIPES_FIND[itemID] = {c,text,zone,map,faction}
               else
@@ -150,13 +181,12 @@ function NOP:ItemLoad() -- load template item tooltips
                 local retry = tItemRetry[itemID] or 0
                 retry = retry + 1
                 tItemRetry[itemID] = retry
-                if retry > 1 then print("ItemLoad:SetItemByID()",itemID,"Have lines:",count,"Looking for:",pattern,"1st line:",_G[TOOLTIP_ITEM .. "TextLeft" .. 1]:GetText(),retry) end
+                if retry > 1 then print("ItemLoad:SetItemByID()",itemID,"Have lines:",count,"Looking for:",pattern,"1st line:",lines[1] and lines[1].leftText,retry) end
               end
               itemRetry = itemID
             end
           elseif type(pattern) == "string" then
-            local tooltipText = TOOLTIP_ITEM .. "TextLeft" .. 1
-            local heading = _G[tooltipText]:GetText()
+            local heading = lines[1] and lines[1].leftText
             if heading then -- look in 1st line
               local compare = gsub(heading,pattern,"%1")
               if compare and (compare ~= heading) and (compare ~= "") then
@@ -180,7 +210,7 @@ function NOP:ItemLoad() -- load template item tooltips
             if retry > 1 then print("ItemLoad() empty tooltip for",itemID,tItemRetry[itemID]) end
           end
           itemRetry = itemID
-          self.itemFrame = self:TooltipCreate(TOOLTIP_ITEM) -- empty tooltip I just throw out old one. Workaround for bad tooltip frame init damn Blizzard!
+          --self.itemFrame = self:TooltipCreate(TOOLTIP_ITEM) -- empty tooltip I just throw out old one. Workaround for bad tooltip frame init damn Blizzard!
         end
       end
     end
@@ -227,11 +257,10 @@ function NOP:SpellLoad() -- load spell patterns
 end
 function NOP:PickLockUpdate() -- rogue picklocking
   if IsPlayerSpell(SPELL_PICKLOCK) then -- have it in spellbook?
-    self.spellFrame:ClearLines() -- clean tooltip frame
-    self.spellFrame:SetSpellByID(SPELL_PICKLOCK) -- Fills the tooltip with information about a spell specified by ID
-    local count = self.spellFrame:NumLines()
+    local lines = NOP:GetTooltipLinesBySpellID(SPELL_PICKLOCK) -- Fills the tooltip with information about a spell specified by ID
+    local count = #lines
     if count > 3 then
-      local text = _G[P.TOOLTIP_SPELL .. "TextLeft" .. 4]:GetText() -- 4th line contains actual level of picklocking
+      local text = lines[4] and lines[4].leftText -- 4th line contains actual level of picklocking
       if text and text ~= "" then
         self.pickLockLevel = tonumber(string.match(text,"%d+")) -- /run local level = string.match("blabla 500.","%d+"); print(level)
         if self.pickLockLevel then
@@ -245,20 +274,19 @@ function NOP:PickLockUpdate() -- rogue picklocking
     end
   end
 end
-function NOP:PrintTooltip(tooltip) -- dump tooltip in chat frame
-  local name = tooltip:GetName()
-  for i=1,tooltip:NumLines() do -- scan all lines in tooltip
-    local leftText = _G[name .. "TextLeft" .. i]
-    local rightText = _G[name .. "TextRight" .. i]
-    if leftText and leftText.GetText then
-      local r,g,b,a = leftText:GetTextColor()
-      local line = leftText:GetText()
-      if line and line ~= "" then print(format("L %2d RGBA %3.3d %3.3d %3.3d %3.3d T %s",i,math.floor(r * 255 + 0.5),math.floor(g * 255 + 0.5),math.floor(b * 255 + 0.5),math.floor(a * 255 + 0.5), line)) end
+function NOP:PrintTooltip(tooltipLines) -- dump tooltip in chat frame
+  if not tooltipLines then return end
+  for i=1,#tooltipLines do -- scan all lines in tooltip
+    local line = tooltipLines[i]
+    if tooltipLines[i].leftText then
+      local r,g,b,a = tooltipLines[i].leftColor:GetRGBAAsBytes()
+      local line = tooltipLines[i].leftText
+      if line and line ~= "" then print(format("L %2d RGBA %3.3d %3.3d %3.3d %3.3d T %s",i,r,g,b,a, line)) end
     end
-    if rightText and rightText.GetText then
-      local r,g,b,a = rightText:GetTextColor()
-      local line = rightText:GetText()
-      if line and line ~= "" then print(format("R %2d RGBA %3.3d %3.3d %3.3d %3.3d T %s",i,math.floor(r * 255 + 0.5),math.floor(g * 255 + 0.5),math.floor(b * 255 + 0.5),math.floor(a * 255 + 0.5), line)) end
+    if tooltipLines[i].rightText then
+      local r,g,b,a = tooltipLines[i].rightColor:GetRGBAAsBytes()
+      local line = tooltipLines[i].rightText
+      if line and line ~= "" then print(format("R %2d RGBA %3.3d %3.3d %3.3d %3.3d T %s",i,r,g,b,a, line)) end
     end
   end
 end

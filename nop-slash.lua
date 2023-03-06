@@ -54,9 +54,7 @@ NOP.slash_handler = function(msg, editbox) -- /nop handler
           local itemID = GetContainerItemID(bag,slot)
           if itemID and itemID == id then -- when I own item just check true tooltip over bags
             print("Tooltip based on item in bag",bag,"slot",slot)
-            NOP.itemFrame:ClearLines()
-            NOP.itemFrame:SetBagItem(bag, slot)
-            NOP:PrintTooltip(NOP.itemFrame)
+            NOP:PrintTooltip(NOP:GetTooltipLinesByBagItem(bag, slot))
             return
           end
         end
@@ -67,9 +65,7 @@ NOP.slash_handler = function(msg, editbox) -- /nop handler
         return
       end
       print("Tooltip based only on ID")
-      NOP.itemFrame:ClearLines()
-      NOP.itemFrame:SetItemByID(id)
-      NOP:PrintTooltip(NOP.itemFrame)
+      NOP:PrintTooltip(NOP:GetTooltipLinesByID(id))
     end
     return
   end
@@ -81,9 +77,7 @@ NOP.slash_handler = function(msg, editbox) -- /nop handler
         print("Spell ID",id,"is not in cache yet! Try same ID later")
         return
       end
-      NOP.spellFrame:ClearLines()
-      NOP.spellFrame:SetSpellByID(id)
-      NOP:PrintTooltip(NOP.spellFrame)
+      NOP:PrintTooltip(NOP:GetTooltipLinesBySpellID(spellID))
     end
     return
   end

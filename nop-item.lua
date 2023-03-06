@@ -96,13 +96,13 @@ function NOP:ItemGetItem(itemID) -- looking for usable item by itemID returns (c
   self:Verbose("ItemGetItem:","itemID",itemID,"will be shown",name,"count",c[1],"prio",c[2])
   return c[1], c[2], z, m, a
 end
-function NOP:ItemGetLockPattern(itemID) -- test tooltip for locked item
-  if NOP.AceDB.profile.profession and self.pickLockLevel and (self.scanFrame:NumLines() > 2) then -- rogue picklock in use
+function NOP:ItemGetLockPattern(itemID, lines) -- test tooltip for locked item
+  if NOP.AceDB.profile.profession and self.pickLockLevel and (#lines > 2) then -- rogue picklock in use
     local locked = -1 
-    if string.match(_G[P.TOOLTIP_SCAN .. "TextLeft" .. 2]:GetText(),"^" .. LOCKED .. "$") then locked = 3 end -- LOCKED is Blizzard's UI global variable and is localized text of Locked, it must be at start of 2dn line in tooltip
-    if string.match(_G[P.TOOLTIP_SCAN .. "TextLeft" .. 3]:GetText(),"^" .. LOCKED .. "$") then locked = 4 end -- color-blind mode adds extra line
+    if string.match(lines[2].leftText,"^" .. LOCKED .. "$") then locked = 3 end -- LOCKED is Blizzard's UI global variable and is localized text of Locked, it must be at start of 2dn line in tooltip
+    if string.match(lines[3].leftText,"^" .. LOCKED .. "$") then locked = 4 end -- color-blind mode adds extra line
     if locked > 0 then 
-      local lockLevel = tonumber(string.match(_G[P.TOOLTIP_SCAN .. "TextLeft" .. locked]:GetText(),"%d+")) -- this line must contain unlock level
+      local lockLevel = tonumber(string.match(lines[locked]:GetText(),"%d+")) -- this line must contain unlock level
       if lockLevel and (self.pickLockLevel >= lockLevel) then -- I can picklock this!
         self:Verbose("ItemGetLockPattern:",itemID,"LockeLevel",lockLevel)
         T_PICK[itemID] = true
@@ -112,11 +112,10 @@ function NOP:ItemGetLockPattern(itemID) -- test tooltip for locked item
   end
 end
 function NOP:ItemGetPattern(itemID,bag,slot) -- looking for usable item via pattern in tooltip returns (count, 2, zone, map) or nil
-  self.scanFrame:ClearLines() -- clean tooltip frame
-  self.scanFrame:SetBagItem(bag, slot) -- fill up tooltip
-  if (self.scanFrame:NumLines() < 1) then -- bug, all items should have tooltip!
-    self.scanFrame = self:TooltipCreate(P.TOOLTIP_SCAN) -- workaround for this obscure bug is reset parent for tooltip
-    self.scanFrame:ClearLines() -- clean tooltip frame
+  local lines = NOP:GetTooltipLinesByBagItem(bag, slot)
+  if (#lines < 1) then -- bug, all items should have tooltip!
+    --self.scanFrame = self:TooltipCreate(P.TOOLTIP_SCAN) -- workaround for this obscure bug is reset parent for tooltip
+    --self.scanFrame:ClearLines() -- clean tooltip frame
     print(format("|cFFFF0000Error|r broken tooltip for |cFFFF0000%s|r itemID(%d)",GetItemInfo(itemID) or "unknown",itemID))
     return -- invalid tooltip
   end
@@ -125,11 +124,10 @@ function NOP:ItemGetPattern(itemID,bag,slot) -- looking for usable item via patt
     self:Verbose("ItemGetPattern:","itemID",itemID,name,"will be shown as MOUNT")
     return 1, P.PRIO_OPEN --fallback for mounts
   end
-  local n, p = self:ItemGetLockPattern(itemID)
+  local n, p = self:ItemGetLockPattern(itemID, lines)
   if n and n > 0 then return n, p end
-  for i=1,self.scanFrame:NumLines() do -- scan all lines in tooltip
-    local headingLine = P.TOOLTIP_SCAN .. "TextLeft" .. i
-    local heading = _G[headingLine]:GetText() -- get line from tooltip
+  for i=1,#lines do -- scan all lines in tooltip
+    local heading = lines[i] and lines[i].leftText
     if heading and heading ~= "" then
       if heading == ITEM_COSMETIC then
         self:Verbose("ItemGetPattern:","itemID",itemID,name,"will be shown as COSMETIC")
@@ -242,10 +240,6 @@ function NOP:ItemScan() -- /run NOP:ItemScan(); foreach(T_USE,print)
   end
 end
 function NOP:ItemIsUnusable(Red, Green, Blue, Alpha) -- test red color
-  Red = math.floor(Red * 255 + 0.5)
-  Green = math.floor(Green * 255 + 0.5)
-  Blue = math.floor(Blue * 255 + 0.5)
-  Alpha = math.floor(Alpha * 255 + 0.5)
   return (Red == 255 and Green == 32 and Blue == 32 and Alpha == 255)
 end
 function NOP:ItemIsUsable(itemID) -- look in tooltip if there is no red text
@@ -255,20 +249,18 @@ function NOP:ItemIsUsable(itemID) -- look in tooltip if there is no red text
     local _, _, linkColor, linkType, linkID = string.find(itemLink, "|?c?f?f?(%x*)|?H?([^:]*):?(%d+):")
     if linkType == P.ITEM_TYPE_BATTLE_PET then return true end
   end
-  self.scanFrame:ClearLines() -- clean tooltip frame
-  self.scanFrame:SetBagItem(bag, slot) -- fill up tooltip
-  if (self.scanFrame:NumLines() < 1) then -- bug, all items should have tooltip!
+  local lines = NOP:GetTooltipLinesByBagItem(bag, slot)
+  if (#lines < 1) then -- bug, all items should have tooltip!
     self:Verbose("ItemIsUsable:","itemID",itemID,"Empty tooltip!")
-    self.scanFrame = self:TooltipCreate(P.TOOLTIP_SCAN) -- workaround for this obscure bug is reset parent for tooltip
-    self.scanFrame:SetBagItem(bag, slot) -- fill up tooltip
+    --self.scanFrame = self:TooltipCreate(P.TOOLTIP_SCAN) -- workaround for this obscure bug is reset parent for tooltip
+    --self.scanFrame:SetBagItem(bag, slot) -- fill up tooltip
   end
-  if self.scanFrame:NumLines() > 0 then
-    for i=1,self.scanFrame:NumLines() do -- scan all lines in tooltip
-      local leftText = _G[P.TOOLTIP_SCAN .. "TextLeft" .. i]
-      if leftText and leftText.GetText then
-        local text = leftText:GetText()
+  if #lines > 0 then
+    for i=1,#lines do -- scan all lines in tooltip
+      if lines[i] and lines[i].leftText then
+        local text = lines[i] and lines[i].leftText
         if text and text ~= "" then
-          if self:ItemIsUnusable(leftText:GetTextColor()) then 
+          if self:ItemIsUnusable(lines[i].leftColor:GetRGBAAsBytes()) then 
             self:Verbose("itemID",itemID,"has red text in tooltip!",text)
             return false
           end
@@ -281,11 +273,10 @@ function NOP:ItemIsUsable(itemID) -- look in tooltip if there is no red text
           end
         end
       end
-      local rightText = _G[P.TOOLTIP_SCAN .. "TextRight" .. i]
-      if rightText and rightText.GetText then
+      if lines[i] and lines[i].rightText then
         local text = rightText:GetText()
         if text and text ~= "" then
-          if self:ItemIsUnusable(rightText:GetTextColor()) then 
+          if self:ItemIsUnusable(lines[i].rightColor:GetRGBAAsBytes()) then 
             self:Verbose("itemID",itemID,"has red text in tooltip!",text)
             return false
           end
@@ -303,15 +294,14 @@ function NOP:ItemToPicklock(itemID) -- need to find which item really need to un
     for slot = 1, GetContainerNumSlots(bag), 1 do
       local id = GetContainerItemID(bag,slot)
       if (id == itemID) then
-        self.scanFrame:ClearLines() -- clean tooltip frame
-        self.scanFrame:SetBagItem(bag, slot) -- fill up tooltip
-        if (self.scanFrame:NumLines() < 1) then -- bug, all items should have tooltip!
+        local lines = NOP:GetTooltipLinesByBagItem(bag, slot)
+        if (#lines < 1) then -- bug, all items should have tooltip!
           self:Verbose("Broken tooltip on " .. id)
-          self.scanFrame = self:TooltipCreate(P.TOOLTIP_SCAN) -- workaround for this obscure bug is reset parent for tooltip
-          self.scanFrame:ClearLines() -- clean tooltip frame
-          self.scanFrame:SetBagItem(bag, slot) -- fill up tooltip
+          --self.scanFrame = self:TooltipCreate(P.TOOLTIP_SCAN) -- workaround for this obscure bug is reset parent for tooltip
+          --self.scanFrame:ClearLines() -- clean tooltip frame
+          --self.scanFrame:SetBagItem(bag, slot) -- fill up tooltip
         end
-        if self:ItemGetLockPattern(id) then
+        if self:ItemGetLockPattern(id, lines) then
           self:Verbose("ItemToPicklock:","Locked item",id,"bag",bag,"slot",slot)
           return bag, slot
         end
