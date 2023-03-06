@@ -130,12 +130,20 @@ function NOP:ItemGetPattern(itemID,bag,slot) -- looking for usable item via patt
     local heading = lines[i] and lines[i].leftText
     if heading and heading ~= "" then
       if heading == ITEM_COSMETIC then
-        self:Verbose("ItemGetPattern:","itemID",itemID,name,"will be shown as COSMETIC")
-        return 1, P.PRI_OPEN
+        if not NOP:ItemIsAppearanceCollected(lines) then
+          self:Verbose("ItemGetPattern:","itemID",itemID,name,"will be shown as COSMETIC")
+          return 1, P.PRI_OPEN
+        else
+          return 0
+        end
       end
       if heading == TOY then
-        self:Verbose("ItemGetPattern:","itemID",itemID,name,"will be shown as TOY")
-        return 1, P.PRI_OPEN
+        if not NOP:ItemIsToyCollected(lines) then
+          self:Verbose("ItemGetPattern:","itemID",itemID,name,"will be shown as TOY")
+          return 1, P.PRI_OPEN
+        else
+          return 0
+        end
       end
       for key, data in pairs(T_RECIPES_FIND) do -- /run for k,v in pairs(NOP.private.T_RECIPES_FIND) do print(k,'"',unpack(v,2,2),'"') end
         local c, pattern, z, m, faction = unpack(data,1,5)
@@ -241,6 +249,28 @@ function NOP:ItemScan() -- /run NOP:ItemScan(); foreach(T_USE,print)
 end
 function NOP:ItemIsUnusable(Red, Green, Blue, Alpha) -- test red color
   return (Red == 255 and Green == 32 and Blue == 32 and Alpha == 255)
+end
+function NOP:ItemIsAppearanceCollected(lines)
+  if not lines then return false end
+  local collected = true
+  for i=1,#lines do
+    if (lines[i] and lines[i].leftText) == TRANSMOGRIFY_TOOLTIP_APPEARANCE_UNKNOWN then
+      collected = false
+      break
+    end
+  end
+  return collected
+end
+function NOP:ItemIsToyCollected(lines)
+  if not lines then return false end
+  local collected = false
+  for i=1,#lines do
+    if (lines[i] and lines[i].leftText) == ITEM_SPELL_KNOWN then
+      --collected = true
+      break
+    end
+  end
+  return collected
 end
 function NOP:ItemIsUsable(itemID) -- look in tooltip if there is no red text
   if not T_BAGS[itemID] then return end -- don't have item
