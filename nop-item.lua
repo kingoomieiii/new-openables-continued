@@ -288,7 +288,7 @@ function NOP:ItemIsUsable(itemID) -- look in tooltip if there is no red text
   if #lines > 0 then
     for i=1,#lines do -- scan all lines in tooltip
       if lines[i] and lines[i].leftText then
-        local text = lines[i] and lines[i].leftText
+        local text = lines[i].leftText
         if text and text ~= "" then
           if self:ItemIsUnusable(lines[i].leftColor:GetRGBAAsBytes()) then 
             self:Verbose("itemID",itemID,"has red text in tooltip!",text)
@@ -304,7 +304,7 @@ function NOP:ItemIsUsable(itemID) -- look in tooltip if there is no red text
         end
       end
       if lines[i] and lines[i].rightText then
-        local text = lines[i].rightText:GetText()
+        local text = lines[i].rightText
         if text and text ~= "" then
           if self:ItemIsUnusable(lines[i].rightColor:GetRGBAAsBytes()) then 
             self:Verbose("itemID",itemID,"has red text in tooltip!",text)
