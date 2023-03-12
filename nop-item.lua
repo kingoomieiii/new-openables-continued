@@ -102,7 +102,7 @@ function NOP:ItemGetLockPattern(itemID, lines) -- test tooltip for locked item
     if string.match(lines[2].leftText,"^" .. LOCKED .. "$") then locked = 3 end -- LOCKED is Blizzard's UI global variable and is localized text of Locked, it must be at start of 2dn line in tooltip
     if string.match(lines[3].leftText,"^" .. LOCKED .. "$") then locked = 4 end -- color-blind mode adds extra line
     if locked > 0 then 
-      local lockLevel = tonumber(string.match(lines[locked],"%d+")) -- this line must contain unlock level
+      local lockLevel = tonumber(string.match(lines[locked].leftText,"%d+")) -- this line must contain unlock level
       if lockLevel and (self.pickLockLevel >= lockLevel) then -- I can picklock this!
         self:Verbose("ItemGetLockPattern:",itemID,"LockeLevel",lockLevel)
         T_PICK[itemID] = true
