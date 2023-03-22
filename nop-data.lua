@@ -109,6 +109,8 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [196593] = {{1,PRI_REP},nil,nil}, -- "Vault Legs Forgestone"
   [196594] = {{1,PRI_REP},nil,nil}, -- "Vault Shoulder Forgestone"
   [196595] = {{1,PRI_REP},nil,nil}, -- "Vault Head Forgestone"
+  --10.0 Primordial Stones
+  [204573] = {{1,PRI_REP},nil,nil}, -- Opening "Condensed ... Magic"
   --10.0 Missing tokens
   [203628] = {{1,PRI_REP},nil,nil}, -- "Create Spaulders"
   [203648] = {{1,PRI_REP},nil,nil}, -- "Create Necklace"
