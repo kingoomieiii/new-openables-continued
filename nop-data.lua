@@ -117,6 +117,7 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [203647] = {{1,PRI_REP},nil,nil}, -- "Create Ring"
   [203649] = {{1,PRI_REP},nil,nil}, -- "Create Trinket"
   [203650] = {{1,PRI_REP},nil,nil}, -- "Create Weapon"
+  [203630] = {{1,PRI_REP},nil,nil}, -- "Create Bracers"
 }
 NOP.T_RECIPES = { -- [ItemId] = {{count_to_use,priority}, "gsub regex" | tooltip-line-number,{"sub-Zone",...},{[mapID]=true,...}, factionID}, item tooltip template only text to 1st match is compared, that mean all items of same school would be looked up.
   [153135] = {{1,PRI_TOKEN},4,nil,nil}, -- Unsullied Cloth Robes, why Blizzard did put in type of armor?
