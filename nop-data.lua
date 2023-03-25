@@ -98,6 +98,7 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [201779] = {{1,PRI_OPEN},nil,nil}, -- Merithra's Blessing
   [201782] = {{1,PRI_OPEN},nil,nil}, -- Tyr's Blessing
   [201783] = {{1,PRI_OPEN},nil,nil}, -- Tutaqan's Commendation
+  [202670] = {{1,PRI_OPEN},nil,nil}, -- Treasure maps "Break Scroll Seal"
   
   --10.0 Profession Knowledge
   [201705] = {{1,PRI_REP},nil,nil}, -- Studying - All knowledge use "Studying"
