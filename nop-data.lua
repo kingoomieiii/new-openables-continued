@@ -1097,6 +1097,13 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [199754] = {{1,PRI_OPEN},nil,nil}, -- Ensemble: Azure Valdrakken Clothing
   [199755] = {{1,PRI_OPEN},nil,nil}, -- Ensemble: Green Valdrakken Clothing
   [199756] = {{1,PRI_OPEN},nil,nil}, -- Ensemble: Bronze Valdrakken Clothing
+  --Rousing Elements
+  [190315] = {{10,PRI_OPEN},nil,nil}, -- Rousing Earth
+  [190320] = {{10,PRI_OPEN},nil,nil}, -- Rousing Fire
+  [190322] = {{10,PRI_OPEN},nil,nil}, -- Rousing Order
+  [190326] = {{10,PRI_OPEN},nil,nil}, -- Rousing Air
+  [190328] = {{10,PRI_OPEN},nil,nil}, -- Rousing Frost
+  [190330] = {{10,PRI_OPEN},nil,nil}, -- Rousing Decay
   
   -- Treasure maps
   [194540] = {{1,PRI_OPEN},nil,nil}, -- Nokhud Armorer's Notes
