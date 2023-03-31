@@ -39,6 +39,7 @@ local SHADOWMOON_VALLEY1 = P.SHADOWMOON_VALLEY1; assert(SHADOWMOON_VALLEY1 ~= ni
 local SHADOWMOON_VALLEY3 = P.SHADOWMOON_VALLEY3; assert(SHADOWMOON_VALLEY3 ~= nil,'SHADOWMOON_VALLEY3')
 local SHADOWMOON_VALLEY3 = P.SHADOWMOON_VALLEY3; assert(SHADOWMOON_VALLEY3 ~= nil,'SHADOWMOON_VALLEY3')
 local VALDRAKKEN = P.VALDRAKKEN; assert(VALDRAKKEN ~= nil,'VALDRAKKEN')
+local ISKAARA = P.ISKAARA; assert(ISKAARA ~= nil,'ISKAARA')
 --
 NOP.T_INSTA_WQ = { -- [spellID] = itemID, list of OH advancements and spells for instant completion non-elite WQ
   [221602] = 140038, -- Might of Dalaran
@@ -1119,23 +1120,47 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [200738] = {{1,PRI_OPEN},nil,nil}, -- Onyx Gem Cluster Map
   
   --Tuskarr Feast Reagent
-  [199208] = {{1,PRI_OPEN},nil,nil}, -- Grungle
-  [199213] = {{1,PRI_OPEN},nil,nil}, -- Lakkamuk Blenny
-  [199212] = {{1,PRI_OPEN},nil,nil}, -- Clubfish
+  [199063] = {{1,PRI_OPEN},nil,nil}, -- Salted Fish Scraps
+  [199100] = {{1,PRI_OPEN},nil,nil}, -- Peppersmelt -- this and the next two are all needed.
+  [199101] = {{1,PRI_OPEN},nil,nil}, -- Dried Wyldermane Kelp
+  [199102] = {{1,PRI_OPEN},nil,nil}, -- Hunk o' Blubber
+  [199103] = {{1,PRI_OPEN},nil,nil}, -- Nappa's Famous Tea
+  [199104] = {{1,PRI_OPEN},nil,nil}, -- Piping-Hot Orca Milk
+  [199105] = {{3,PRI_OPEN},nil,nil}, -- Ancheevy
+  [199106] = {{1,PRI_OPEN},nil,nil}, -- Tiny Leviathan Bone
   [199205] = {{1,PRI_OPEN},nil,nil}, -- Manasucker
   [199207] = {{1,PRI_OPEN},nil,nil}, -- Iceback Sculpin
-  [199106] = {{1,PRI_OPEN},nil,nil}, -- Tiny Leviathan Bone
-  [199105] = {{3,PRI_OPEN},nil,nil}, -- Ancheevy
-  [199834] = {{1,PRI_OPEN},nil,nil}, -- Pulpy Seagrass -- this and the next two are all needed.
-  [199101] = {{1,PRI_OPEN},nil,nil}, -- Dried Wyldermane Kelp
-  [199835] = {{1,PRI_OPEN},nil,nil}, -- Torga's Braid
-  [199100] = {{1,PRI_OPEN},nil,nil}, -- Peppersmelt -- this and the next two are all needed.
-  [199833] = {{1,PRI_OPEN},nil,nil}, -- Dragonhead Eel
+  [199208] = {{1,PRI_OPEN},nil,nil}, -- Grungle
+  [199212] = {{1,PRI_OPEN},nil,nil}, -- Clubfish
+  [199213] = {{1,PRI_OPEN},nil,nil}, -- Lakkamuk Blenny
   [199832] = {{1,PRI_OPEN},nil,nil}, -- Smoked Seaviper
-  [199103] = {{1,PRI_OPEN},nil,nil}, -- Nappa's Famous Tea
-  [199102] = {{1,PRI_OPEN},nil,nil}, -- Hunk o' Blubber
-  [199063] = {{1,PRI_OPEN},nil,nil}, -- Salted Fish Scraps
-  [199104] = {{1,PRI_OPEN},nil,nil}, -- Piping-Hot Orca Milk
+  [199833] = {{1,PRI_OPEN},nil,nil}, -- Dragonhead Eel
+  [199834] = {{1,PRI_OPEN},nil,nil}, -- Pulpy Seagrass -- this and the next two are all needed.
+  [199835] = {{1,PRI_OPEN},nil,nil}, -- Torga's Braid
+  [204281] = {{1,PRI_OPEN},nil,nil}, -- Thousandbite Piranha Collar
+  [204282] = {{1,PRI_OPEN},nil,nil}, -- Lunker Bits
+  [204283] = {{1,PRI_OPEN},nil,nil}, -- Skrog Liver Oil
+  [204284] = {{1,PRI_OPEN},nil,nil}, -- Norukk's "All-Purpose" Fish Powder
+  [204285] = {{1,PRI_OPEN},nil,nil}, -- Fermented Mackerel Paste
+  [204286] = {{1,PRI_OPEN},nil,nil}, -- Deepsquid Ink
+  [204287] = {{1,PRI_OPEN},nil,nil}, -- Island Crab Jerky
+  [204288] = {{1,PRI_OPEN},nil,nil}, -- Eye of Bass
+  [204289] = {{1,PRI_OPEN},nil,nil}, -- Seven Spices Bruffalon
+  [204290] = {{1,PRI_OPEN},nil,nil}, -- Dragonflame Argali
+  [204291] = {{1,PRI_OPEN},nil,nil}, -- Thrice-Charred Mammoth Ribs
+  [204292] = {{1,PRI_OPEN},nil,nil}, -- "Volcano" Duck
+  [204293] = {{1,PRI_OPEN},nil,nil}, -- Greenberry
+  [204294] = {{1,PRI_OPEN},nil,nil}, -- Fresh Dragon Fruit
+  [204295] = {{1,PRI_OPEN},nil,nil}, -- Juicy Bushfruit
+  [204296] = {{1,PRI_OPEN},nil,nil}, -- Dried Coldsnap Sagittate
+  [204297] = {{1,PRI_OPEN},nil,nil}, -- Exquisite Ohn'ahran Potato
+  [204298] = {{1,PRI_OPEN},nil,nil}, -- Flaky Pastry Dough
+  [204299] = {{1,PRI_OPEN},nil,nil}, -- Dark Thaldraszian Cocoa Powder
+  [204300] = {{1,PRI_OPEN},nil,nil}, -- Four-Cheese Blend
+  [204301] = {{1,PRI_OPEN},nil,nil}, -- Rations: Scorpid Surprise
+  [204302] = {{1,PRI_OPEN},nil,nil}, -- Rations: Undermine Clam Chowder
+  [204303] = {{1,PRI_OPEN},nil,nil}, -- Rations: Westfall Stew
+  [204304] = {{1,PRI_OPEN},nil,nil}, -- Rations: Dragonbreath Chili
   
   --[] = {{1,PRI_OPEN},nil,nil}, -- 
   
