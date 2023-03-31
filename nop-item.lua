@@ -145,15 +145,18 @@ function NOP:ItemGetPattern(itemID,bag,slot) -- looking for usable item via patt
           return 0
         end
       end
-      for key, data in pairs(T_RECIPES_FIND) do -- /run for k,v in pairs(NOP.private.T_RECIPES_FIND) do print(k,'"',unpack(v,2,2),'"') end
-        local c, pattern, z, m, faction = unpack(data,1,5)
-        if strfind(heading,pattern,1,true) and classID ~= 2 and classID ~= 4 then
-          if faction then -- faction tokens can be skipped when exalted or when paragon reward pending
-            local level, top, value, reward = self:GetReputation(heading)
-            if (level and (level > 7) and NOP.AceDB.profile.SkipExalted) or reward then return end -- already exalted with faction for this token or have reward pending
+      --if classID ~= Enum.ItemClass.Weapon and classID ~= Enum.ItemClass.Armor then -- we want to check armor tokens, but illusions can trigger this... needs to be mitigated.
+      if not self:IsTransmogColor(lines[i].leftColor:GetRGBAAsBytes()) then
+        for key, data in pairs(T_RECIPES_FIND) do -- /run for k,v in pairs(NOP.private.T_RECIPES_FIND) do print(k,'"',unpack(v,2,2),'"') end
+          local c, pattern, z, m, faction = unpack(data,1,5)
+          if strfind(heading,pattern,1,true) then
+            if faction then -- faction tokens can be skipped when exalted or when paragon reward pending
+              local level, top, value, reward = self:GetReputation(heading)
+              if (level and (level > 7) and NOP.AceDB.profile.SkipExalted) or reward then return end -- already exalted with faction for this token or have reward pending
+            end
+            self:Verbose("ItemGetPattern:","itemID",itemID,name,"will be shown as RECIPE")
+            return c[1], c[2], z, m
           end
-          self:Verbose("ItemGetPattern:","itemID",itemID,name,"will be shown as RECIPE")
-          return c[1], c[2], z, m
         end
       end
       for key, data in pairs(T_OPEN) do
@@ -249,6 +252,9 @@ function NOP:ItemScan() -- /run NOP:ItemScan(); foreach(T_USE,print)
 end
 function NOP:ItemIsUnusable(Red, Green, Blue, Alpha) -- test red color
   return (Red == 255 and Green == 32 and Blue == 32 and Alpha == 255)
+end
+function NOP:IsTransmogColor(Red, Green, Blue, Alpha) -- test pink color
+  return (Red == 255 and Green == 128 and Blue == 255 and Alpha == 255)
 end
 function NOP:ItemIsAppearanceCollected(lines)
   if not lines then return false end

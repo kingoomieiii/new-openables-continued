@@ -72,6 +72,7 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [ 94225] = {{1,PRI_REP},nil,nil}, -- Stolen Celestial Insignia
   [ 94226] = {{1,PRI_REP},nil,nil}, -- Stolen Stolen Klaxxi Insignia
   [ 94227] = {{1,PRI_REP},nil,nil}, -- Stolen Golden Lotus Insignia
+  --[[
   [104013] = {{1,PRI_REP},nil,nil}, -- Timeless x Armor Cache
   [102288] = {{1,PRI_REP},nil,nil}, -- Timeless x Leggings
   [102284] = {{1,PRI_REP},nil,nil}, -- Timeless x Robes
@@ -86,6 +87,7 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [102291] = {{1,PRI_REP},nil,nil}, -- Timeless Signet
   [104345] = {{1,PRI_REP},nil,nil}, -- Timeless Lavalliere
   [104347] = {{1,PRI_REP},nil,nil}, -- Timeless Curio
+  --]]
   
   --10.0 Misc
   [198614] = {{1,PRI_OPEN},nil,nil}, -- Soggy Clump of Darkmoon Cards
@@ -114,19 +116,23 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   --10.0 Primordial Stones
   [204573] = {{1,PRI_REP},nil,nil}, -- Opening "Condensed ... Magic"
   --10.0 Missing tokens
+  --[[
   [203628] = {{1,PRI_REP},nil,nil}, -- "Create Spaulders"
   [203648] = {{1,PRI_REP},nil,nil}, -- "Create Necklace"
   [203647] = {{1,PRI_REP},nil,nil}, -- "Create Ring"
   [203649] = {{1,PRI_REP},nil,nil}, -- "Create Trinket"
   [203650] = {{1,PRI_REP},nil,nil}, -- "Create Weapon"
   [203630] = {{1,PRI_REP},nil,nil}, -- "Create Bracers"
+  --]]
 }
 NOP.T_RECIPES = { -- [ItemId] = {{count_to_use,priority}, "gsub regex" | tooltip-line-number,{"sub-Zone",...},{[mapID]=true,...}, factionID}, item tooltip template only text to 1st match is compared, that mean all items of same school would be looked up.
   [153135] = {{1,PRI_TOKEN},4,nil,nil}, -- Unsullied Cloth Robes, why Blizzard did put in type of armor?
   [153143] = {{1,PRI_TOKEN},4,nil,nil}, -- Unsullied Plate Breastplate, why Blizzard did put in type of armor?
   [152741] = {{1,PRI_TOKEN},4,nil,nil}, -- Unsullied Mail Chestguard, why Blizzard did put in type of armor?
   [153151] = {{1,PRI_TOKEN},4,nil,nil}, -- Unsullied Leather Tunic, why Blizzard did put in type of armor?
-  [127799] = {{1,PRI_TOKEN},3,nil,nil}, -- Baleful Pendant, for another slots than armor.
+  [127799] = {{1,PRI_TOKEN},4,nil,nil}, -- Baleful Pendant, for another slots than armor.
+  [203646] = {{1,PRI_TOKEN},4,nil,nil}, -- Class Tokens
+  [104013] = {{1,PRI_TOKEN},3,nil,nil}, -- Timeless x Armor Cache -> Loot Spec Token
   [139879] = {{1,PRI_OPEN},3,nil,nil}, -- Crate of Champion Equipment
   [ 82800] = {{1,PRI_OPEN},1,nil,nil}, -- Pet Cage
   [162536] = {{1,PRI_OPEN},"(.+:).*",nil,nil}, -- Scouting Report: Swiftwind Post
