@@ -173,6 +173,7 @@ NOP.T_RECIPES = { -- [ItemId] = {{count_to_use,priority}, "gsub regex" | tooltip
   [141987] = {{1,PRI_REP},1,nil,nil,1948}, -- Greater Valarjar Insignia 
   [141342] = {{1,PRI_REP},1,nil,nil,1894}, -- Wardens Insignia
   [141991] = {{1,PRI_REP},1,nil,nil,1894}, -- Greater Wardens Insignia
+  [199208] = {{1,PRI_OPEN},5,{ISKAARA},{[2024] = true,},nil}, -- Tuskarr Feast Reagents
 }
 NOP.T_DISENCHANT_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]=true,...},auraID}, table for opening/use item by itemID, when is no possible to check for any common text
   --10.0
@@ -1126,6 +1127,7 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [200738] = {{1,PRI_OPEN},nil,nil}, -- Onyx Gem Cluster Map
   
   --Tuskarr Feast Reagent
+  --[[
   [199063] = {{1,PRI_OPEN},nil,nil}, -- Salted Fish Scraps
   [199100] = {{1,PRI_OPEN},nil,nil}, -- Peppersmelt -- this and the next two are all needed.
   [199101] = {{1,PRI_OPEN},nil,nil}, -- Dried Wyldermane Kelp
@@ -1167,6 +1169,7 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [204302] = {{1,PRI_OPEN},nil,nil}, -- Rations: Undermine Clam Chowder
   [204303] = {{1,PRI_OPEN},nil,nil}, -- Rations: Westfall Stew
   [204304] = {{1,PRI_OPEN},nil,nil}, -- Rations: Dragonbreath Chili
+  --]]
   
   --[] = {{1,PRI_OPEN},nil,nil}, -- 
   
