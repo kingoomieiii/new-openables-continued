@@ -265,7 +265,7 @@ function NOP:OptionsLoad() -- load options for UI config
         order = 2,
         args = {
           header1 = {
-            name = P.L["Buttom location"],
+            name = P.L["Button location"],
             type = "header",
             order = 1,
           },

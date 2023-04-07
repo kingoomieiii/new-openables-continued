@@ -81,7 +81,7 @@
 ]]
 --[[<p>08.42 17.04.2018</p>
 <p><ul>
-<li>Fix. Restore item buttom and quest bar button frame anchor according to saved anchor in profile, instead reseting position.</li>
+<li>Fix. Restore item button and quest bar button frame anchor according to saved anchor in profile, instead reseting position.</li>
 <li>Fix. Tooltip anchor and if ElvUI is installed, then is forced to use uberTooltip anchor.</li>
 <li>Fix. Save procedure calls parent frame as nil for anchor when buttons are moved.</li>
 </ul><hr></p>
