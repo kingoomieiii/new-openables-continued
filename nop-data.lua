@@ -39,6 +39,7 @@ local SHADOWMOON_VALLEY1 = P.SHADOWMOON_VALLEY1; assert(SHADOWMOON_VALLEY1 ~= ni
 local SHADOWMOON_VALLEY3 = P.SHADOWMOON_VALLEY3; assert(SHADOWMOON_VALLEY3 ~= nil,'SHADOWMOON_VALLEY3')
 local SHADOWMOON_VALLEY3 = P.SHADOWMOON_VALLEY3; assert(SHADOWMOON_VALLEY3 ~= nil,'SHADOWMOON_VALLEY3')
 local VALDRAKKEN = P.VALDRAKKEN; assert(VALDRAKKEN ~= nil,'VALDRAKKEN')
+--local LOAMM = P.LOAMM; assert(LOAMM ~= nil,'LOAMM')
 local ISKAARA = P.ISKAARA; assert(ISKAARA ~= nil,'ISKAARA')
 --
 NOP.T_INSTA_WQ = { -- [spellID] = itemID, list of OH advancements and spells for instant completion non-elite WQ
@@ -124,6 +125,11 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [203650] = {{1,PRI_REP},nil,nil}, -- "Create Weapon"
   [203630] = {{1,PRI_REP},nil,nil}, -- "Create Bracers"
   --]]
+  --10.1
+  [205250] = {{1,PRI_OPEN},nil,nil}, -- Loamm Niffen Valuable
+  [205991] = {{1,PRI_OPEN},nil,nil}, -- Loamm Niffen - Symbol of Friendship
+  [205342] = {{1,PRI_OPEN},nil,nil}, -- Loamm Niffen Insignia
+  --[205982] = {{1,PRI_OPEN},{LOAMM},{[2133] = true,}}, -- Lost Dig Map
 }
 NOP.T_RECIPES = { -- [ItemId] = {{count_to_use,priority}, "gsub regex" | tooltip-line-number,{"sub-Zone",...},{[mapID]=true,...}, factionID}, item tooltip template only text to 1st match is compared, that mean all items of same school would be looked up.
   [153135] = {{1,PRI_TOKEN},4,nil,nil}, -- Unsullied Cloth Robes, why Blizzard did put in type of armor?
