@@ -1133,6 +1133,17 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [199068] = {{1,PRI_OPEN},nil,nil}, -- Time-Lost Memo
   [200738] = {{1,PRI_OPEN},nil,nil}, -- Onyx Gem Cluster Map
   
+  -- 10.1
+  -- Crests
+  [204075] = {{15,PRI_OPEN},nil,nil}, -- Whelpling's Shadowflame Crest Fragment
+  [204076] = {{15,PRI_OPEN},nil,nil}, -- Drake's Shadowflame Crest Fragment
+  [204077] = {{15,PRI_OPEN},nil,nil}, -- Wyrm's Shadowflame Crest Fragment
+  [204078] = {{15,PRI_OPEN},nil,nil}, -- Aspect's Shadowflame Crest Fragment
+  [205423] = {{1,PRI_OPEN},nil,nil}, -- Shadowflame Residue Sack
+  
+  --Other
+  [204717] = {{2,PRI_OPEN},nil,nil}, -- Splintered Spark of Shadowflame
+  
   --Tuskarr Feast Reagent
   --[[
   [199063] = {{1,PRI_OPEN},nil,nil}, -- Salted Fish Scraps
