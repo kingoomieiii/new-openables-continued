@@ -130,6 +130,7 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [205991] = {{1,PRI_OPEN},nil,nil}, -- Loamm Niffen - Symbol of Friendship
   [205342] = {{1,PRI_OPEN},nil,nil}, -- Loamm Niffen Insignia
   --[205982] = {{1,PRI_OPEN},{LOAMM},{[2133] = true,}}, -- Lost Dig Map
+  [205982] = {{1,PRI_OPEN},nil,nil}, -- Lost Dig Map
 }
 NOP.T_RECIPES = { -- [ItemId] = {{count_to_use,priority}, "gsub regex" | tooltip-line-number,{"sub-Zone",...},{[mapID]=true,...}, factionID}, item tooltip template only text to 1st match is compared, that mean all items of same school would be looked up.
   [153135] = {{1,PRI_TOKEN},4,nil,nil}, -- Unsullied Cloth Robes, why Blizzard did put in type of armor?
