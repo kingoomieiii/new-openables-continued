@@ -129,6 +129,7 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [205250] = {{1,PRI_OPEN},nil,nil}, -- Loamm Niffen Valuable
   [205991] = {{1,PRI_OPEN},nil,nil}, -- Loamm Niffen - Symbol of Friendship
   [205342] = {{1,PRI_OPEN},nil,nil}, -- Loamm Niffen Insignia
+  [205254] = {{1,PRI_OPEN},nil,nil}, -- Honorary Explorer's Compass
   --[205982] = {{1,PRI_OPEN},{LOAMM},{[2133] = true,}}, -- Lost Dig Map
   [205982] = {{1,PRI_OPEN},nil,nil}, -- Lost Dig Map
 }
@@ -1140,6 +1141,7 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [204077] = {{15,PRI_OPEN},nil,nil}, -- Wyrm's Shadowflame Crest Fragment
   [204078] = {{15,PRI_OPEN},nil,nil}, -- Aspect's Shadowflame Crest Fragment
   [205423] = {{1,PRI_OPEN},nil,nil}, -- Shadowflame Residue Sack
+  [205962] = {{1,PRI_OPEN},nil,nil}, -- Echoing Storm Flightstone
   
   --Other
   [204717] = {{2,PRI_OPEN},nil,nil}, -- Splintered Spark of Shadowflame
