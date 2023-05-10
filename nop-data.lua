@@ -132,6 +132,12 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [205254] = {{1,PRI_OPEN},nil,nil}, -- Honorary Explorer's Compass
   --[205982] = {{1,PRI_OPEN},{LOAMM},{[2133] = true,}}, -- Lost Dig Map
   [205982] = {{1,PRI_OPEN},nil,nil}, -- Lost Dig Map
+  [202621] = {{1,PRI_REP},nil,nil}, -- "Corrupting Fluid" Aberrus tokens
+  [202624] = {{1,PRI_REP},nil,nil}, -- "Mixing Fluid" Aberrus tokens
+  [202627] = {{1,PRI_REP},nil,nil}, -- "Melting Fluid" Aberrus tokens
+  [202631] = {{1,PRI_REP},nil,nil}, -- "Ventilation Fluid" Aberrus tokens
+  [202634] = {{1,PRI_REP},nil,nil}, -- "Cooling Fluid" Aberrus tokens
+  
 }
 NOP.T_RECIPES = { -- [ItemId] = {{count_to_use,priority}, "gsub regex" | tooltip-line-number,{"sub-Zone",...},{[mapID]=true,...}, factionID}, item tooltip template only text to 1st match is compared, that mean all items of same school would be looked up.
   [153135] = {{1,PRI_TOKEN},4,nil,nil}, -- Unsullied Cloth Robes, why Blizzard did put in type of armor?
