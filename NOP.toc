@@ -6,6 +6,7 @@
 #@end-version-retail@
 ## Notes: Popup Button and keybind for opening or using items in your bags. Continued version of the original NOP to support Dragonflight.
 ## SavedVariables: NewOpenablesProfile
+## OptionalDeps: Masque
 ## X-Curse-Project-ID: 790748
 ## X-Wago-ID: RBKpYOGE
 
