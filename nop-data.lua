@@ -389,7 +389,7 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [128488] = {{1,PRI_OPEN},nil,nil}, -- Ship: The Awakener
   [128490] = {{1,PRI_OPEN},nil,nil}, -- Blueprint: Oil Rig
   [128980] = {{1,PRI_OPEN},nil,nil}, -- Scroll of Forgotten Knowledge
-  [132523] = {{1,PRI_REST},nil,nil}, -- Reaves Battery
+  --[132523] = {{1,PRI_REST},nil,nil}, -- Reaves Battery
   [136269] = {{1,PRI_OPEN},nil,nil}, -- Kel'danath's Manaflask
   [136342] = {{100,PRI_OPEN},nil,nil},-- Obliterum Ash
   [136412] = {{1,PRI_OPEN},nil,nil}, -- Heavy Armor Set
