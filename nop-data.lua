@@ -1151,6 +1151,7 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   
   --Other
   [204717] = {{2,PRI_OPEN},nil,nil}, -- Splintered Spark of Shadowflame
+  [205363] = {{1,PRI_OPEN},nil,nil}, -- Ensemble: Ornate Black Dragon Labwear
   
   --Tuskarr Feast Reagent
   --[[
