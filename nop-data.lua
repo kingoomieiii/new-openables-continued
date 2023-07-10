@@ -485,6 +485,7 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [ 21813] = {{1,PRI_OPEN},nil,nil}, -- Bag of Heart Candies
 -- 9.0
   [190339] = {{1,PRI_OPEN},nil,nil}, -- Enlightened Offering
+  [190198] = {{5,PRI_OPEN},nil,nil}, -- Sandworn Chest Key Fragment
 -- Memories of the Runecarver
   [182617] = {{1,PRI_REP},nil,{[1912] = true,}}, -- Memory of Death's Embrace
   [182625] = {{1,PRI_REP},nil,{[1912] = true,}}, -- Memory of an Everlasting Grip
