@@ -483,9 +483,9 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [118729] = {{1,PRI_OPEN},nil,nil}, -- Gorgrond Treasure Map
   [118731] = {{1,PRI_OPEN},nil,nil}, -- Spires of Arak Treasure Map
   [ 21813] = {{1,PRI_OPEN},nil,nil}, -- Bag of Heart Candies
-  [190198] = {{5,PRI_OPEN},nil,nil}, -- [Sandworn Chest Key Fragment]
 -- 9.0
   [190339] = {{1,PRI_OPEN},nil,nil}, -- Enlightened Offering
+  [190198] = {{5,PRI_OPEN},nil,nil}, -- Sandworn Chest Key Fragment
 -- Memories of the Runecarver
   [182617] = {{1,PRI_REP},nil,{[1912] = true,}}, -- Memory of Death's Embrace
   [182625] = {{1,PRI_REP},nil,{[1912] = true,}}, -- Memory of an Everlasting Grip
