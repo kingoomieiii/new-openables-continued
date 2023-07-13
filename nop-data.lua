@@ -73,6 +73,7 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [ 94225] = {{1,PRI_REP},nil,nil}, -- Stolen Celestial Insignia
   [ 94226] = {{1,PRI_REP},nil,nil}, -- Stolen Stolen Klaxxi Insignia
   [ 94227] = {{1,PRI_REP},nil,nil}, -- Stolen Golden Lotus Insignia
+  [ 17047] = {{1,PRI_REP},nil,nil}, -- Argent Dawn Valor Token - "Increase Reputation"
   --[[
   [104013] = {{1,PRI_REP},nil,nil}, -- Timeless x Armor Cache
   [102288] = {{1,PRI_REP},nil,nil}, -- Timeless x Leggings
