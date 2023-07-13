@@ -328,9 +328,14 @@ function NOP:ButtonShow() -- display button
   -- self:printt("ButtonShow:","macro text",self:CompressText(bt.mtext))
   if not (bt:IsVisible() or bt:IsShown()) then bt:Show() end
   if NOP.AceDB.profile.glowButton and bt.isGlow then
+  --if (true) then
     self.ActionButton_ShowOverlayGlow(bt)
+    --ActionButton_ShowOverlayGlow(bt)
+    --local frameWidth, frameHeight = bt:GetSize()
+    --SetOutside(bt.SpellActivationAlert,bt,frameWidth/3, frameHeight/3) -- adopted from ElvUI to glow outside
   else
     self.ActionButton_HideOverlayGlow(bt)
+    --ActionButton_HideOverlayGlow(bt)
   end
   self.BF.clickON = true -- signals to other addon about new item on button
 end
@@ -347,6 +352,7 @@ function NOP:ButtonHide() -- hide button
   bt:SetAttribute("macrotext1", MACRO_INACTIVE)
   self:ButtonCount(bt.itemCount)
   self.ActionButton_HideOverlayGlow(bt)
+  --ActionButton_HideOverlayGlow(bt)
   if NOP.AceDB.profile.visible then  -- show fake button, instead hide.
     if not (bt:IsShown() or bt:IsVisible()) then bt:Show() end
   else
@@ -419,29 +425,27 @@ function NOP.ActionButton_GetOverlayGlow()
   return overlay;
 end
 function NOP.ActionButton_ShowOverlayGlow(self)
-  if self.overlay then
-    if self.overlay.animOut:IsPlaying() then
-      self.overlay.animOut:Stop()
-      self.overlay.animIn:Play()
-    end
-  else
+  if not self.overlay then
     self.overlay = NOP.ActionButton_GetOverlayGlow()
     local frameWidth, frameHeight = self:GetSize()
     self.overlay:SetParent(self)
     SetOutside(self.overlay,self,frameWidth/3, frameHeight/3) -- adopted from ElvUI to glow outside
-    self.overlay.animIn:Play()
   end
+  --if not self.overlay:IsShown() then
+  self.overlay:Show()
+  self.overlay.ProcStartAnim:Stop()
+  self.overlay.ProcStartAnim:Play()
+  --end
 end
 function NOP.ActionButton_HideOverlayGlow(self)
   if self.overlay then
-    if self.overlay.animIn:IsPlaying() then
-      self.overlay.animIn:Stop()
+    if self.overlay.ProcStartAnim:IsPlaying() then
+      self.overlay.ProcStartAnim:Stop()
     end
-    NOP.ActionButton_OverlayGlowAnimOutFinished(self.overlay.animOut)
+    NOP.ActionButton_OverlayGlowAnimOutFinished(self.overlay)
   end
 end
-function NOP.ActionButton_OverlayGlowAnimOutFinished(animGroup)
-  local overlay = animGroup:GetParent()
+function NOP.ActionButton_OverlayGlowAnimOutFinished(overlay)
   local actionButton = overlay:GetParent()
   overlay:Hide()
   tinsert(unusedOverlayGlows, overlay)
