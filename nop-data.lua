@@ -131,8 +131,8 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [205991] = {{1,PRI_OPEN},nil,nil}, -- Loamm Niffen - Symbol of Friendship
   [205342] = {{1,PRI_OPEN},nil,nil}, -- Loamm Niffen Insignia
   [205254] = {{1,PRI_OPEN},nil,nil}, -- Honorary Explorer's Compass
-  --[205982] = {{1,PRI_OPEN},{LOAMM},{[2133] = true,}}, -- Lost Dig Map
-  [205982] = {{1,PRI_OPEN},nil,nil}, -- Lost Dig Map
+  [205982] = {{1,PRI_OPEN},{LOAMM},{[2133] = true,}}, -- Lost Dig Map
+  --[205982] = {{1,PRI_OPEN},nil,nil}, -- Lost Dig Map
   [202621] = {{1,PRI_REP},nil,nil}, -- "Corrupting Fluid" Aberrus tokens
   [202624] = {{1,PRI_REP},nil,nil}, -- "Mixing Fluid" Aberrus tokens
   [202627] = {{1,PRI_REP},nil,nil}, -- "Melting Fluid" Aberrus tokens
@@ -1180,50 +1180,32 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [204717] = {{2,PRI_OPEN},nil,nil}, -- Splintered Spark of Shadowflame
   [205363] = {{1,PRI_OPEN},nil,nil}, -- Ensemble: Ornate Black Dragon Labwear
   
-  --Tuskarr Feast Reagent
-  --[[
-  [199063] = {{1,PRI_OPEN},nil,nil}, -- Salted Fish Scraps
-  [199100] = {{1,PRI_OPEN},nil,nil}, -- Peppersmelt -- this and the next two are all needed.
-  [199101] = {{1,PRI_OPEN},nil,nil}, -- Dried Wyldermane Kelp
-  [199102] = {{1,PRI_OPEN},nil,nil}, -- Hunk o' Blubber
-  [199103] = {{1,PRI_OPEN},nil,nil}, -- Nappa's Famous Tea
-  [199104] = {{1,PRI_OPEN},nil,nil}, -- Piping-Hot Orca Milk
-  [199105] = {{3,PRI_OPEN},nil,nil}, -- Ancheevy
-  [199106] = {{1,PRI_OPEN},nil,nil}, -- Tiny Leviathan Bone
-  [199205] = {{1,PRI_OPEN},nil,nil}, -- Manasucker
-  [199207] = {{1,PRI_OPEN},nil,nil}, -- Iceback Sculpin
-  [199208] = {{1,PRI_OPEN},nil,nil}, -- Grungle
-  [199212] = {{1,PRI_OPEN},nil,nil}, -- Clubfish
-  [199213] = {{1,PRI_OPEN},nil,nil}, -- Lakkamuk Blenny
-  [199832] = {{1,PRI_OPEN},nil,nil}, -- Smoked Seaviper
-  [199833] = {{1,PRI_OPEN},nil,nil}, -- Dragonhead Eel
-  [199834] = {{1,PRI_OPEN},nil,nil}, -- Pulpy Seagrass -- this and the next two are all needed.
-  [199835] = {{1,PRI_OPEN},nil,nil}, -- Torga's Braid
-  [204281] = {{1,PRI_OPEN},nil,nil}, -- Thousandbite Piranha Collar
-  [204282] = {{1,PRI_OPEN},nil,nil}, -- Lunker Bits
-  [204283] = {{1,PRI_OPEN},nil,nil}, -- Skrog Liver Oil
-  [204284] = {{1,PRI_OPEN},nil,nil}, -- Norukk's "All-Purpose" Fish Powder
-  [204285] = {{1,PRI_OPEN},nil,nil}, -- Fermented Mackerel Paste
-  [204286] = {{1,PRI_OPEN},nil,nil}, -- Deepsquid Ink
-  [204287] = {{1,PRI_OPEN},nil,nil}, -- Island Crab Jerky
-  [204288] = {{1,PRI_OPEN},nil,nil}, -- Eye of Bass
-  [204289] = {{1,PRI_OPEN},nil,nil}, -- Seven Spices Bruffalon
-  [204290] = {{1,PRI_OPEN},nil,nil}, -- Dragonflame Argali
-  [204291] = {{1,PRI_OPEN},nil,nil}, -- Thrice-Charred Mammoth Ribs
-  [204292] = {{1,PRI_OPEN},nil,nil}, -- "Volcano" Duck
-  [204293] = {{1,PRI_OPEN},nil,nil}, -- Greenberry
-  [204294] = {{1,PRI_OPEN},nil,nil}, -- Fresh Dragon Fruit
-  [204295] = {{1,PRI_OPEN},nil,nil}, -- Juicy Bushfruit
-  [204296] = {{1,PRI_OPEN},nil,nil}, -- Dried Coldsnap Sagittate
-  [204297] = {{1,PRI_OPEN},nil,nil}, -- Exquisite Ohn'ahran Potato
-  [204298] = {{1,PRI_OPEN},nil,nil}, -- Flaky Pastry Dough
-  [204299] = {{1,PRI_OPEN},nil,nil}, -- Dark Thaldraszian Cocoa Powder
-  [204300] = {{1,PRI_OPEN},nil,nil}, -- Four-Cheese Blend
-  [204301] = {{1,PRI_OPEN},nil,nil}, -- Rations: Scorpid Surprise
-  [204302] = {{1,PRI_OPEN},nil,nil}, -- Rations: Undermine Clam Chowder
-  [204303] = {{1,PRI_OPEN},nil,nil}, -- Rations: Westfall Stew
-  [204304] = {{1,PRI_OPEN},nil,nil}, -- Rations: Dragonbreath Chili
-  --]]
+  -- 10.1.5
+  -- Quantum Transmogs ---- Maybe chec to implement via keyword (weapons not "cosmetic"...)
+  [208061] = {{1,PRI_OPEN},nil,nil}, -- Quantum Headpiece
+  [208062] = {{1,PRI_OPEN},nil,nil}, -- Quantum Shoulders
+  [208063] = {{1,PRI_OPEN},nil,nil}, -- Quantum Gloves
+  [208064] = {{1,PRI_OPEN},nil,nil}, -- Quantum Chestpiece
+  [208065] = {{1,PRI_OPEN},nil,nil}, -- Quantum Legs
+  [208109] = {{1,PRI_OPEN},nil,nil}, -- Quantum Sword
+  [208110] = {{1,PRI_OPEN},nil,nil}, -- Quantum Mace
+  [208111] = {{1,PRI_OPEN},nil,nil}, -- Quantum Axe
+  [208112] = {{1,PRI_OPEN},nil,nil}, -- Quantum Greatsword
+  [208113] = {{1,PRI_OPEN},nil,nil}, -- Quantum Greataxe
+  [208114] = {{1,PRI_OPEN},nil,nil}, -- Quantum Greathammer
+  [208115] = {{1,PRI_OPEN},nil,nil}, -- Quantum Staff
+  [208116] = {{1,PRI_OPEN},nil,nil}, -- Quantum Polearm
+  [208117] = {{1,PRI_OPEN},nil,nil}, -- Quantum Bow
+  [208118] = {{1,PRI_OPEN},nil,nil}, -- Quantum Crossbow
+  [208119] = {{1,PRI_OPEN},nil,nil}, -- Quantum Firearm
+  [208120] = {{1,PRI_OPEN},nil,nil}, -- Quantum Knife
+  [208121] = {{1,PRI_OPEN},nil,nil}, -- Quantum Knuckles
+  [208122] = {{1,PRI_OPEN},nil,nil}, -- Quantum Warglaives
+  [208123] = {{1,PRI_OPEN},nil,nil}, -- Quantum Wand
+  [208125] = {{1,PRI_OPEN},nil,nil}, -- Quantum Focus
+  [208126] = {{1,PRI_OPEN},nil,nil}, -- Quantum Shield
+  [208216] = {{1,PRI_OPEN},nil,nil}, -- Reins of the Quantum Courser
+  
   
   --[] = {{1,PRI_OPEN},nil,nil}, -- 
   
