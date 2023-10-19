@@ -139,6 +139,8 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [202631] = {{1,PRI_REP},nil,nil}, -- "Ventilation Fluid" Aberrus tokens
   [202634] = {{1,PRI_REP},nil,nil}, -- "Cooling Fluid" Aberrus tokens
   
+  [208951] = {{1,PRI_REP},nil,nil}, -- "Open"
+  
 }
 NOP.T_RECIPES = { -- [ItemId] = {{count_to_use,priority}, "gsub regex" | tooltip-line-number,{"sub-Zone",...},{[mapID]=true,...}, factionID}, item tooltip template only text to 1st match is compared, that mean all items of same school would be looked up.
   [153135] = {{1,PRI_TOKEN},4,nil,nil}, -- Unsullied Cloth Robes, why Blizzard did put in type of armor?
@@ -1206,6 +1208,14 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [208126] = {{1,PRI_OPEN},nil,nil}, -- Quantum Shield
   [208216] = {{1,PRI_OPEN},nil,nil}, -- Reins of the Quantum Courser
   
+  [208831] = {{1,PRI_OPEN},nil,nil}, -- Tyr's Titan Key
+  
+  -- 10.1.7
+  -- Rift Mender's gear
+  [207016] = {{1,PRI_OPEN},nil,nil}, -- Rift-Mender's Tabard
+  [207017] = {{1,PRI_OPEN},nil,nil}, -- Rift-Mender's Cape
+  [207018] = {{1,PRI_OPEN},nil,nil}, -- Rift-Mender's Spaulders
+  [207020] = {{1,PRI_OPEN},nil,nil}, -- Ensemble: Rift-Mender's Vestments
   
   --[] = {{1,PRI_OPEN},nil,nil}, -- 
   
