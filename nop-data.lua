@@ -1220,6 +1220,8 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [207018] = {{1,PRI_OPEN},nil,nil}, -- Rift-Mender's Spaulders
   [207020] = {{1,PRI_OPEN},nil,nil}, -- Ensemble: Rift-Mender's Vestments
   
+  [209417] = {{1,PRI_OPEN},nil,nil}, -- Ensemble: Thundering Stormrider's Attire
+  
   --[] = {{1,PRI_OPEN},nil,nil}, -- 
   
 }
