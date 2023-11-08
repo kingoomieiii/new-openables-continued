@@ -1222,6 +1222,10 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   
   [209417] = {{1,PRI_OPEN},nil,nil}, -- Ensemble: Thundering Stormrider's Attire
   
+  -- 10.2
+  [210996] = {{1,PRI_OPEN},nil,nil}, -- Moonberry's Many Mischief Makers
+  [208396] = {{2,PRI_OPEN},nil,nil}, -- Dragon Shard of Knowledge
+  
   --[] = {{1,PRI_OPEN},nil,nil}, -- 
   
 }
