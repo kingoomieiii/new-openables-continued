@@ -143,6 +143,12 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   
   --10.2
   [210757] = {{1,PRI_REP},nil,nil}, -- Dream Warden Emblem
+  [211374] = {{1,PRI_OPEN},nil,nil}, -- Tangled Yarn of Secrets -> "Untangling" -> Dream Wardens rep
+  [207473] = {{1,PRI_REP},nil,nil}, -- "Blazing Dreamheart" Amirdrassil tokens
+  [207469] = {{1,PRI_REP},nil,nil}, -- "Tormented Dreamheart" Amirdrassil tokens
+  [207481] = {{1,PRI_REP},nil,nil}, -- "Smoldering Dreamheart" Amirdrassil tokens
+  [207477] = {{1,PRI_REP},nil,nil}, -- "Ashen Dreamheart" Amirdrassil tokens
+  [207465] = {{1,PRI_REP},nil,nil}, -- "Verdurous Dreamheart" Amirdrassil tokens
   
 }
 NOP.T_RECIPES = { -- [ItemId] = {{count_to_use,priority}, "gsub regex" | tooltip-line-number,{"sub-Zone",...},{[mapID]=true,...}, factionID}, item tooltip template only text to 1st match is compared, that mean all items of same school would be looked up.
@@ -1225,6 +1231,12 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   -- 10.2
   [210996] = {{1,PRI_OPEN},nil,nil}, -- Moonberry's Many Mischief Makers
   [208396] = {{2,PRI_OPEN},nil,nil}, -- Dragon Shard of Knowledge
+  [210770] = {{1,PRI_OPEN},nil,nil}, -- Satchel of Drake's Dreaming Crests
+  [210917] = {{1,PRI_OPEN},nil,nil}, -- Pouch of Whelpling's Dreaming Crests
+  [210923] = {{1,PRI_OPEN},nil,nil}, -- Clutch of Wyrm's Dreaming Crests
+  
+  [209837] = {{1,PRI_OPEN},nil,nil}, -- Faint Whispers of Dreaming
+  [210790] = {{1,PRI_OPEN},nil,nil}, -- Ensemble: Elegant Green Dragon Outerwear
   
   --[] = {{1,PRI_OPEN},nil,nil}, -- 
   
