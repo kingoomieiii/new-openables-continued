@@ -210,6 +210,8 @@ NOP.T_DISENCHANT_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",..
   [198800] = {{1,PRI_OPEN},nil,nil}, -- fractured-titanic-sphere -- needs to be disenchanted!
   [198798] = {{1,PRI_OPEN},nil,nil}, -- flashfrozen-scroll -- needs to be disenchanted!
   [198675] = {{1,PRI_OPEN},nil,nil}, -- lava-infused-seed -- needs to be disenchanted!
+  [210234] = {{1,PRI_OPEN},nil,nil}, -- Essence of Dreams -- needs to be disenchanted!
+  [210231] = {{1,PRI_OPEN},nil,nil}, -- Everburning Core -- needs to be disenchanted!
   --Profession Materieals Enchanting
   [200939] = {{1,PRI_OPEN},nil,nil}, -- Chromatic Pocketwatch
   [200940] = {{1,PRI_OPEN},nil,nil}, -- Everflowing Inkwell
@@ -1237,6 +1239,12 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   
   [209837] = {{1,PRI_OPEN},nil,nil}, -- Faint Whispers of Dreaming
   [210790] = {{1,PRI_OPEN},nil,nil}, -- Ensemble: Elegant Green Dragon Outerwear
+  [210468] = {{1,PRI_OPEN},nil,nil}, -- Emerald Blossom Dreamstone
+  [209604] = {{1,PRI_OPEN},nil,nil}, -- Ensemble: Raiment of Amirdrassil
+  
+  [210762] = {{1,PRI_OPEN},nil,nil}, -- Shimmering Clutch of Wyrm's Dreaming Crests
+  [210756] = {{1,PRI_OPEN},nil,nil}, -- Gleaming Satchel of Drake's Dreaming Crests
+  [210768] = {{1,PRI_OPEN},nil,nil}, -- Viridescent Bouquet of Aspect's Dreaming Crests
   
   --[] = {{1,PRI_OPEN},nil,nil}, -- 
   
