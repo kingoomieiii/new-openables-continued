@@ -74,22 +74,7 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [ 94226] = {{1,PRI_REP},nil,nil}, -- Stolen Stolen Klaxxi Insignia
   [ 94227] = {{1,PRI_REP},nil,nil}, -- Stolen Golden Lotus Insignia
   [ 17047] = {{1,PRI_REP},nil,nil}, -- Argent Dawn Valor Token - "Increase Reputation"
-  --[[
-  [104013] = {{1,PRI_REP},nil,nil}, -- Timeless x Armor Cache
-  [102288] = {{1,PRI_REP},nil,nil}, -- Timeless x Leggings
-  [102284] = {{1,PRI_REP},nil,nil}, -- Timeless x Robes
-  [102263] = {{1,PRI_REP},nil,nil}, -- Timeless x Chestpiece
-  [102289] = {{1,PRI_REP},nil,nil}, -- Timeless x Spaulders
-  [102290] = {{1,PRI_REP},nil,nil}, -- Timeless x Belt
-  [102286] = {{1,PRI_REP},nil,nil}, -- Timeless x Gloves
-  [102287] = {{1,PRI_REP},nil,nil}, -- Timeless x Helm
-  [102321] = {{1,PRI_REP},nil,nil}, -- Timeless x Bracers
-  [102285] = {{1,PRI_REP},nil,nil}, -- Timeless x Boots
-  [102318] = {{1,PRI_REP},nil,nil}, -- Timeless Cloak
-  [102291] = {{1,PRI_REP},nil,nil}, -- Timeless Signet
-  [104345] = {{1,PRI_REP},nil,nil}, -- Timeless Lavalliere
-  [104347] = {{1,PRI_REP},nil,nil}, -- Timeless Curio
-  --]]
+  [210324] = {{1,PRI_REP},nil,nil}, -- Medal of Honor
   
   --10.0 Misc
   [198614] = {{1,PRI_OPEN},nil,nil}, -- Soggy Clump of Darkmoon Cards
