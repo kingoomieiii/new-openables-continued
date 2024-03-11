@@ -134,6 +134,7 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [207481] = {{1,PRI_REP},nil,nil}, -- "Smoldering Dreamheart" Amirdrassil tokens
   [207477] = {{1,PRI_REP},nil,nil}, -- "Ashen Dreamheart" Amirdrassil tokens
   [207465] = {{1,PRI_REP},nil,nil}, -- "Verdurous Dreamheart" Amirdrassil tokens
+  [210871] = {{1,PRI_REP},nil,nil}, -- "Fyr'alath's Embrace" Leggo bad luck protection
   
 }
 NOP.T_RECIPES = { -- [ItemId] = {{count_to_use,priority}, "gsub regex" | tooltip-line-number,{"sub-Zone",...},{[mapID]=true,...}, factionID}, item tooltip template only text to 1st match is compared, that mean all items of same school would be looked up.
