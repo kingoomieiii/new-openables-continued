@@ -1,3 +1,8 @@
 package-as: NOP
 
+externals:
+    WagoAnalytics:
+        url: https://github.com/wagoio/WagoAnalyticsShim.git
+        branch: main
+
 enable-nolib-creation: no

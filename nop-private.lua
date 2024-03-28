@@ -28,6 +28,8 @@ local LIB_BABBLESUBZONE_has = LIB_BABBLESUBZONE:GetUnstrictLookupTable() -- all 
 local LIB_HEREBEDRAGONS = LibStub("HereBeDragons-2.0",true); P.LIB_HEREBEDRAGONS = LIB_HEREBEDRAGONS -- MapID fetch 8.x and 7.x compatible
 local LIB_MASQUE = LibStub("Masque", true); P.LIB_MASQUE = LIB_MASQUE -- Masque support
 local LIB_QUESTITEM = LibStub("LibQuestItem-1.0", true); P.LIB_QUESTITEM = LIB_QUESTITEM -- Quest Items detection
+local LIB_WAGO_ANALYTICS = LibStub("WagoAnalytics"):Register("RBKpYOGE")
+P.LIB_WAGO_ANALYTICS = LIB_WAGO_ANALYTICS
 --
 P.VALIDATE = false -- validate tables after new patch
 P.SALVAGE_YARD = LIB_BABBLESUBZONE_has["Salvage Yard"]

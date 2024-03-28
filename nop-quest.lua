@@ -32,6 +32,7 @@ local NOP = LibStub("AceAddon-3.0"):GetAddon(ADDON)
 local LIB_QUESTITEM = P.LIB_QUESTITEM; assert(LIB_QUESTITEM ~= nil,'LIB_QUESTITEM')
 local print = P.print; assert(print ~= nil,'print')
 local T_BLACKLIST_Q = P.T_BLACKLIST_Q; assert(T_BLACKLIST_Q ~= nil,'T_BLACKLIST_Q')
+local LIB_WAGO_ANALYTICS = P.LIB_WAGO_ANALYTICS; assert(LIB_WAGO_ANALYTICS ~= nil,'LIB_WAGO_ANALYTICS')
 --
 function NOP:QBAnchorMove() -- move anchor for quest bar
   if not self.QB then return end
@@ -149,10 +150,12 @@ function NOP:QBBlacklist(isPermanent,itemID) -- add quest item to blacklist
       if not NOP.AceDB.profile["T_BLACKLIST_Q"] then NOP.AceDB.profile.T_BLACKLIST_Q = {} end
       NOP.AceDB.profile.T_BLACKLIST_Q[0] = true
       NOP.AceDB.profile.T_BLACKLIST_Q[itemID] = true
+      LIB_WAGO_ANALYTICS:IncrementCounter("SessionBlacklistQuest")
       print(P.L["PERMA_BLACKLIST"],name or itemID)
     else
       T_BLACKLIST_Q[0] = true -- blacklist is defined
       T_BLACKLIST_Q[itemID] = true
+      LIB_WAGO_ANALYTICS:IncrementCounter("PermanentBlacklistQuest")
       print(P.L["SESSION_BLACKLIST"],name or itemID)
     end
     self:QBUpdate() -- force update
@@ -160,9 +163,17 @@ function NOP:QBBlacklist(isPermanent,itemID) -- add quest item to blacklist
 end
 function NOP:QBPostClick(bt,mouse) -- click on button, place hotkey if none
   if mouse and (mouse == 'RightButton') then self:QBBlacklist(IsControlKeyDown(),bt.itemID) end
+  if not mouse then 
+    LIB_WAGO_ANALYTICS:IncrementCounter("QuestItemKeybindUsed")
+  end
   if NOP.AceDB.profile.keyBind and (bt.itemID ~= self.AceDB.char.questBarID) then
     self.AceDB.char.questBarID = bt.itemID
     self:QBKeyBind(bt)
+    if mouse then
+      LIB_WAGO_ANALYTICS:IncrementCounter("QuestItemClickedKeybindUpdated")
+    end
+  elseif mouse and NOP.AceDB.profile.keyBind then
+    LIB_WAGO_ANALYTICS:IncrementCounter("QuestItemClickedKeybindNotUpdated")
   end
 end
 function NOP:QBKeyBind(bt,i) -- define hotkey
