@@ -24,7 +24,8 @@ local type = _G.type; assert(type ~= nil,'type')
 local unpack = _G.unpack; assert(unpack ~= nil,'unpack')
 local wipe = _G.wipe; assert(wipe ~= nil,'wipe')
 local GetItemCooldown = _G.GetItemCooldown; assert(GetItemCooldown ~= nil,'GetItemCooldown')
-local UnitAura = _G.UnitAura; assert(UnitAura ~= nil,'UnitAura')
+local UnpackAuraData = AuraUtil.UnpackAuraData; assert(UnpackAuraData ~= nil,'UnpackAuraData')
+local GetPlayerAuraBySpellID = C_UnitAuras.GetPlayerAuraBySpellID; assert(GetPlayerAuraBySpellID ~= nil,'GetPlayerAuraBySpellID')
 -- local AddOn
 local ADDON, P = ...
 local NOP = LibStub("AceAddon-3.0"):GetAddon(ADDON)
@@ -71,18 +72,15 @@ function NOP:ItemGetItem(itemID) -- looking for usable item by itemID returns (c
   end -- map lock reject
   if a then
     local hasAura = false
-    for n = 1, 40 do 
-      local name, icon, countAura, debuffType, duration, expirationTime, unitCaster, isStealable, shouldConsolidate, spellID = UnitAura(P.UNITID_PLAYER, n,P.AURA_HELPFUL)
-      if spellID and (spellID == math.abs(a)) then -- already has aura from that item
-        if (spellID == P.AURA_MINERS_COFFEE) then -- extra handling for this aura
-          if (countAura >= NOP.AceDB.profile.cofeeStacks) then -- it has enough of stacks?
-            self:Verbose("ItemGetItem:","itemID",itemID,"rejected already have aura",name,"with",countAura,"stacks")
-            return 0
-          end
-        else
-          hasAura = true
+    local name, icon, countAura, debuffType, duration, expirationTime, unitCaster, isStealable, shouldConsolidate, spellID = UnpackAuraData(GetPlayerAuraBySpellID(a))
+    if spellID and (spellID == math.abs(a)) then -- already has aura from that item
+      if (spellID == P.AURA_MINERS_COFFEE) then -- extra handling for this aura
+        if (countAura >= NOP.AceDB.profile.cofeeStacks) then -- it has enough of stacks?
+          self:Verbose("ItemGetItem:","itemID",itemID,"rejected already have aura",name,"with",countAura,"stacks")
+          return 0
         end
-        break
+      else
+        hasAura = true
       end
     end
     if a > 0 and hasAura then

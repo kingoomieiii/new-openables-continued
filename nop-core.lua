@@ -32,8 +32,8 @@ local IsPlayerSpell = _G.IsPlayerSpell; assert(IsPlayerSpell ~= nil,'IsPlayerSpe
 local ITEM_OPENABLE = _G.ITEM_OPENABLE; assert(ITEM_OPENABLE ~= nil,'ITEM_OPENABLE')
 local ITEM_SPELL_TRIGGER_ONUSE = _G.ITEM_SPELL_TRIGGER_ONUSE; assert(ITEM_SPELL_TRIGGER_ONUSE ~= nil,'ITEM_SPELL_TRIGGER_ONUSE')
 local LE_FOLLOWER_TYPE_SHIPYARD_6_2 = Enum.GarrisonFollowerType.FollowerType_6_0_Boat; assert(LE_FOLLOWER_TYPE_SHIPYARD_6_2 ~= nil,'LE_FOLLOWER_TYPE_SHIPYARD_6_2')
-local LE_GARRISON_TYPE_6_0 = Enum.GarrisonType.Type_6_0; assert(LE_GARRISON_TYPE_6_0 ~= nil,'LE_GARRISON_TYPE_6_0')
-local LE_GARRISON_TYPE_7_0 = Enum.GarrisonType.Type_7_0; assert(LE_GARRISON_TYPE_7_0 ~= nil,'LE_GARRISON_TYPE_7_0')
+local LE_GARRISON_TYPE_6_0 = Enum.GarrisonType.Type_6_0_Garrison or Enum.GarrisonType.Type_6_0; assert(LE_GARRISON_TYPE_6_0 ~= nil,'LE_GARRISON_TYPE_6_0')
+local LE_GARRISON_TYPE_7_0 = Enum.GarrisonType.Type_7_0_Garrison or Enum.GarrisonType.Type_7_0; assert(LE_GARRISON_TYPE_7_0 ~= nil,'LE_GARRISON_TYPE_7_0')
 local LibStub = _G.LibStub; assert(LibStub ~= nil,'LibStub')
 local math = _G.math; assert(math ~= nil,'math')
 local NUM_CHAT_WINDOWS = _G.NUM_CHAT_WINDOWS; assert(NUM_CHAT_WINDOWS ~= nil,'NUM_CHAT_WINDOWS')
@@ -113,10 +113,8 @@ end
 function NOP:GetLinesFromTooltipData(tooltipData)
   if not tooltipData then return {} end
   --this is the retail way
-  TooltipUtil.SurfaceArgs(tooltipData)
   local lines = {}
   for i, line in ipairs(tooltipData.lines) do
-    TooltipUtil.SurfaceArgs(line)
     lines[i] = line
   end
   return lines

@@ -5,7 +5,7 @@ local assert = _G.assert
 local date = _G.date; assert(date ~= nil,'date')
 local debugstack = _G.debugstack; assert(debugstack ~= nil,'debugstack')
 local format = _G.format; assert(format ~= nil,'format')
-local GetAddOnMetadata = _G.GetAddOnMetadata; assert(GetAddOnMetadata ~= nil,'GetAddOnMetadata')
+local GetAddOnMetadata = _G.C_AddOns and _G.C_AddOns.GetAddOnMetadata or _G.GetAddOnMetadata; assert(GetAddOnMetadata ~= nil,'GetAddOnMetadata')
 local GetTime = _G.GetTime; assert(GetTime ~= nil,'GetTime')
 local ipairs = _G.ipairs; assert(ipairs ~= nil,'ipairs')
 local LibStub = _G.LibStub; assert(LibStub ~= nil,'LibStub')
