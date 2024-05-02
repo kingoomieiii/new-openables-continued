@@ -1234,6 +1234,9 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [210756] = {{1,PRI_OPEN},nil,nil}, -- Gleaming Satchel of Drake's Dreaming Crests
   [210768] = {{1,PRI_OPEN},nil,nil}, -- Viridescent Bouquet of Aspect's Dreaming Crests
   
+  [212384] = {{1,PRI_OPEN},nil,nil}, -- Restless Satchel of Drake's Awakened Crests
+  [211950] = {{1,PRI_OPEN},nil,nil}, -- Lively Clutch of Wyrm's Awakened Crests
+  [212383] = {{1,PRI_OPEN},nil,nil}, -- Yawning Basket of Aspect's Awakened Crests
   --[] = {{1,PRI_OPEN},nil,nil}, -- 
   
 }
