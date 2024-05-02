@@ -136,6 +136,12 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [207465] = {{1,PRI_REP},nil,nil}, -- "Verdurous Dreamheart" Amirdrassil tokens
   [210871] = {{1,PRI_REP},nil,nil}, -- "Fyr'alath's Embrace" Leggo bad luck protection
   
+  [217335] = {{1,PRI_REP},nil,nil}, -- "Synchronous Timestrand" Fated tokens
+  [217316] = {{1,PRI_REP},nil,nil}, -- "Fleeting Hourglass" Fated tokens
+  [217320] = {{1,PRI_REP},nil,nil}, -- "Quickened Bronzestone" Fated tokens
+  [217328] = {{1,PRI_REP},nil,nil}, -- "Ephemeral Hypersphere" Fated tokens
+  [217324] = {{1,PRI_REP},nil,nil}, -- "Decelerating Chronograph" Fated tokens
+  
 }
 NOP.T_RECIPES = { -- [ItemId] = {{count_to_use,priority}, "gsub regex" | tooltip-line-number,{"sub-Zone",...},{[mapID]=true,...}, factionID}, item tooltip template only text to 1st match is compared, that mean all items of same school would be looked up.
   [153135] = {{1,PRI_TOKEN},4,nil,nil}, -- Unsullied Cloth Robes, why Blizzard did put in type of armor?
@@ -1180,6 +1186,7 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   --Other
   [204717] = {{2,PRI_OPEN},nil,nil}, -- Splintered Spark of Shadowflame
   [205363] = {{1,PRI_OPEN},nil,nil}, -- Ensemble: Ornate Black Dragon Labwear
+  [211515] = {{2,PRI_OPEN},nil,nil}, -- Splintered Spark of Awakening
   
   -- 10.1.5
   -- Quantum Transmogs ---- Maybe chec to implement via keyword (weapons not "cosmetic"...)
@@ -1237,6 +1244,9 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [212384] = {{1,PRI_OPEN},nil,nil}, -- Restless Satchel of Drake's Awakened Crests
   [211950] = {{1,PRI_OPEN},nil,nil}, -- Lively Clutch of Wyrm's Awakened Crests
   [212383] = {{1,PRI_OPEN},nil,nil}, -- Yawning Basket of Aspect's Awakened Crests
+  
+  [217242] = {{1,PRI_OPEN},nil,nil}, -- Awakening Stone Wing
+  
   --[] = {{1,PRI_OPEN},nil,nil}, -- 
   
 }
