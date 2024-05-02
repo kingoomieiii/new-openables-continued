@@ -1244,6 +1244,7 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [212384] = {{1,PRI_OPEN},nil,nil}, -- Restless Satchel of Drake's Awakened Crests
   [211950] = {{1,PRI_OPEN},nil,nil}, -- Lively Clutch of Wyrm's Awakened Crests
   [212383] = {{1,PRI_OPEN},nil,nil}, -- Yawning Basket of Aspect's Awakened Crests
+  [211951] = {{1,PRI_OPEN},nil,nil}, -- Pouch of Whelpling's Awakened Crests
   
   [217242] = {{1,PRI_OPEN},nil,nil}, -- Awakening Stone Wing
   
