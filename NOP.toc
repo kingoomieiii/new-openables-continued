@@ -10,8 +10,8 @@
 ## X-Curse-Project-ID: 790748
 ## X-Wago-ID: RBKpYOGE
 
-WagoAnalytics\Shim.lua
 LibStub\LibStub.lua
+WagoAnalytics\Shim.lua
 CallbackHandler-1.0\CallbackHandler-1.0.lua
 AceAddon-3.0\AceAddon-3.0.xml
 AceDB-3.0\AceDB-3.0.xml 
