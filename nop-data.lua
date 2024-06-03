@@ -1248,6 +1248,57 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   
   [217242] = {{1,PRI_OPEN},nil,nil}, -- Awakening Stone Wing
   
+  -- Pandaria Remix 10.2.7 - courtesy of Goten87
+  -- Infinite Threads
+  [219274] = {{1,PRI_OPEN},nil,nil}, -- Infinite Thread of Power
+  [219275] = {{1,PRI_OPEN},nil,nil}, -- Infinite Thread of Stamina
+  [219280] = {{1,PRI_OPEN},nil,nil}, -- Infinite Thread of Mastery
+  [219277] = {{1,PRI_OPEN},nil,nil}, -- Infinite Thread of Haste
+  [219276] = {{1,PRI_OPEN},nil,nil}, -- Infinite Thread of Critical Strike
+  [219279] = {{1,PRI_OPEN},nil,nil}, -- Infinite Thread of Leech
+  [219281] = {{1,PRI_OPEN},nil,nil}, -- Infinite Thread of Versatility
+  [219278] = {{1,PRI_OPEN},nil,nil}, -- Infinite Thread of Speed
+  [217722] = {{1,PRI_OPEN},nil,nil}, -- Thread of Experience
+  [219264] = {{1,PRI_OPEN},nil,nil}, -- Temporal Thread of Experience
+  [219273] = {{1,PRI_OPEN},nil,nil}, -- Perpetual Thread of Experience
+  [219282] = {{1,PRI_OPEN},nil,nil}, -- Infinite Thread of Experience
+  
+  -- Spools of Eternal Thread
+  [226145] = {{1,PRI_OPEN},nil,nil}, -- Minor Spool of Eternal Thread
+  [226144] = {{1,PRI_OPEN},nil,nil}, -- Lesser Spool of Eternal Thread
+  [226143] = {{1,PRI_OPEN},nil,nil}, -- Spool of Eternal Thread
+  [226142] = {{1,PRI_OPEN},nil,nil}, -- Greater Spool of Eternal Thread
+
+  -- Chipped Prismatic Gems [Green]
+  [210714] = {{3,PRI_OPEN},nil,nil}, -- Chipped Deadly Sapphire
+  [211109] = {{3,PRI_OPEN},nil,nil}, -- Chipped Sustaining Emerald
+  [210681] = {{3,PRI_OPEN},nil,nil}, -- Chipped Quick Topaz
+  [210715] = {{3,PRI_OPEN},nil,nil}, -- Chipped Masterful Amethyst
+  [210717] = {{3,PRI_OPEN},nil,nil}, -- Chipped Hungering Ruby
+  [210716] = {{3,PRI_OPEN},nil,nil}, -- Chipped Swift Opal
+  [220367] = {{3,PRI_OPEN},nil,nil}, -- Chipped Stalwart Pearl
+  [220371] = {{3,PRI_OPEN},nil,nil}, -- Chipped Versatile Diamond
+
+  -- Flawed Prismatic Gems [Blue]
+  [216644] = {{3,PRI_OPEN},nil,nil}, -- Flawed Deadly Sapphire
+  [216642] = {{3,PRI_OPEN},nil,nil}, -- Flawed Sustaining Emerald
+  [216641] = {{3,PRI_OPEN},nil,nil}, -- Flawed Hungering Ruby
+  [216643] = {{3,PRI_OPEN},nil,nil}, -- Flawed Quick Topaz
+  [220368] = {{3,PRI_OPEN},nil,nil}, -- Flawed Stalwart Pearl
+  [216640] = {{3,PRI_OPEN},nil,nil}, -- Flawed Masterful Amethyst
+  [220372] = {{3,PRI_OPEN},nil,nil}, -- Flawed Versatile Diamond
+  [216639] = {{3,PRI_OPEN},nil,nil}, -- Flawed Swift Opal
+
+  -- Prismatic Gem [Purple]
+  [211123] = {{3,PRI_OPEN},nil,nil}, -- Deadly Sapphire
+  [211125] = {{3,PRI_OPEN},nil,nil}, -- Sustaining Emerald
+  [210718] = {{3,PRI_OPEN},nil,nil}, -- Hungering Ruby
+  [211107] = {{3,PRI_OPEN},nil,nil}, -- Quick Topaz
+  [220370] = {{3,PRI_OPEN},nil,nil}, -- Stalwart Pearl
+  [211106] = {{3,PRI_OPEN},nil,nil}, -- Masterful Amethyst
+  [220374] = {{3,PRI_OPEN},nil,nil}, -- Versatile Diamond
+  [211124] = {{3,PRI_OPEN},nil,nil}, -- Swift Opal
+  
   --[] = {{1,PRI_OPEN},nil,nil}, -- 
   
 }
