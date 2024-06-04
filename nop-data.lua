@@ -1299,6 +1299,13 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [220374] = {{3,PRI_OPEN},nil,nil}, -- Versatile Diamond
   [211124] = {{3,PRI_OPEN},nil,nil}, -- Swift Opal
   
+  -- Asynchronized Prismatic Gems
+  [223907] = {{1,PRI_OPEN},nil,nil}, -- Asynchronized Prismatic Gem
+  [223906] = {{1,PRI_OPEN},nil,nil}, -- Asynchronized Tinker Gem
+  [223904] = {{1,PRI_OPEN},nil,nil}, -- Asynchronized Cogwheel Gem
+  [223905] = {{1,PRI_OPEN},nil,nil}, -- Asynchronized Meta Gem
+
+  
   --[] = {{1,PRI_OPEN},nil,nil}, -- 
   
 }
