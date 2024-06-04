@@ -1249,6 +1249,37 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [217242] = {{1,PRI_OPEN},nil,nil}, -- Awakening Stone Wing
   
   -- Pandaria Remix 10.2.7 - courtesy of Goten87
+  -- Threads
+  [210984] = {{1,PRI_OPEN},nil,nil}, -- Thread of Critical Strike
+  [210985] = {{1,PRI_OPEN},nil,nil}, -- Thread of Haste
+  [210987] = {{1,PRI_OPEN},nil,nil}, -- Thread of Leech
+  [210989] = {{1,PRI_OPEN},nil,nil}, -- Thread of Mastery
+  [210982] = {{1,PRI_OPEN},nil,nil}, -- Thread of Power
+  [210986] = {{1,PRI_OPEN},nil,nil}, -- Thread of Speed
+  [210983] = {{1,PRI_OPEN},nil,nil}, -- Thread of Stamina
+  [217722] = {{1,PRI_OPEN},nil,nil}, -- Thread of Experience
+
+  --Temporal Thread
+  [219258] = {{1,PRI_OPEN},nil,nil}, -- Temporal Thread of Critical Strike
+  [219259] = {{1,PRI_OPEN},nil,nil}, -- Temporal Thread of Haste
+  [219261] = {{1,PRI_OPEN},nil,nil}, -- Temporal Thread of Leech
+  [219256] = {{1,PRI_OPEN},nil,nil}, -- Temporal Thread of Power
+  [219260] = {{1,PRI_OPEN},nil,nil}, -- Temporal Thread of Speed
+  [219257] = {{1,PRI_OPEN},nil,nil}, -- Temporal Thread of Stamina
+  [219263] = {{1,PRI_OPEN},nil,nil}, -- Temporal Thread of Versatility
+  [219264] = {{1,PRI_OPEN},nil,nil}, -- Temporal Thread of Experience
+
+  -- Perpetual Thread
+  [219273] = {{1,PRI_OPEN},nil,nil}, -- Perpetual Thread of Experience
+  [219266] = {{1,PRI_OPEN},nil,nil}, -- Perpetual Thread of Stamina
+  [219267] = {{1,PRI_OPEN},nil,nil}, -- Perpetual Thread of Critical Strike
+  [219271] = {{1,PRI_OPEN},nil,nil}, -- Perpetual Thread of Mastery
+  [219272] = {{1,PRI_OPEN},nil,nil}, -- Perpetual Thread of Versatility
+  [219265] = {{1,PRI_OPEN},nil,nil}, -- Perpetual Thread of Power
+  [219270] = {{1,PRI_OPEN},nil,nil}, -- Perpetual Thread of Leech
+  [219268] = {{1,PRI_OPEN},nil,nil}, -- Perpetual Thread of Haste
+  [219269] = {{1,PRI_OPEN},nil,nil}, -- Perpetual Thread of Speed
+
   -- Infinite Threads
   [219274] = {{1,PRI_OPEN},nil,nil}, -- Infinite Thread of Power
   [219275] = {{1,PRI_OPEN},nil,nil}, -- Infinite Thread of Stamina
@@ -1258,9 +1289,6 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [219279] = {{1,PRI_OPEN},nil,nil}, -- Infinite Thread of Leech
   [219281] = {{1,PRI_OPEN},nil,nil}, -- Infinite Thread of Versatility
   [219278] = {{1,PRI_OPEN},nil,nil}, -- Infinite Thread of Speed
-  [217722] = {{1,PRI_OPEN},nil,nil}, -- Thread of Experience
-  [219264] = {{1,PRI_OPEN},nil,nil}, -- Temporal Thread of Experience
-  [219273] = {{1,PRI_OPEN},nil,nil}, -- Perpetual Thread of Experience
   [219282] = {{1,PRI_OPEN},nil,nil}, -- Infinite Thread of Experience
   
   -- Spools of Eternal Thread
