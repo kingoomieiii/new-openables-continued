@@ -1266,6 +1266,7 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [219256] = {{1,PRI_OPEN},nil,nil}, -- Temporal Thread of Power
   [219260] = {{1,PRI_OPEN},nil,nil}, -- Temporal Thread of Speed
   [219257] = {{1,PRI_OPEN},nil,nil}, -- Temporal Thread of Stamina
+  [219262] = {{1,PRI_OPEN},nil,nil}, -- Temporal Thread of Mastery
   [219263] = {{1,PRI_OPEN},nil,nil}, -- Temporal Thread of Versatility
   [219264] = {{1,PRI_OPEN},nil,nil}, -- Temporal Thread of Experience
 
