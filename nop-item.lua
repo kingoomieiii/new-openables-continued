@@ -9,9 +9,9 @@ local GetContainerItemID = _G.GetContainerItemID or C_Container.GetContainerItem
 local GetContainerItemInfo = _G.GetContainerItemInfo or C_Container.GetContainerItemInfo; assert(GetContainerItemInfo ~= nil,'GetContainerItemInfo')
 local GetContainerItemLink = _G.GetContainerItemLink or C_Container.GetContainerItemLink; assert(GetContainerItemLink ~= nil,'GetContainerItemLink')
 local GetContainerNumSlots = _G.GetContainerNumSlots or C_Container.GetContainerNumSlots; assert(GetContainerNumSlots ~= nil,'GetContainerNumSlots')
-local GetItemCount = _G.GetItemCount; assert(GetItemCount ~= nil,'GetItemCount')
-local GetItemInfo = _G.GetItemInfo; assert(GetItemInfo ~= nil,'GetItemInfo')
-local GetItemSpell = _G.GetItemSpell; assert(GetItemSpell ~= nil,'GetItemSpell')
+local GetItemCount = _G.GetItemCount or _G.C_Item.GetItemCount; assert(GetItemCount ~= nil,'GetItemCount')
+local GetItemInfo = _G.GetItemInfo or _G.C_Item.GetItemInfo; assert(GetItemInfo ~= nil,'GetItemInfo')
+local GetItemSpell = _G.GetItemSpell or _G.C_Item.GetItemSpell; assert(GetItemSpell ~= nil,'GetItemSpell')
 local GetTime = _G.GetTime; assert(GetTime ~= nil,'GetTime')
 local LOCKED = _G.LOCKED; assert(LOCKED ~= nil,'LOCKED')
 local math = _G.math; assert(math ~= nil,'math')
@@ -23,7 +23,7 @@ local tonumber = _G.tonumber; assert(tonumber ~= nil,'tonumber')
 local type = _G.type; assert(type ~= nil,'type')
 local unpack = _G.unpack; assert(unpack ~= nil,'unpack')
 local wipe = _G.wipe; assert(wipe ~= nil,'wipe')
-local GetItemCooldown = _G.GetItemCooldown; assert(GetItemCooldown ~= nil,'GetItemCooldown')
+local GetItemCooldown = _G.GetItemCooldown or _G.C_Item.GetItemCooldown; assert(GetItemCooldown ~= nil,'GetItemCooldown')
 local UnpackAuraData = AuraUtil.UnpackAuraData; assert(UnpackAuraData ~= nil,'UnpackAuraData')
 local GetPlayerAuraBySpellID = C_UnitAuras.GetPlayerAuraBySpellID; assert(GetPlayerAuraBySpellID ~= nil,'GetPlayerAuraBySpellID')
 -- local AddOn
@@ -373,27 +373,44 @@ function NOP:ItemShow(itemID,prio) -- add item to button
   if type(itemTexture) == "table" then
     itemTexture = itemTexture.iconFileID
   end
-  local mtext = format(P.MACRO_ACTIVE,itemID)
+  --local mtext = format(P.MACRO_ACTIVE,itemID)
+  --local mtarget = format("%d",itemID)
+  local mtarget = format("item:%d", itemID)
+  local mtargetitem = nil
+  local mtype = "item"
+  local mspell = nil
   if T_PICK[itemID] then -- item has picklock in tooltip
     local bag, slot = self:ItemToPicklock(itemID) -- find where in bags is item which still with unlock because same itemID can be unlocked or locked it depends on state of item
     if bag and slot then
       bagID = bag
       slotID = slot
       isGlow = true
-      mtext = format(P.MACRO_PICKLOCK,self.pickLockSpell,bagID,slotID) -- this one needs unlock
+      --mtext = format(P.MACRO_PICKLOCK,self.pickLockSpell,bagID,slotID) -- this one needs unlock
+      mtype = "spell"
+      mspell = self.pickLockSpell
+      mtarget = nil
+      mtargetitem = format("item:%d", itemID) --format("%d %d" ,bagID,slotID) -- this one needs unlock
     else
       T_PICK[itemID] = nil -- it not require lockpick anymore
     end
   elseif NOP.T_DISENCHANT_ITEMS[itemID] then
     isGlow = true
-    mtext = format(P.MACRO_DISENCHANT,itemID) -- disenchant this
+    --mtext = format(P.MACRO_DISENCHANT,itemID) -- disenchant this
+    mtype = "spell"
+    mspell = "Disenchant"
+    mtarget = nil
+    mtargetitem =  format("item:%d", itemID) --format("%d %d" ,bagID,slotID) -- disenchant this
   end
-  if (bt.itemCount ~= itemCount) or (bt.itemID ~= itemID) or (bt.isGlow ~= isGlow) or (bt.mtext ~= mtext) then
+  if (bt.itemCount ~= itemCount) or (bt.itemID ~= itemID) or (bt.isGlow ~= isGlow) or (bt.mtext ~= mtext) or (bt.mtype ~= mtype) or (bt.mspell ~= mspell) or (bt.mtarget ~= mtarget) or (bt.mtargetitem ~= mtargetitem) then
     bt.prio = prio
     bt.showID = itemID
     bt.itemID = itemID
     bt.isGlow = isGlow
-    bt.mtext = mtext
+    --bt.mtext = mtext
+    bt.mtype = mtype
+    bt.mspell = mspell
+    bt.mtarget = mtarget
+    bt.mtargetitem = mtargetitem
     bt.bagID = bagID
     bt.slotID = slotID
     bt.itemCount = itemCount

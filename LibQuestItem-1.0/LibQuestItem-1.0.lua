@@ -1,4 +1,4 @@
-local MAJOR, MINOR = "LibQuestItem-1.0", tonumber("28") or 999 -- ES increased version to take over all older instances
+local MAJOR, MINOR = "LibQuestItem-1.0", tonumber("29") or 999 -- ES increased version to take over all older instances
 local LibQuestItem = LibStub:NewLibrary(MAJOR, MINOR)
 
 if not LibQuestItem then return end -- no need to update
@@ -17,11 +17,12 @@ local select = _G.select
 local tonumber	= _G.tonumber
 local tostring	= _G.tostring
 
-local GetContaineritemId = _G.GetContaineritemId
-local GetContainerNumSlots = _G.GetContainerNumSlots
-local GetInventoryitemId = _G.GetInventoryitemId
-local GetInventorySlotInfo = _G.GetInventorySlotInfo
-local GetItemInfo = _G.GetItemInfo
+local GetContaineritemId = _G.GetContaineritemId or _G.C_Item.GetContaineritemId
+local GetContainerNumSlots = _G.GetContainerNumSlots or _G.C_Item.GetContainerNumSlots
+local GetInventoryitemId = _G.GetInventoryitemId or _G.C_Item.GetInventoryitemId
+local GetInventorySlotInfo = _G.GetInventorySlotInfo or _G.GetInventorySlotInfo
+local GetItemInfo = _G.GetItemInfo or _G.C_Item.GetItemInfo
+local GetItemSpell = _G.GetItemSpell or _G.C_Item.GetItemSpell
 
 local strformat	= _G.string.format
 local strlen = _G.string.len
@@ -34,7 +35,8 @@ LibQuestItem.frame = LibQuestItem.frame	or CreateFrame("Frame", "LibQuestItem10F
 -- -----
 -- localization
 -- -----
-local LOCALE_QUEST = ((_G.GetItemClassInfo == nil) and select(10, GetAuctionItemClasses())) or _G.GetItemClassInfo(LE_ITEM_CLASS_QUESTITEM or (Enum and Enum.ItemClass and Enum.ItemClass.Questitem)) or "Quest" -- ES legion aware fix
+local GetItemClassInfo = _G.GetItemClassInfo or _G.C_Item.GetItemClassInfo
+local LOCALE_QUEST = ((GetItemClassInfo == nil) and select(10, GetAuctionItemClasses())) or GetItemClassInfo(LE_ITEM_CLASS_QUESTITEM or (Enum and Enum.ItemClass and Enum.ItemClass.Questitem)) or "Quest" -- ES legion aware fix
 
 -- -----
 -- local helpers

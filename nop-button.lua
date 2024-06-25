@@ -7,9 +7,9 @@ local CreateFrame = _G.CreateFrame; assert(CreateFrame ~= nil,'CreateFrame')
 local GameTooltip = _G.GameTooltip; assert(GameTooltip ~= nil,'GameTooltip')
 local GameTooltip_SetDefaultAnchor = _G.GameTooltip_SetDefaultAnchor; assert(GameTooltip_SetDefaultAnchor ~= nil,'GameTooltip_SetDefaultAnchor')
 local GetCVar = _G.GetCVar; assert(GetCVar ~= nil,'GetCVar')
-local GetItemCooldown = _G.GetItemCooldown; assert(GetItemCooldown ~= nil,'GetItemCooldown')
-local GetItemInfo = _G.GetItemInfo; assert(GetItemInfo ~= nil,'GetItemInfo')
-local GetMouseFocus = _G.GetMouseFocus; assert(GetMouseFocus ~= nil,'GetMouseFocus')
+local GetItemCooldown = _G.GetItemCooldown or _G.C_Item.GetItemCooldown; assert(GetItemCooldown ~= nil,'GetItemCooldown')
+local GetItemInfo = _G.GetItemInfo or _G.C_Item.GetItemInfo; assert(GetItemInfo ~= nil,'GetItemInfo')
+--local GetMouseFocus = _G.GetMouseFocus; assert(GetMouseFocus ~= nil,'GetMouseFocus')
 local GetScreenWidth = _G.GetScreenWidth; assert(GetScreenWidth ~= nil,'GetScreenWidth')
 local GetTime = _G.GetTime; assert(GetTime ~= nil,'GetTime')
 local IsAltKeyDown = _G.IsAltKeyDown; assert(IsAltKeyDown ~= nil,'IsAltKeyDown')
@@ -179,6 +179,16 @@ function NOP:ButtonPostClick(button) -- post click on button
     self:TimerFire("ItemShowNew", TIMER_IDLE / 3)
   end
 end
+function NOP:ButtonPreClick(bt, button) -- post click on button
+  if button then
+    if (button == 'RightButton') then
+      bt:SetAttribute("type", nil)
+      bt:SetAttribute("spell", nil)
+      bt:SetAttribute("target-item", nil)
+      bt:SetAttribute("item", nil)
+    end
+  end
+end
 function NOP:ButtonOnDragStart(button) -- start moving
   if NOP.AceDB.profile.lockButton or self:inCombat() then return end
   if IsAltKeyDown() then button:StartMoving() end
@@ -265,7 +275,7 @@ function NOP:ButtonLoad() -- create button, restore his position
     bt:RegisterForClicks("AnyUp", "AnyDown") -- act on key release 
     bt:SetScript("OnEnter",     function(self) NOP:ButtonOnEnter(self) end)
     bt:SetScript("OnLeave",     function(self) NOP:ButtonOnLeave(self) end)
-    bt:SetScript("PreClick",    function(self,button) NOP.preClick = true end)
+    bt:SetScript("PreClick",    function(self,button) NOP:ButtonPreClick(self, button) NOP.preClick = true end)
     bt:SetScript("PostClick",   function(self,button) NOP:ButtonPostClick(button) end)
     bt:SetScript("OnDragStart", function(self) NOP:ButtonOnDragStart(self) end)
     bt:SetScript("OnDragStop",  function(self) NOP:ButtonOnDragStop(self) end)
@@ -317,13 +327,23 @@ function NOP:ButtonShow() -- display button
   local bt = self.BF
   self:ButtonCount(bt.itemCount)
   bt.icon:SetTexture(bt.itemTexture or DEFAULT_ICON)
-  if (GetMouseFocus() == bt) then self:ButtonOnEnter(bt) end -- update tooltip if mouse is over button
+  --if (GetMouseFocus() == bt) then self:ButtonOnEnter(bt) end -- update tooltip if mouse is over button
+  if (bt:IsMouseMotionFocus()) then self:ButtonOnEnter(bt) end -- update tooltip if mouse is over button
   if bt.itemTexture then
-    bt:SetAttribute("type1", "macro") -- "type1" Unmodified left click.
-    bt:SetAttribute("macrotext1", bt.mtext)
-    self:Verbose("ButtonShow:","macro text",self:CompressText(bt.mtext))
+    --bt:SetAttribute("type1", "macro") -- "type1" Unmodified left click.
+    --bt:SetAttribute("macrotext1", bt.mtext)
+    --self:Verbose("ButtonShow:","macro text",self:CompressText(bt.mtext))
+    bt:SetAttribute("type", bt.mtype)
+    bt:SetAttribute("spell", bt.mspell)
+    bt:SetAttribute("item", bt.mtarget) -- ("bag slot")
+    bt:SetAttribute("target-item", bt.mtargetitem) -- ("bag slot")
+    self:Verbose("ButtonShow:",self:CompressText(bt.mtype),bt.mspell and self:CompressText(bt.mspell),bt.mtarget and self:CompressText("item: " .. bt.mtarget),bt.mtargetitem and self:CompressText("target-item: " .. bt.mtargetitem))
   else
-    bt:SetAttribute("macrotext1", "")
+    --bt:SetAttribute("macrotext1", nil)
+    bt:SetAttribute("type", nil)
+    bt:SetAttribute("spell", nil)
+    bt:SetAttribute("target-item", nil)
+    bt:SetAttribute("item", nil)
   end
   -- self:printt("ButtonShow:","macro text",self:CompressText(bt.mtext))
   if not (bt:IsVisible() or bt:IsShown()) then bt:Show() end
@@ -349,7 +369,11 @@ function NOP:ButtonHide() -- hide button
   bt.mtext = MACRO_INACTIVE
   bt.itemTexture = nil
   bt.icon:SetTexture(DEFAULT_ICON)
-  bt:SetAttribute("macrotext1", MACRO_INACTIVE)
+  --bt:SetAttribute("macrotext1", MACRO_INACTIVE)
+  bt:SetAttribute("type", nil)
+  bt:SetAttribute("spell", nil)
+  bt:SetAttribute("target-item", nil)
+  bt:SetAttribute("item", nil)
   self:ButtonCount(bt.itemCount)
   self.ActionButton_HideOverlayGlow(bt)
   --ActionButton_HideOverlayGlow(bt)

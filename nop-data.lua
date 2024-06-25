@@ -48,6 +48,7 @@ NOP.T_INSTA_WQ = { -- [spellID] = itemID, list of OH advancements and spells for
   [221561] = 140158, -- Rift Cannon
 }
 NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]=true,...}} table to fetch via GetItemSpell(itemID) for group of items where spell-name is the same
+  [186520] = {{1,PRI_OPEN},nil,nil}, -- Chest of Playtest Equipment - Create Essential Stuff
   [137908] = {{1,PRI_OPEN},nil,nil}, -- Recipe: Battlebound Armbands, produce spell Learning
   [ 99726] = {{1,PRI_OPEN},nil,nil}, -- Create Item, Leggings of the Cursed Vanquisher
   [113355] = {{1,PRI_OPEN},nil,nil}, -- Flip Card, Card of Omens

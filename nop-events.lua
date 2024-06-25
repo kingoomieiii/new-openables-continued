@@ -14,7 +14,7 @@ local format = _G.format; assert(format ~= nil,'format')
 local GameTooltip = _G.GameTooltip; assert(GameTooltip ~= nil,'GameTooltip')
 local GetBindingKey = _G.GetBindingKey; assert(GetBindingKey ~= nil,'GetBindingKey')
 local GetBuildInfo = _G.GetBuildInfo; assert(GetBuildInfo ~= nil,'GetBuildInfo')
-local GetItemCooldown = _G.GetItemCooldown; assert(GetItemCooldown ~= nil,'GetItemCooldown')
+local GetItemCooldown = _G.GetItemCooldown or _G.C_Item.GetItemCooldown; assert(GetItemCooldown ~= nil,'GetItemCooldown')
 local hooksecurefunc = _G.hooksecurefunc; assert(hooksecurefunc ~= nil,'hooksecurefunc')
 local INTERRUPTED = _G.INTERRUPTED; assert(INTERRUPTED ~= nil,'INTERRUPTED')
 local ipairs = _G.ipairs; assert(ipairs ~= nil,'ipairs')
@@ -96,9 +96,13 @@ function NOP:UI_ERROR_MESSAGE(event, msgType, msg, ...) -- handle lockpicking it
     UIErrorsFrame:Clear()
     local bt = self.BF
     if bt and self:ItemToPicklock(bt.itemID) then
-      bt.mtext = format(MACRO_PICKLOCK,self.pickLockSpell,bt.bagID,bt.slotID)
-      bt:SetAttribute("type1", "macro")
-      bt:SetAttribute("macrotext1", bt.mtext)
+      --bt.mtext = format(MACRO_PICKLOCK,self.pickLockSpell,bt.bagID,bt.slotID)
+      --bt:SetAttribute("type1", "macro")
+      --bt:SetAttribute("macrotext1", bt.mtext)
+      bt:SetAttribute("type", "spell")
+      bt:SetAttribute("spell", self.pickLockSpell)
+      bt:SetAttribute("target-item", format("item:%d", bt.itemID))
+      bt:SetAttribute("item", nil)
     end
     return
   end
