@@ -153,7 +153,7 @@ function NOP:ItemGetPattern(itemID,bag,slot) -- looking for usable item via patt
               local level, top, value, reward = self:GetReputation(heading)
               if (level and (level > 7) and NOP.AceDB.profile.SkipExalted) or reward then return end -- already exalted with faction for this token or have reward pending
             end
-            self:Verbose("ItemGetPattern:","itemID",itemID,name,"will be shown as RECIPE")
+            self:Verbose("ItemGetPattern:","itemID",itemID,name,"will be shown as RECIPE because of heading and pattern:",heading,pattern)
             return c[1], c[2], z, m
           end
         end
