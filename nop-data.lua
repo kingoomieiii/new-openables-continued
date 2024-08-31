@@ -42,6 +42,21 @@ local VALDRAKKEN = P.VALDRAKKEN; assert(VALDRAKKEN ~= nil,'VALDRAKKEN')
 --local LOAMM = P.LOAMM; assert(LOAMM ~= nil,'LOAMM')
 local ISKAARA = P.ISKAARA; assert(ISKAARA ~= nil,'ISKAARA')
 --
+NOP.T_ITEM_REQUIRE_QUEST_NOT_COMPLETED = { -- [itemID] = questID, entries where questID needs to be not completed
+  [222548] = 83730, -- Algari Treatise on Inscription
+  [222554] = 83726, -- Algari Treatise on Blacksmithing
+  [222552] = 83729, -- Algari Treatise on Herbalism
+  [222546] = 83725, -- Algari Treatise on Alchemy
+  [222553] = 83733, -- Algari Treatise on Mining
+  [222547] = 83735, -- Algari Treatise on Tailoring
+  [222621] = 83728, -- Algari Treatise on Engineering
+  [222550] = 83727, -- Algari Treatise on Enchanting
+  [222649] = 83734, -- Algari Treatise on Skinning
+  [222551] = 83731, -- Algari Treatise on Jewelcrafting
+  [222549] = 83732, -- Algari Treatise on Leatherworking
+  
+   -- [itemID] = questID, --
+}
 NOP.T_INSTA_WQ = { -- [spellID] = itemID, list of OH advancements and spells for instant completion non-elite WQ
   [221602] = 140038, -- Might of Dalaran
   [221587] = 140155, -- Vanguard of the Silver Hand
