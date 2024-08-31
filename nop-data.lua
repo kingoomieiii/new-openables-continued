@@ -1337,6 +1337,8 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
 
 
   -- 11.0
+  -- Sparks
+  [211297] = {{2,PRI_OPEN},nil,nil}, -- Fractured Spark of Omens
   -- Crests
   [221268] = {{1,PRI_OPEN},nil,nil}, -- Pouch of Weathered Harbinger Crests
   [221373] = {{1,PRI_OPEN},nil,nil}, -- Satchel of Carved Harbinger Crests
