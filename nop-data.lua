@@ -1377,6 +1377,13 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [225906] = {{1,PRI_OPEN},nil,nil}, -- Lifeless Necrotic Relic
   [225907] = {{1,PRI_OPEN},nil,nil}, -- Relic of Sentience
   
+  -- Contracts
+  [222599] = {{1,PRI_OPEN},nil,nil,-454933}, -- Contract: Council of Dornogal
+  [222606] = {{1,PRI_OPEN},nil,nil,-454940}, -- Contract: The Severed Threads
+  [222605] = {{1,PRI_OPEN},nil,nil,-454939}, -- Contract: Hallowfall Arathi
+  [222608] = {{1,PRI_OPEN},nil,nil,-454942}, -- Contract: The Severed Threads
+  [222602] = {{1,PRI_OPEN},nil,nil,-454936}, -- Contract: Assembly of the Deeps
+  
   --[] = {{1,PRI_OPEN},nil,nil}, -- 
   
 }
