@@ -1376,6 +1376,7 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [228582] = {{1,PRI_OPEN},nil,nil}, -- Streamlined Relic
   [225906] = {{1,PRI_OPEN},nil,nil}, -- Lifeless Necrotic Relic
   [225907] = {{1,PRI_OPEN},nil,nil}, -- Relic of Sentience
+  [229899] = {{100,PRI_OPEN},nil,nil}, -- Coffer Key Shard
   
   -- Contracts
   [222597] = {{1,PRI_OPEN},nil,nil,454931}, -- Contract: Council of Dornogal
