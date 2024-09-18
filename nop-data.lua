@@ -158,6 +158,15 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [217328] = {{1,PRI_REP},nil,nil}, -- "Ephemeral Hypersphere" Fated tokens
   [217324] = {{1,PRI_REP},nil,nil}, -- "Decelerating Chronograph" Fated tokens
   
+  --11.0
+  [224982] = {{1,PRI_REP},nil,nil}, -- "Delver's Dirigible Schematic" - Interpreting
+  --Tier Tokens
+  [225617] = {{1,PRI_REP},nil,nil}, -- Blasphemer's Effigy
+  [225621] = {{1,PRI_REP},nil,nil}, -- Stalwart's Emblem
+  [225625] = {{1,PRI_REP},nil,nil}, -- Conniver's Badge
+  [225629] = {{1,PRI_REP},nil,nil}, -- Slayer's Icon
+  [225633] = {{1,PRI_REP},nil,nil}, -- Obscenity's Idol
+  
 }
 NOP.T_RECIPES = { -- [ItemId] = {{count_to_use,priority}, "gsub regex" | tooltip-line-number,{"sub-Zone",...},{[mapID]=true,...}, factionID}, item tooltip template only text to 1st match is compared, that mean all items of same school would be looked up.
   [153135] = {{1,PRI_TOKEN},4,nil,nil}, -- Unsullied Cloth Robes, why Blizzard did put in type of armor?
