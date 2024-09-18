@@ -1405,6 +1405,9 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [222607] = {{1,PRI_OPEN},nil,nil,454941}, -- Contract: The Severed Threads
   [222608] = {{1,PRI_OPEN},nil,nil,454942}, -- Contract: The Severed Threads
   
+  -- Misc
+  [217707] = {{5,PRI_OPEN},nil,nil}, -- Imperfect Null Stone
+  
   
   --[] = {{1,PRI_OPEN},nil,nil}, -- 
   
