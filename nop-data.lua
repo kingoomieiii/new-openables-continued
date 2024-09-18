@@ -1383,9 +1383,13 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [225904] = {{1,PRI_OPEN},nil,nil}, -- Time Lost Relic
   [225903] = {{1,PRI_OPEN},nil,nil}, -- Amorphous Relic
   [228582] = {{1,PRI_OPEN},nil,nil}, -- Streamlined Relic
+  [225901] = {{1,PRI_OPEN},nil,nil}, -- Streamlined Relic
   [225906] = {{1,PRI_OPEN},nil,nil}, -- Lifeless Necrotic Relic
   [225907] = {{1,PRI_OPEN},nil,nil}, -- Relic of Sentience
+  [225897] = {{1,PRI_OPEN},nil,nil}, -- Brute Force Idol
+  [225908] = {{1,PRI_OPEN},nil,nil}, -- Relicblood of Zekvir
   [229899] = {{100,PRI_OPEN},nil,nil}, -- Coffer Key Shard
+  [225249] = {{1,PRI_OPEN},nil,nil}, -- Rattling Bag o' Gold
   
   -- Contracts
   [222597] = {{1,PRI_OPEN},nil,nil,454931}, -- Contract: Council of Dornogal
