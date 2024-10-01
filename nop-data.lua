@@ -91,6 +91,7 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [ 94227] = {{1,PRI_REP},nil,nil}, -- Stolen Golden Lotus Insignia
   [ 17047] = {{1,PRI_REP},nil,nil}, -- Argent Dawn Valor Token - "Increase Reputation"
   [210324] = {{1,PRI_REP},nil,nil}, -- Medal of Honor
+  [213389] = {{1,PRI_OPEN},nil,nil}, -- Ancient Centaur Diary - "Breaking Down"
   
   --10.0 Misc
   [198614] = {{1,PRI_OPEN},nil,nil}, -- Soggy Clump of Darkmoon Cards
@@ -1358,8 +1359,18 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [223906] = {{1,PRI_OPEN},nil,nil}, -- Asynchronized Tinker Gem
   [223904] = {{1,PRI_OPEN},nil,nil}, -- Asynchronized Cogwheel Gem
   [223905] = {{1,PRI_OPEN},nil,nil}, -- Asynchronized Meta Gem
-
-
+  
+  --Azeronian Archives
+  [213185] = {{1,PRI_OPEN},nil,nil}, -- Dusty Centaur Tome
+  [213175] = {{1,PRI_OPEN},nil,nil}, -- Dusty Djaradin Tome
+  [213188] = {{1,PRI_OPEN},nil,nil}, -- Dusty Dracthyr Tome
+  [213187] = {{1,PRI_OPEN},nil,nil}, -- Dusty Drakonid Tome
+  [213186] = {{1,PRI_OPEN},nil,nil}, -- Dusty Niffen Tome
+  [213190] = {{1,PRI_OPEN},nil,nil}, -- Preserved Djaradin Tome
+  [213189] = {{1,PRI_OPEN},nil,nil}, -- Preserved Drakonid Tome
+  [213176] = {{1,PRI_OPEN},nil,nil}, -- Preserved Isles Tome
+  [213177] = {{1,PRI_OPEN},nil,nil}, -- Immaculate Tome
+  
   -- 11.0
   -- Sparks
   [211297] = {{2,PRI_OPEN},nil,nil}, -- Fractured Spark of Omens
