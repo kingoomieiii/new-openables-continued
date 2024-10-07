@@ -119,22 +119,12 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [196595] = {{1,PRI_REP},nil,nil}, -- "Vault Head Forgestone"
   --10.0 Primordial Stones
   [204573] = {{1,PRI_REP},nil,nil}, -- Opening "Condensed ... Magic"
-  --10.0 Missing tokens
-  --[[
-  [203628] = {{1,PRI_REP},nil,nil}, -- "Create Spaulders"
-  [203648] = {{1,PRI_REP},nil,nil}, -- "Create Necklace"
-  [203647] = {{1,PRI_REP},nil,nil}, -- "Create Ring"
-  [203649] = {{1,PRI_REP},nil,nil}, -- "Create Trinket"
-  [203650] = {{1,PRI_REP},nil,nil}, -- "Create Weapon"
-  [203630] = {{1,PRI_REP},nil,nil}, -- "Create Bracers"
-  --]]
   --10.1
   [205250] = {{1,PRI_OPEN},nil,nil}, -- Loamm Niffen Valuable
   [205991] = {{1,PRI_OPEN},nil,nil}, -- Loamm Niffen - Symbol of Friendship
   [205342] = {{1,PRI_OPEN},nil,nil}, -- Loamm Niffen Insignia
   [205254] = {{1,PRI_OPEN},nil,nil}, -- Honorary Explorer's Compass
   [205982] = {{1,PRI_OPEN},{LOAMM},{[2133] = true,}}, -- Lost Dig Map
-  --[205982] = {{1,PRI_OPEN},nil,nil}, -- Lost Dig Map
   [202621] = {{1,PRI_REP},nil,nil}, -- "Corrupting Fluid" Aberrus tokens
   [202624] = {{1,PRI_REP},nil,nil}, -- "Mixing Fluid" Aberrus tokens
   [202627] = {{1,PRI_REP},nil,nil}, -- "Melting Fluid" Aberrus tokens
@@ -425,7 +415,6 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [128488] = {{1,PRI_OPEN},nil,nil}, -- Ship: The Awakener
   [128490] = {{1,PRI_OPEN},nil,nil}, -- Blueprint: Oil Rig
   [128980] = {{1,PRI_OPEN},nil,nil}, -- Scroll of Forgotten Knowledge
-  --[132523] = {{1,PRI_REST},nil,nil}, -- Reaves Battery
   [136269] = {{1,PRI_OPEN},nil,nil}, -- Kel'danath's Manaflask
   [136342] = {{100,PRI_OPEN},nil,nil},-- Obliterum Ash
   [136412] = {{1,PRI_OPEN},nil,nil}, -- Heavy Armor Set
