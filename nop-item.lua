@@ -386,6 +386,8 @@ function NOP:ItemShow(itemID,prio) -- add item to button
   local mtarget = format("item:%d", itemID)
   --local mtarget = format("%d %d", bagID, slotID)
   local mtargetitem = nil
+  local mtargetbag = nil
+  local mtartgetslot = nil
   local mtype = "item"
   local mspell = nil
   if T_PICK[itemID] then -- item has picklock in tooltip
@@ -398,7 +400,8 @@ function NOP:ItemShow(itemID,prio) -- add item to button
       mtype = "spell"
       mspell = self.pickLockSpell
       mtarget = nil
-      mtargetitem = format("item:%d", itemID) --format("%d %d" ,bagID,slotID) -- this one needs unlock
+      --mtargetitem = format("item:%d", itemID) --format("%d %d" ,bagID,slotID) -- this one needs unlock
+      mtargetitem = nil
     else
       T_PICK[itemID] = nil -- it not require lockpick anymore
     end
@@ -410,7 +413,7 @@ function NOP:ItemShow(itemID,prio) -- add item to button
     mtarget = nil
     mtargetitem =  format("item:%d", itemID) --format("%d %d" ,bagID,slotID) -- disenchant this
   end
-  if (bt.itemCount ~= itemCount) or (bt.itemID ~= itemID) or (bt.isGlow ~= isGlow) or (bt.mtext ~= mtext) or (bt.mtype ~= mtype) or (bt.mspell ~= mspell) or (bt.mtarget ~= mtarget) or (bt.mtargetitem ~= mtargetitem) then
+  if (bt.itemCount ~= itemCount) or (bt.itemID ~= itemID) or (bt.isGlow ~= isGlow) or (bt.mtext ~= mtext) or (bt.mtype ~= mtype) or (bt.mspell ~= mspell) or (bt.mtarget ~= mtarget) or (bt.mtargetitem ~= mtargetitem) or (bt.bagID ~= bagID) or (bt.slotID ~= slotID) then
     bt.prio = prio
     bt.showID = itemID
     bt.itemID = itemID

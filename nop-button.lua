@@ -337,6 +337,10 @@ function NOP:ButtonShow() -- display button
     bt:SetAttribute("spell", bt.mspell)
     bt:SetAttribute("item", bt.mtarget) -- ("bag slot")
     bt:SetAttribute("target-item", bt.mtargetitem) -- ("bag slot")
+    if bt.mspell then
+      bt:SetAttribute("target-bag", bt.bagID)
+      bt:SetAttribute("target-slot", bt.slotID)
+    end
     self:Verbose("ButtonShow:",self:CompressText(bt.mtype),bt.mspell and self:CompressText(bt.mspell),bt.mtarget and self:CompressText("item: " .. bt.mtarget),bt.mtargetitem and self:CompressText("target-item: " .. bt.mtargetitem))
   else
     --bt:SetAttribute("macrotext1", nil)
