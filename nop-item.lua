@@ -382,6 +382,7 @@ function NOP:ItemShow(itemID,prio) -- add item to button
     itemTexture = itemTexture.iconFileID
   end
   --local mtext = format(P.MACRO_ACTIVE,itemID)
+  local mtext = nil
   --local mtarget = format("%d",itemID)
   local mtarget = format("item:%d", itemID)
   --local mtarget = format("%d %d", bagID, slotID)
@@ -397,6 +398,7 @@ function NOP:ItemShow(itemID,prio) -- add item to button
       slotID = slot
       isGlow = true
       --mtext = format(P.MACRO_PICKLOCK,self.pickLockSpell,bagID,slotID) -- this one needs unlock
+      mtext = nil
       mtype = "spell"
       mspell = self.pickLockSpell
       mtarget = nil
@@ -408,17 +410,20 @@ function NOP:ItemShow(itemID,prio) -- add item to button
   elseif NOP.T_DISENCHANT_ITEMS[itemID] then
     isGlow = true
     --mtext = format(P.MACRO_DISENCHANT,itemID) -- disenchant this
+    mtext = nil
     mtype = "spell"
     mspell = "Disenchant"
     mtarget = nil
     mtargetitem =  format("item:%d", itemID) --format("%d %d" ,bagID,slotID) -- disenchant this
+  elseif C_Item.IsDressableItemByID(itemID) then
+    mtext = format(P.MACRO_ACTIVE,itemID)
   end
   if (bt.itemCount ~= itemCount) or (bt.itemID ~= itemID) or (bt.isGlow ~= isGlow) or (bt.mtext ~= mtext) or (bt.mtype ~= mtype) or (bt.mspell ~= mspell) or (bt.mtarget ~= mtarget) or (bt.mtargetitem ~= mtargetitem) or (bt.bagID ~= bagID) or (bt.slotID ~= slotID) then
     bt.prio = prio
     bt.showID = itemID
     bt.itemID = itemID
     bt.isGlow = isGlow
-    --bt.mtext = mtext
+    bt.mtext = mtext
     bt.mtype = mtype
     bt.mspell = mspell
     bt.mtarget = mtarget

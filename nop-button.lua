@@ -329,25 +329,30 @@ function NOP:ButtonShow() -- display button
   bt.icon:SetTexture(bt.itemTexture or DEFAULT_ICON)
   --if (GetMouseFocus() == bt) then self:ButtonOnEnter(bt) end -- update tooltip if mouse is over button
   if (bt:IsMouseMotionFocus()) then self:ButtonOnEnter(bt) end -- update tooltip if mouse is over button
+  
+  --cleanup
+  bt:SetAttribute("macrotext1", nil)
+  bt:SetAttribute("type", nil)
+  bt:SetAttribute("spell", nil)
+  bt:SetAttribute("target-item", nil)
+  bt:SetAttribute("item", nil)
+  
   if bt.itemTexture then
-    --bt:SetAttribute("type1", "macro") -- "type1" Unmodified left click.
-    --bt:SetAttribute("macrotext1", bt.mtext)
-    --self:Verbose("ButtonShow:","macro text",self:CompressText(bt.mtext))
-    bt:SetAttribute("type", bt.mtype)
-    bt:SetAttribute("spell", bt.mspell)
-    bt:SetAttribute("item", bt.mtarget) -- ("bag slot")
-    bt:SetAttribute("target-item", bt.mtargetitem) -- ("bag slot")
-    if bt.mspell then
-      bt:SetAttribute("target-bag", bt.bagID)
-      bt:SetAttribute("target-slot", bt.slotID)
+    if bt.mtext then
+      bt:SetAttribute("type1", "macro") -- "type1" Unmodified left click.
+      bt:SetAttribute("macrotext1", bt.mtext)
+      self:Verbose("ButtonShow:","macro text",self:CompressText(bt.mtext))
+    else
+      bt:SetAttribute("type", bt.mtype)
+      bt:SetAttribute("spell", bt.mspell)
+      bt:SetAttribute("item", bt.mtarget) -- ("bag slot" or "item:<id>")
+      bt:SetAttribute("target-item", bt.mtargetitem) -- ("bag slot")
+      if bt.mspell then
+        bt:SetAttribute("target-bag", bt.bagID)
+        bt:SetAttribute("target-slot", bt.slotID)
+      end
+      self:Verbose("ButtonShow:",self:CompressText(bt.mtype),bt.mspell and self:CompressText(bt.mspell),bt.mtarget and self:CompressText("item: " .. bt.mtarget),bt.mtargetitem and self:CompressText("target-item: " .. bt.mtargetitem))
     end
-    self:Verbose("ButtonShow:",self:CompressText(bt.mtype),bt.mspell and self:CompressText(bt.mspell),bt.mtarget and self:CompressText("item: " .. bt.mtarget),bt.mtargetitem and self:CompressText("target-item: " .. bt.mtargetitem))
-  else
-    --bt:SetAttribute("macrotext1", nil)
-    bt:SetAttribute("type", nil)
-    bt:SetAttribute("spell", nil)
-    bt:SetAttribute("target-item", nil)
-    bt:SetAttribute("item", nil)
   end
   -- self:printt("ButtonShow:","macro text",self:CompressText(bt.mtext))
   if not (bt:IsVisible() or bt:IsShown()) then bt:Show() end
