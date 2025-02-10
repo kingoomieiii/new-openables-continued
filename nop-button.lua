@@ -266,26 +266,23 @@ end
 function NOP:ButtonLoad() -- create button, restore his position
   if self:inCombat() then self:TimerFire("ButtonLoad", TIMER_IDLE); return end
   if not self.BF then -- new button
-    self.BF = CreateFrame("Button", BUTTON_FRAME, self.frameHiderB, "SecureActionButtonTemplate")
+    self.BF = CreateFrame("Button", BUTTON_FRAME, self.frameHiderB, "ActionButtonTemplate,SecureActionButtonTemplate")
     local bt = self.BF
-    bt.icon = bt:CreateTexture(BUTTON_FRAME .. "Icon", "BACKGROUND")
-    bt.icon:SetAllPoints()
     
-    bt.normal = bt:CreateTexture(BUTTON_FRAME .. "NormalTexture")
-    bt.normal:SetAtlas("UI-HUD-ActionBar-IconFrame")
-    --bt.normal:SetSize(46, 45)
-    --bt.normal:SetPoint("TOPLEFT")
-    bt.normal:SetAllPoints()
-    bt:SetNormalTexture(bt.normal)
-    
-    bt.TextOverlayContainer = CreateFrame("Frame", nil, bt)
-    Mixin(bt.TextOverlayContainer, ActionButtonTextOverlayContainerMixin)
-    bt.TextOverlayContainer:SetAllPoints()
-    bt.count = bt.TextOverlayContainer:CreateFontString(BUTTON_FRAME .. "Count", nil, "NumberFontNormal")
-    bt.count:SetPoint("BOTTOMRIGHT", -5, 5)
-    bt.hotkey = bt.TextOverlayContainer:CreateFontString(BUTTON_FRAME .. "HotKey", nil, "NumberFontNormalSmallGray")
-    bt.hotkey:SetPoint("BOTTOMRIGHT", -5, -5)
-    bt.hotkey:SetSize(32, 10)
+    --bt.icon = bt:CreateTexture(BUTTON_FRAME .. "Icon", "BACKGROUND")
+    --bt.icon:SetAllPoints()
+    --bt.normal = bt:CreateTexture(BUTTON_FRAME .. "NormalTexture")
+    --bt.normal:SetAtlas("UI-HUD-ActionBar-IconFrame")
+    --bt.normal:SetAllPoints()
+    --bt:SetNormalTexture(bt.normal)
+    --bt.TextOverlayContainer = CreateFrame("Frame", nil, bt)
+    --Mixin(bt.TextOverlayContainer, ActionButtonTextOverlayContainerMixin)
+    --bt.TextOverlayContainer:SetAllPoints()
+    --bt.count = bt.TextOverlayContainer:CreateFontString(BUTTON_FRAME .. "Count", nil, "NumberFontNormal")
+    --bt.count:SetPoint("BOTTOMRIGHT", -5, 5)
+    --bt.hotkey = bt.TextOverlayContainer:CreateFontString(BUTTON_FRAME .. "HotKey", nil, "NumberFontNormalSmallGray")
+    --bt.hotkey:SetPoint("BOTTOMRIGHT", -5, -5)
+    --bt.hotkey:SetSize(32, 10)
     
     if bt:IsVisible() or bt:IsShown() then bt:Hide() end
     bt:SetFrameStrata(NOP.AceDB.profile.strata and "HIGH" or "MEDIUM")
