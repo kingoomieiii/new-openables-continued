@@ -1466,6 +1466,9 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [219133] = {{1,PRI_OPEN},nil,nil}, -- Deep Cartographer's Orientation
   [219134] = {{1,PRI_OPEN},nil,nil}, -- Mossy Cartographer's Orientation
   
+  --Love is in the air
+  [232925] = {{1,PRI_OPEN},nil,nil}, -- Ensemble: Truly Heartfelt Shoulders
+  
   
   --[] = {{1,PRI_OPEN},nil,nil}, -- 
   
