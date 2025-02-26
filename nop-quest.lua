@@ -92,7 +92,7 @@ function NOP:QBButton(i, p) -- create new quest bar button
     return bt
   end
   local name = P.QB_NAME..i
-  local bt = CreateFrame("Button", name, p, "SecureActionButtonTemplate, ActionButtonTemplate")
+  local bt = CreateFrame("Button", name, p, "ActionButtonTemplate,SecureActionButtonTemplate")
   self:QBButtonSize(bt)
   self:ButtonBackdrop(bt)
   bt:RegisterForClicks("AnyUp", "AnyDown") -- act on key release 
