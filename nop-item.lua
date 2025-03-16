@@ -145,7 +145,7 @@ function NOP:ItemGetPattern(itemID,bag,slot) -- looking for usable item via patt
     if heading and heading ~= "" then
       if heading == ITEM_COSMETIC then
         if not NOP:ItemIsAppearanceCollected(lines) then
-          self:Verbose("ItemGetPattern:","itemID",itemID,name,"will be shown as COSMETIC")
+          self:Verbose("ItemGetPattern:","itemID",itemID,"will be shown as COSMETIC")
           return 1, P.PRI_OPEN
         else
           return 0
@@ -153,7 +153,7 @@ function NOP:ItemGetPattern(itemID,bag,slot) -- looking for usable item via patt
       end
       if heading == TOY then
         if not NOP:ItemIsToyCollected(lines) then
-          self:Verbose("ItemGetPattern:","itemID",itemID,name,"will be shown as TOY")
+          self:Verbose("ItemGetPattern:","itemID",itemID,"will be shown as TOY")
           return 1, P.PRI_OPEN
         else
           return 0
@@ -168,7 +168,7 @@ function NOP:ItemGetPattern(itemID,bag,slot) -- looking for usable item via patt
               local level, top, value, reward = self:GetReputation(heading)
               if (level and (level > 7) and NOP.AceDB.profile.SkipExalted) or reward then return end -- already exalted with faction for this token or have reward pending
             end
-            self:Verbose("ItemGetPattern:","itemID",itemID,name,"will be shown as RECIPE because of heading and pattern:",heading,pattern)
+            self:Verbose("ItemGetPattern:","itemID",itemID,"will be shown as RECIPE because of heading and pattern:",heading,pattern)
             return c[1], c[2], z, m
           end
         end
@@ -176,7 +176,7 @@ function NOP:ItemGetPattern(itemID,bag,slot) -- looking for usable item via patt
       for key, data in pairs(T_OPEN) do
         if strfind(heading,key,1,true) then
           local c, z, m = unpack(data,1,3)
-          self:Verbose("ItemGetPattern:","itemID",itemID,name,"will be shown as OPEN")
+          self:Verbose("ItemGetPattern:","itemID",itemID,"will be shown as OPEN")
           return c[1], c[2], z, m
         end
       end
