@@ -161,6 +161,14 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   --Delve
   [227784] = {{1,PRI_OPEN},nil,nil}, -- Delver's Bounty
   
+  --11.1
+  --Tier Tokens
+  [464833] = {{1,PRI_REP},nil,nil}, -- Polished Gallybux
+  [464834] = {{1,PRI_REP},nil,nil}, -- Rusty Gallybux
+  [464835] = {{1,PRI_REP},nil,nil}, -- Gilded Gallybux
+  [464836] = {{1,PRI_REP},nil,nil}, -- Greased Gallybux
+  [464837] = {{1,PRI_REP},nil,nil}, -- Bloody Gallybux
+  
 }
 NOP.T_RECIPES = { -- [ItemId] = {{count_to_use,priority}, "gsub regex" | tooltip-line-number,{"sub-Zone",...},{[mapID]=true,...}, factionID}, item tooltip template only text to 1st match is compared, that mean all items of same school would be looked up.
   [153135] = {{1,PRI_TOKEN},4,nil,nil}, -- Unsullied Cloth Robes, why Blizzard did put in type of armor?
