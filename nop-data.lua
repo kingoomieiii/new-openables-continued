@@ -1418,6 +1418,7 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   
   -- Misc
   [217707] = {{5,PRI_OPEN},nil,nil}, -- Imperfect Null Stone
+  [226258] = {{1,PRI_OPEN},nil,nil}, -- Delver's Pouch of Reagents
   
   -- 11.1
   -- Sparks
