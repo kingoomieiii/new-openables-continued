@@ -159,7 +159,7 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   [225633] = {{1,PRI_REP},nil,nil}, -- Obscenity's Idol
   
   --Delve
-  [227784] = {{1,PRI_OPEN},nil,nil}, -- Delver's Bounty
+  [233071] = {{1,PRI_OPEN},nil,nil}, -- Delver's Bounty
   
   --11.1
   --Tier Tokens
