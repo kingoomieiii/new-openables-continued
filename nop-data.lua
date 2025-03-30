@@ -1430,6 +1430,9 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [231264] = {{1,PRI_OPEN},nil,nil}, -- Glorious Cluster of Gilded Undermine Crests
   [231267] = {{1,PRI_OPEN},nil,nil}, -- Pouch of Weathered Undermine Crests
   
+  -- Delves
+  [236096] = {{100,PRI_OPEN},nil,nil}, -- Coffer Key Shard
+  
   --[] = {{1,PRI_OPEN},nil,nil}, -- 
   
 }
