@@ -171,7 +171,6 @@ NOP.T_SPELL_BY_NAME = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},
   
   --Misc
   [232981] = {{1,PRI_REP},nil,nil}, -- Installing - G99 stuff
-  [235531] = {{1,PRI_OPEN},nil,nil}, -- Restored Coffer Key
   
 }
 NOP.T_RECIPES = { -- [ItemId] = {{count_to_use,priority}, "gsub regex" | tooltip-line-number,{"sub-Zone",...},{[mapID]=true,...}, factionID}, item tooltip template only text to 1st match is compared, that mean all items of same school would be looked up.
@@ -1437,6 +1436,8 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   
   -- Delves
   [236096] = {{100,PRI_OPEN},nil,nil}, -- Coffer Key Shard
+  [235531] = {{1,PRI_OPEN},nil,nil}, -- Restored Coffer Key
+  [233555] = {{1,PRI_OPEN},nil,nil}, -- Restored Coffer Key
   
   --[] = {{1,PRI_OPEN},nil,nil}, -- 
   
