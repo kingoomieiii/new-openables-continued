@@ -1441,6 +1441,9 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [235531] = {{1,PRI_OPEN},nil,nil}, -- Restored Coffer Key
   [233555] = {{1,PRI_OPEN},nil,nil}, -- Restored Coffer Key
   
+  -- 11.2
+  -- Sparks
+  [231757] = {{2,PRI_OPEN},nil,nil}, -- Fractured Spark of Fortunes
   --[] = {{1,PRI_OPEN},nil,nil}, -- 
   
 }
