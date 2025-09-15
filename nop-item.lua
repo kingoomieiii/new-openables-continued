@@ -64,7 +64,7 @@ function NOP:ItemGetSpell(itemID) -- looking for usable item by spell attached t
   end
 end
 function NOP:ItemGetItem(itemID) -- looking for usable item by itemID returns (count, 2, zone, map, aura) or nil
-  local ref = NOP.T_ITEMS[itemID] or NOP.T_DISENCHANT_ITEMS[itemID]
+  local ref = NOP.T_ITEMS[itemID] or NOP.T_DISENCHANT_ITEMS[itemID] or NOP.AceDB.profile["T_TRACKLIST"][itemID]
   if not ref then return end
   local c,z,m,a = unpack(ref,1,4)
   if m and not m[self.mapID] then

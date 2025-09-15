@@ -24,6 +24,7 @@ local ADDON, P = ...
 local NOP = LibStub("AceAddon-3.0"):GetAddon(ADDON)
 --
 local T_CHECK = P.T_CHECK; assert(T_CHECK ~= nil,'T_CHECK')
+local PRI_OPEN = P.PRI_OPEN; assert(PRI_OPEN ~= nil,'PRI_OPEN')
 local print = P.print; assert(print ~= nil,'print')
 --
 NOP.slash_handler = function(msg, editbox) -- /nop handler
@@ -194,6 +195,15 @@ NOP.slash_handler = function(msg, editbox) -- /nop handler
   if cmd == "zone" then
     NOP.AceDB.profile["zoneUnlock"] = not NOP.AceDB.profile.zoneUnlock
     NOP:BAG_UPDATE()
+    return
+  end
+  if cmd == "add" then
+    local id = tonumber(arg)
+    local printed = false
+    if id then
+      if NOP.AceDB.profile["T_TRACKLIST"] ~= nil then NOP.AceDB.profile.T_TRACKLIST[id] = {{1,PRI_OPEN},nil,nil}; NOP:BAG_UPDATE() end
+      print("Item ID",id,"added to the tracking list.")
+    end
     return
   end
   local usage = {string.split("\n", P.L["NOP_USE"] .. P.CONSOLE_CMD .. P.CONSOLE_USAGE)}
