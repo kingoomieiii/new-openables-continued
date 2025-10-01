@@ -22,8 +22,7 @@ jobs:
         uses: cont1nuity/toc-interface-updater@master
         with:
           flavor: retail # this is the default
-          future: true   # this is optional
-          replaceflavor: true # this is optional
+          ptr: true   # this is optional
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v6
