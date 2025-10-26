@@ -1452,8 +1452,8 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   -- 11.2
   -- Sparks
   [231757] = {{2,PRI_OPEN},nil,nil}, -- Fractured Spark of Fortunes
-  --[] = {{1,PRI_OPEN},nil,nil}, -- 
-
+  
+  -- 11.2.5
   -- Legion Remix
   [254267] = {{100,PRI_OPEN},nil,nil}, -- Fragmented Memento of Epoch Challenges
   [245925] = {{1, PRI_OPEN},nil,nil},  --  Artifactium Sand
@@ -1474,4 +1474,5 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [253227] = {{10, PRI_OPEN},nil,nil}, --   Flawless Thread of Time
   [253756] = {{1, PRI_OPEN},nil,nil},  --  Insignia of The Broken Isles
   [254579] = {{1, PRI_OPEN},nil,nil},  --  Epoch Resonance
+  --[] = {{1,PRI_OPEN},nil,nil}, -- 
 }
