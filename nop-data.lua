@@ -1453,5 +1453,25 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   -- Sparks
   [231757] = {{2,PRI_OPEN},nil,nil}, -- Fractured Spark of Fortunes
   --[] = {{1,PRI_OPEN},nil,nil}, -- 
-  
+
+  -- Legion Remix
+  [254267] = {{100,PRI_OPEN},nil,nil}, -- Fragmented Memento of Epoch Challenges
+  [245925] = {{1, PRI_OPEN},nil,nil},  --  Artifactium Sand
+  [248141] = {{1, PRI_OPEN},nil,nil},  --  Curious Simulacrum
+  [249781] = {{1, PRI_OPEN},nil,nil},  --  Wardens Champions Insignia
+  [249782] = {{1, PRI_OPEN},nil,nil},  --  Valarjar Champions Insignia
+  [249783] = {{1, PRI_OPEN},nil,nil},  --  Nightfallen Champions Insignia
+  [249784] = {{1, PRI_OPEN},nil,nil},  --  Legionfall Champions Insignia
+  [249785] = {{1, PRI_OPEN},nil,nil},  --  Highmountain Tribe Champions Insignia
+  [249786] = {{1, PRI_OPEN},nil,nil},  --  Dreamweaver Champions Insignia
+  [249787] = {{1, PRI_OPEN},nil,nil},  --  Court of Farondis Champions Insignia
+  [249788] = {{1, PRI_OPEN},nil,nil},  --  Argussian Reach Champions Insignia
+  [249891] = {{1, PRI_OPEN},nil,nil},  --  Mound of Artifactium Sand
+  [252364] = {{10, PRI_OPEN},nil,nil}, --   Gem of Guldan
+  [253222] = {{10, PRI_OPEN},nil,nil}, --   Corrupted Thorn of The Dream
+  [253223] = {{10, PRI_OPEN},nil,nil}, --   Fractal Felshard
+  [253224] = {{10, PRI_OPEN},nil,nil}, --   Mote of A Broken Time
+  [253227] = {{10, PRI_OPEN},nil,nil}, --   Flawless Thread of Time
+  [253756] = {{1, PRI_OPEN},nil,nil},  --  Insignia of The Broken Isles
+  [254579] = {{1, PRI_OPEN},nil,nil},  --  Epoch Resonance
 }
