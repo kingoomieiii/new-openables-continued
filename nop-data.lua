@@ -1474,5 +1474,24 @@ NOP.T_ITEMS = { -- [itemID] = {{count_to_use,priority},{"sub-Zone",...},{[mapID]
   [253227] = {{10, PRI_OPEN},nil,nil}, --   Flawless Thread of Time
   [253756] = {{1, PRI_OPEN},nil,nil},  --  Insignia of The Broken Isles
   [254579] = {{1, PRI_OPEN},nil,nil},  --  Epoch Resonance
+  [246937] = {{1,PRI_OPEN},nil,nil}, -- Perfected Epoch Memento
+  
+  --These Mementos are automatically consumed when looted... usually
+  [242516] = {{1,PRI_OPEN},nil,nil}, -- Memento of Epoch Legends
+  [242508] = {{1,PRI_OPEN},nil,nil}, -- Memento of Epoch Potential
+  [242502] = {{1,PRI_OPEN},nil,nil}, -- Memento of Epoch History
+  [242503] = {{1,PRI_OPEN},nil,nil}, -- Memento of Epoch Stories
+  [242507] = {{1,PRI_OPEN},nil,nil}, -- Memento of Epoch Power
+  [242506] = {{1,PRI_OPEN},nil,nil}, -- Memento of Epoch Rituals
+  [242501] = {{1,PRI_OPEN},nil,nil}, -- Memento of Epoch Knowledge
+  [242505] = {{1,PRI_OPEN},nil,nil}, -- Memento of Epoch Hope
+  [242504] = {{1,PRI_OPEN},nil,nil}, -- Memento of Epoch Truth
+  [242511] = {{1,PRI_OPEN},nil,nil}, -- Memento of Epoch Nostalgia
+  [242514] = {{1,PRI_OPEN},nil,nil}, -- Memento of Epoch Fun
+  [242515] = {{1,PRI_OPEN},nil,nil}, -- Memento of Epoch Strategies
+  [242510] = {{1,PRI_OPEN},nil,nil}, -- Memento of Epoch Kindness
+  [242509] = {{1,PRI_OPEN},nil,nil}, -- Memento of Epoch Curiosity
+  [242512] = {{1,PRI_OPEN},nil,nil}, -- Memento of Epoch Creatures
+  [242513] = {{1,PRI_OPEN},nil,nil}, -- Memento of Epoch Collections
   --[] = {{1,PRI_OPEN},nil,nil}, -- 
 }
